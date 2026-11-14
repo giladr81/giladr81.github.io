@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400&family=Schibsted+Grotesk:wght@400..800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=202611132039">
+<link rel="stylesheet" href="assets/style.css?v=202611132227">
 <style>
   .src-note { font-size: var(--step--1); color: var(--ink-3); }
   table.worth { max-width: 720px; }
@@ -70,7 +70,7 @@
       </div>
       <dl class="summary">
         <dt>The bet</dt><dd>For Gaia's paying users, whether the app works with no signal and in the vehicle decides renewal more than the price does. Fixing that keeps more long-time subscribers than a discount would.</dd>
-        <dt>Evidence</dt><dd>Per 100 App Store reviews, Gaia gets <span data-k="derived.reliability_ratio_ci.lo_int"></span> to <span data-k="derived.reliability_ratio_ci.hi_int"></span> times as many "the app didn't work" complaints as onX, but only <span data-k="derived.pay_ratio" data-fmt="x"></span> as many price complaints. <span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's 1 and 2-star reviewers are long-time users, against <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span> for onX.</dd>
+        <dt>Evidence</dt><dd>Per 100 App Store reviews, Gaia gets <span data-k="derived.reliability_ratio_ci.lo_int"></span> to <span data-k="derived.reliability_ratio_ci.hi_int"></span> times as many "the app didn't work" complaints as onX, but only <span data-k="derived.pay_ratio" data-fmt="x"></span> as many price complaints. On Google Play the reliability gap is much smaller, about <span data-k="android_comparison.excl_burst.derived.reliability_ratio" data-fmt="x"></span>. <span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's 1 and 2-star reviewers are long-time users, against <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span> for onX.</dd>
         <dt>First move</dt><dd>Fix crashes in the field and in the vehicle, then let downloaded maps open without an online login check, built once into the shared Outside account.</dd>
         <dt>How to test it on Outside's data</dt><dd>Compare cancellations among second-year subscribers in the 60 days after a crash, failed offline launch or sync error with similar subscribers who had none. Then run a win-back test: a "we fixed it" message against a discount.</dd>
         <dt>What would kill it</dt><dd>Telemetry shows offline launches almost never fail, failures don't change cancellation rates, or the discount clearly beats the "we fixed it" message.</dd>
@@ -79,7 +79,7 @@
       <div class="stats" aria-label="Headline figures">
         <div class="stat">
           <div class="big"><span data-k="ios_comparison.gaia.low_share" data-fmt="pct"></span> <span class="vs">vs <span data-k="ios_comparison.onx_offroad.low_share" data-fmt="pct"></span></span></div>
-          <p>of recent written reviews give 1 or 2 stars (Gaia vs onX). Gaia's <span data-k="store_rating.gaia.avg"></span>-star App Store average counts all <span data-k="store_rating.gaia.count" data-fmt="n"></span> ratings since launch, most without a written review.</p>
+          <p>of recent written App Store reviews give 1 or 2 stars (Gaia vs onX). Gaia's <span data-k="store_rating.gaia.avg"></span>-star App Store average counts all <span data-k="store_rating.gaia.count" data-fmt="n"></span> ratings since launch, most without a written review.</p>
         </div>
         <div class="stat">
           <div class="big"><span data-k="derived.reliability_ratio" data-fmt="x"></span></div>
@@ -96,6 +96,7 @@
         <h2 id="s-stages">Price isn't what separates the two apps</h2>
         <p>Money complaints are common at both: since <span class="mono" data-k="window.since" data-fmt="date"></span> they're <span data-k="apps.onx_offroad.stage_low.pay.share_of_low" data-fmt="pct"></span> of onX's 1 and 2-star reviews and <span data-k="apps.gaia.stage_low.pay.share_of_low" data-fmt="pct"></span> of Gaia's. The difference is whether the app works. Gaia had <span data-k="ios_comparison.gaia.reliability_count"></span> reliability complaints against onX's <span data-k="ios_comparison.onx_offroad.reliability_count"></span>, from far fewer reviews: <span data-k="derived.reliability_ratio" data-fmt="x"></span> as many per 100. With samples this small, the 95% confidence range is <span data-k="derived.reliability_ratio_ci.lo_int"></span> to <span data-k="derived.reliability_ratio_ci.hi_int"></span> times as many. The direction is solid even if the exact size isn't.</p>
       </div>
+      <p class="col">On Google Play the gap is much smaller. Over the same period Gaia gets <span data-k="android_comparison.excl_burst.derived.reliability_ratio" data-fmt="x"></span> as many reliability complaints per 100 reviews as onX (likely range <span data-k="android_comparison.excl_burst.derived.reliability_ratio_ci.lo" data-fmt="x"></span> to <span data-k="android_comparison.excl_burst.derived.reliability_ratio_ci.hi" data-fmt="x"></span>), and <span data-k="android_comparison.excl_burst.gaia.low_share" data-fmt="pct"></span> of Gaia's reviews give 1 or 2 stars against <span data-k="android_comparison.excl_burst.onx_offroad.low_share" data-fmt="pct"></span> of onX's. That leaves out a September burst of short 5-star onX reviews that looks like an in-app rating prompt (<a href="methods.html#s-android">details and the figures with it</a>). Gaia still has more reliability complaints on both stores, but part of the App Store gap is about who writes reviews there, not only about the apps.</p>
       <figure class="fig">
         <figcaption>
           <span class="fig-title">Complaints per 100 reviews, by type of complaint</span>
@@ -118,7 +119,7 @@
       <div class="sec-head">
         <p class="marker">Evidence 2 of 3</p>
         <h2 id="s-who">The people leaving are the ones who paid</h2>
-        <p><span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's 1 and 2-star App Store reviewers say they've used it for years, mention a past subscription, or say it "used to be" good. For onX it's <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span>; its critics are mostly new users hitting the paywall, like the third quote. Gaia's critics name onX most as where they're going. In a hand check, <span data-k="loyal_precision.0"></span> of <span data-k="loyal_precision.1"></span> random matches really described the reviewer's own long or past use.</p>
+        <p><span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's 1 and 2-star App Store reviewers say they've used it for years, mention a past subscription, or say it "used to be" good. For onX it's <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span>. Its critics are mostly new users hitting the paywall, like the third quote. Google Play shows the same split: <span data-k="android_comparison.excl_burst.gaia.loyal_share_of_low" data-fmt="pct"></span> against <span data-k="android_comparison.excl_burst.onx_offroad.loyal_share_of_low" data-fmt="pct"></span>. Gaia's critics name onX most as where they're going. In a hand check, <span data-k="loyal_precision.0"></span> of <span data-k="loyal_precision.1"></span> random matches really described the reviewer's own long or past use.</p>
       </div>
       <div class="quotes">
         <blockquote class="q" data-q="loyal"></blockquote>
@@ -168,7 +169,7 @@
         <figure class="fig">
           <figcaption>
             <span class="fig-title">Gaia reviews that mention CarPlay or Android Auto</span>
-            <span class="fig-note">Count per quarter, both stores. A signal to check, not a finding: the highlighted quarter (Oct 1 to <span class="mono" data-k="window.until" data-fmt="date"></span>) has only <span data-k="gaia_carplay_by_quarter.2026Q4.n"></span> reviews, <span data-k="gaia_carplay_by_quarter.2026Q4.low"></span> of them 1 or 2 stars. Gaia's forum dates a blank CarPlay screen to the 2026.4.2 update in May.</span>
+            <span class="fig-note">Count per quarter, both stores. A signal to check, not a finding: the highlighted quarter (Oct 1 to <span class="mono" data-k="window.until" data-fmt="date"></span>) has only <span data-k="gaia_carplay_by_quarter.2026Q4.n"></span> reviews, <span data-k="gaia_carplay_by_quarter.2026Q4.low"></span> of them 1 or 2 stars. Gaia's forum has reports of a blank CarPlay screen from <span class="mono" data-k="ext.gaia_releases.carplay_suspect.first_carplay_report" data-fmt="date"></span>, after Gaia <span data-k="ext.gaia_releases.carplay_suspect.version"></span>, with one poster blaming an iOS update.</span>
           </figcaption>
           <div class="chart" id="chart-carplay"></div>
         </figure>
@@ -186,15 +187,16 @@
       <div class="two-up">
         <div class="flow">
           <h3>Gaia's community forum</h3>
-          <p>Of the <span data-k="ext.gaia_forum.listing_n"></span> newest posts (<span data-k="ext.gaia_forum.window"></span>), <span data-k="ext.gaia_forum.listing_reliability_n"></span> are about offline maps, sync, downloads, CarPlay or a pulled release; none has an official reply. Three examples:</p>
+          <p>Of the <span data-k="ext.gaia_forum.listing_n"></span> newest posts (<span data-k="ext.gaia_forum.window"></span>), <span data-k="ext.gaia_forum.listing_reliability_n"></span> are about offline maps, sync, downloads, CarPlay or a pulled release. None of the CarPlay, offline-map or sync posts got a reply from Gaia. Three examples:</p>
           <ol class="timeline" id="forum-timeline"></ol>
         </div>
         <div class="flow">
           <h3>Reddit</h3>
-          <div id="reddit-block"><p class="muted">Reddit figures are added when the data build includes them.</p></div>
+          <div id="reddit-block" class="flow"><p class="muted">Reddit figures are added when the data build includes them.</p></div>
           <h3>BC off-road Facebook groups</h3>
-          <p><span data-k="ext.facebook_bc.threads"></span> relevant threads in <span data-k="ext.facebook_bc.groups_searched"></span> groups since <span class="mono" data-k="ext.facebook_bc.window_from" data-fmt="date"></span>. The groups are members-only, so these are summaries:</p>
+          <p>I read <span data-k="ext.facebook_bc.read_in_depth"></span> threads in depth. A hand count found about <span data-k="ext.facebook_bc.threads_total"></span> threads about navigation apps in <span data-k="ext.facebook_bc.groups_searched"></span> groups since <span class="mono" data-k="ext.facebook_bc.window_from" data-fmt="date"></span>. The groups are members-only, so these are summaries:</p>
           <ul class="clean" id="fb-themes"></ul>
+          <p>Outside already owns one answer to road freshness: <a href="https://backroadstatus.com/">Backroad Status</a> road reports are built into Trailforks, while Gaia users have to load them as custom map data.</p>
         </div>
       </div>
     </div>
@@ -212,7 +214,7 @@
           <h3>Opens with no signal</h3>
           <dl>
             <dt>What it measures</dt><dd>Launches with no network that show a usable map and saved items without a login prompt.</dd>
-            <dt>How to set the target</dt><dd>Four weeks of offline launches by app version; target the best recent version's rate.</dd>
+            <dt>How to set the target</dt><dd>Four weeks of offline launches by app version. Target the best recent version's rate.</dd>
             <dt>Starting guess</dt><dd><span class="hyp">Hypothesis</span>99.9% or better, with a usable map within 5 seconds.</dd>
           </dl>
         </div>
@@ -227,7 +229,7 @@
           <h3>Nothing lost in sync</h3>
           <dl>
             <dt>What it measures</dt><dd>Tracks, waypoints and routes that reach the account intact within 24 hours of signal returning.</dd>
-            <dt>How to set the target</dt><dd>Zero lost items; until then, unsynced items say "not synced yet".</dd>
+            <dt>How to set the target</dt><dd>Zero lost items. Until then, unsynced items say "not synced yet".</dd>
           </dl>
         </div>
       </div>
@@ -261,7 +263,7 @@
         <div class="flow col">
           <h3>Tell the user before they lose signal</h3>
           <p>The measures tell the team whether the promise holds. This screen tells the user, while they can still fix it: a map gap, a login about to expire, unsaved waypoints, a missing CarPlay map.</p>
-          <p><b>How I'd test it.</b> Show it to a random half of users who download maps for a route. Measure failed no-signal launches per trip; guardrail: time to start navigating.</p>
+          <p><b>How I'd test it.</b> Show it to a random half of users who download maps for a route. Measure failed no-signal launches per trip, with time to start navigating as the guardrail.</p>
         </div>
       </div>
     </div>
@@ -275,8 +277,8 @@
         <p>Ranked by how many long-time users each problem reaches and how much harm it does.</p>
       </div>
       <ol class="ranked col">
-        <li><h3>Fix crashes in the field and in the vehicle</h3><p>The most common complaint after price. Start with the blank CarPlay map reported since 2026.4.2, and reply on the forum where it was reported.</p><p class="worked"><b>How we'd know it worked:</b> CarPlay map failures at zero within two releases, and the field crash-free rate matching in-town use.</p></li>
-        <li><h3>Let downloaded maps open without a login check</h3><p>Rare, but the worst harm on the list, and built once into the shared account it fixes Gaia and Trailforks together.</p><p class="worked"><b>How we'd know it worked:</b> staged rollout with a holdout; offline login prompts go to zero with no drop in renewals.</p></li>
+        <li><h3>Fix crashes in the field and in the vehicle</h3><p>The most common complaint after price. Start with the blank CarPlay map reported from <span class="mono" data-k="ext.gaia_releases.carplay_suspect.first_carplay_report" data-fmt="date"></span>, after Gaia <span data-k="ext.gaia_releases.carplay_suspect.version"></span> (one poster blames an iOS update), and reply on the forum where it was reported.</p><p class="worked"><b>How we'd know it worked:</b> CarPlay map failures at zero within two releases, and the field crash-free rate matching in-town use.</p></li>
+        <li><h3>Let downloaded maps open without a login check</h3><p>Rare, but the worst harm on the list, and built once into the shared account it fixes Gaia and Trailforks together.</p><p class="worked"><b>How we'd know it worked:</b> staged rollout with a holdout. Offline login prompts go to zero with no drop in renewals.</p></li>
         <li><h3>Make sure nothing is lost in sync</h3><p><span data-k="ios_comparison.gaia.per100.return"></span> per 100 Gaia reviews, none for onX. Show "not synced yet" first, then drive lost items to zero.</p></li>
       </ol>
       <div class="flow col">
@@ -313,8 +315,9 @@
       <div class="sec-head">
         <p class="marker">Before committing a team</p>
         <h2 id="s-test">How I'd test the bet with Outside's own data</h2>
-        <p>Reviews show where to look, not whether to commit a team. Cheapest checks first; each has a result that changes the plan.</p>
+        <p>Reviews show where to look, not whether to commit a team. Cheapest checks first, and each has a result that changes the plan.</p>
       </div>
+      <p class="col">Gaia's own recent releases point the same way. iOS <span data-k="ext.gaia_releases.ios_offline.version"></span> (<span class="mono" data-k="ext.gaia_releases.ios_offline.date" data-fmt="date"></span>) says downloaded maps load more reliably when cell service is spotty, and Android <span data-k="ext.gaia_releases.android_reauth.version"></span> (<span class="mono" data-k="ext.gaia_releases.android_reauth.date" data-fmt="date"></span>) fixed account re-authentication. The team has started on offline and login, which fits the bet. So the first checks should run on these versions, or they'll measure problems that may already be fixed.</p>
       <div class="tbl-wrap">
         <table class="data plan-tbl">
           <thead><tr><th>Question</th><th>How to find out</th><th>Effort</th><th>What changes the plan</th></tr></thead>
@@ -333,7 +336,7 @@
       <h2 id="s-limits">Limits of this evidence, and how to close each one</h2>
       <ul class="clean">
         <li>Reviewers skew unhappy, so reviews compare problems, not overall satisfaction. <span class="close">Close it with the cancellation analysis above.</span></li>
-        <li>The head-to-head uses App Store reviews only (all I have for onX), and Gaia has only <span data-k="ios_comparison.gaia.n"></span> in the period, hence the wide range. <span class="close">Close it by repeating the comparison each quarter.</span></li>
+        <li>The head-to-head uses App Store reviews, and Gaia has only <span data-k="ios_comparison.gaia.n"></span> in the period, hence the wide range. On Google Play, with <span data-k="android_comparison.excl_burst.gaia.n" data-fmt="n"></span> Gaia reviews, the gap is about <span data-k="android_comparison.excl_burst.derived.reliability_ratio" data-fmt="x"></span>. <span class="close">Close it by repeating the comparison each quarter on both stores.</span></li>
         <li>Types come from phrase matching. In hand checks, <span id="prec-range"></span> of sampled reviews per type were correctly placed, and <span data-k="loyal_precision.0"></span> of <span data-k="loyal_precision.1"></span> for long-time users. <span class="close">Close it with Outside's support-ticket categories.</span></li>
         <li>Only <span data-k="apps.gaia.offroad.n"></span> Gaia reviews since <span class="mono" data-k="window.since" data-fmt="date"></span> mention off-roading by name (vehicles and terrain, not CarPlay), so the off-road angle is a direction, not a measured size. <span class="close">Close it by splitting the telemetry by Off-Road mode use.</span></li>
       </ul>
@@ -356,16 +359,18 @@
   </div>
 </footer>
 
-<script src="data/reviews_summary.js?v=202611132039"></script>
-<script src="data/external.js?v=202611132039"></script>
-<script src="assets/charts.js?v=202611132039"></script>
+<script src="data/reviews_summary.js?v=202611132227"></script>
+<script src="data/external.js?v=202611132227"></script>
+<script src="assets/charts.js?v=202611132227"></script>
 <script>
-window.renderReddit = function (D, R) {
-  const g = D.apps.gaia.neutral, o = D.apps.onx.neutral, sc = D.neutral_scope, fmt = (n) => Number(n).toLocaleString("en-CA");
-  const few = g.reliability_count < 20 || o.reliability_count < 20;
+window.renderReddit = function (D, R, X) {
+  const g = D.neutral_reliability.gaia, o = D.neutral_reliability.onx, sc = D.neutral_scope, fmt = (n) => Number(n).toLocaleString("en-CA");
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const day = (iso) => { const [y, m, d] = iso.split("-"); return `${months[+m - 1]} ${+d}, ${y}`; };
+  const mon = (iso) => { const [y, m] = iso.split("-"); return `${months[+m - 1]} ${y}`; };
   const cq = Object.values(D.gaia_carplay_by_quarter).reduce((a, v) => a + v.negative, 0);
-  return `<p>Of ${fmt(D.n_items)} posts and comments since ${D.window_from}, the fair comparison is r/overlanding from ${sc.from} to ${sc.until}, where both apps were collected the same way. There, Gaia mentions describe a reliability problem ${g.reliability_per100} times per 100 and onX mentions ${o.reliability_per100} times${few ? `, from just ${g.reliability_count} and ${o.reliability_count} mentions` : ""}. Switching runs both ways: ${D.switch.gaia_to_onx} mentions of Gaia to onX, ${D.switch.onx_to_gaia} of onX to Gaia.</p>
-  <p>Reddit doesn't show the gap. Either it's specific to people writing 1 and 2-star reviews, or it's noise in a small app-store sample. The telemetry check below decides which. In r/GaiaGPS, ${cq} negative CarPlay or Android Auto mentions since mid-2025 show the in-car problem predates the May 2026 update.</p>
+  return `<p>Of ${fmt(D.n_items)} posts and comments since ${day(D.window_from)}, the fair comparison is r/overlanding from ${day(sc.from)} to ${day(sc.until)}, where both apps were collected the same way. I read every mention there that the phrase lists flagged as a reliability problem. Only ${g[0]} of ${g[1]} for Gaia and ${o[0]} of ${o[1]} for onX were genuine reliability complaints: few for either app, and roughly comparable. Switching runs both ways: ${D.switch.gaia_to_onx} mentions of Gaia to onX, ${D.switch.onx_to_gaia} of onX to Gaia.</p>
+  <p>Reddit doesn't show the App Store gap, and Google Play shows a smaller one. So part of that gap is about who writes App Store reviews, and the telemetry check below decides how much. On Reddit, ${cq} negative mentions of CarPlay or Android Auto in Gaia posts since ${mon(D.window_from)} show the in-car problem predates ${mon(X.gaia_releases.carplay_suspect.first_carplay_report)}.</p>
 `;
 };
 </script>
@@ -382,7 +387,7 @@ window.renderReddit = function (D, R) {
   document.getElementById("forum-timeline").innerHTML = X.gaia_forum.posts.filter((p) => keep.some((id) => p.url.includes(id))).map((p) =>
     `<li><span class="mono small">${p.date}</span> <span class="tag-stage">${esc(stageName[p.stage] || p.stage)}</span><br><a href="${p.url}">${esc(p.title)}</a><br><span class="muted small">${esc(p.gist)}</span></li>`).join("");
   document.getElementById("fb-themes").innerHTML = X.facebook_bc.themes.filter((t, i) => [0, 2, 4].includes(i)) /* several apps used together; price; road freshness */.map((t) => `<li>${esc(t)}</li>`).join("");
-  if (X.reddit) document.getElementById("reddit-block").innerHTML = window.renderReddit(X.reddit, R);
+  if (X.reddit) document.getElementById("reddit-block").innerHTML = window.renderReddit(X.reddit, R, X);
   const g = R.ios_comparison.gaia, o = R.ios_comparison.onx_offroad;
 
   // Chart: drop types with almost no reviews in the comparison window, and say so.

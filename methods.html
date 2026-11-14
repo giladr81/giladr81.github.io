@@ -9,13 +9,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400&family=Schibsted+Grotesk:wght@400..800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=202611132039">
+<link rel="stylesheet" href="assets/style.css?v=202611132227">
 <style>
   code.pat { font: 12px/1.5 var(--font-data); color: var(--ink-2); overflow-wrap: anywhere; }
   table.data td.pat-cell { white-space: normal; min-width: 260px; max-width: 560px; }
   #tbl-patterns td { white-space: normal; vertical-align: top; }
   #tbl-patterns td:first-child { min-width: 200px; max-width: 340px; }
   #tbl-patterns td.r, #tbl-patterns th.r { white-space: nowrap; }
+  #tbl-android th { white-space: normal; vertical-align: bottom; }
+  #tbl-android caption { white-space: normal; }
 </style>
 </head>
 <body>
@@ -44,6 +46,7 @@
     <p>On this page</p>
     <ol>
       <li><a href="#s-src">Where the reviews came from</a></li>
+      <li><a href="#s-android">Google Play check</a></li>
       <li><a href="#s-tag">Sorting complaints</a></li>
       <li><a href="#s-quotes">Choosing quotes</a></li>
       <li><a href="#s-other">Other sources</a></li>
@@ -56,10 +59,24 @@
     <div class="flow-lg">
       <div class="sec-head">
         <h2 id="s-src">Where the reviews came from</h2>
-        <p>I collected the most recent public reviews for each app on <span class="mono" data-k="store_rating_as_of" data-fmt="date"></span>: up to 500 per country (US and Canada) from the App Store's public review feed, and up to 1,500 from Google Play. That gives <span data-k="corpus_total" data-fmt="n"></span> reviews in total. The case study uses reviews written between <span class="mono" data-k="window.since" data-fmt="date"></span> and <span class="mono" data-k="window.until" data-fmt="date"></span>.</p>
+        <p>I collected public reviews for each app from the App Store's public review feed (US and Canada) and from Google Play, most recently on <span class="mono" data-k="store_rating_as_of" data-fmt="date"></span>, and kept every review from earlier pulls. That gives <span data-k="corpus_total" data-fmt="n"></span> reviews in total. The case study uses reviews written between <span class="mono" data-k="window.since" data-fmt="date"></span> and <span class="mono" data-k="window.until" data-fmt="date"></span>.</p>
       </div>
       <div class="tbl-wrap"><table class="data" id="tbl-corpus"></table></div>
-      <p class="col small muted">I have no Google Play reviews for onX Offroad, so every Gaia vs onX comparison uses App Store reviews for both. The App Store feed only returns the newest 500 reviews per country. onX gets so many reviews that its US feed only reaches back to <span class="mono" data-k="cmp_window.since" data-fmt="date"></span>, so the Gaia vs onX comparison is limited to that date onward, the period both feeds fully cover. Other figures use the full window.</p>
+      <p class="col small muted">The head-to-head uses App Store reviews for both apps. onX Offroad's Google Play reviews were added in the latest refresh and are used only for the Google Play check below, so every other onX figure is App Store only. Gaia and Trailforks figures outside the head-to-head use both stores. The App Store feed only returns the newest 500 reviews per country. onX gets so many reviews that its US feed only reaches back to <span class="mono" data-k="cmp_window.since" data-fmt="date"></span>, so the Gaia vs onX comparison is limited to that date onward, the period both feeds fully cover. Other figures use the full window.</p>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="s-android">
+    <div class="flow-lg">
+      <div class="sec-head">
+        <h2 id="s-android">Google Play check: the same comparison on the other store</h2>
+        <p>To see whether the App Store gap is about the apps or about who reviews them, I ran the same Gaia vs onX comparison on Google Play reviews from <span class="mono" data-k="android_comparison.since" data-fmt="date"></span> to <span class="mono" data-k="android_comparison.until" data-fmt="date"></span>. Both Play feeds reach back before that date, so the period is fully covered. Gaia still gets more reliability complaints per 100 reviews, <span data-k="android_comparison.excl_burst.derived.reliability_ratio" data-fmt="x"></span> as many (95% range <span data-k="android_comparison.excl_burst.derived.reliability_ratio_ci.lo" data-fmt="x"></span> to <span data-k="android_comparison.excl_burst.derived.reliability_ratio_ci.hi" data-fmt="x"></span>), against <span data-k="derived.reliability_ratio" data-fmt="x"></span> on the App Store. But onX's share of 1 and 2-star reviews there is no lower than Gaia's. The long-time-user split holds on both stores. So the direction holds, and the size of the App Store gap partly reflects who writes reviews on each store.</p>
+      </div>
+      <div class="col flow">
+        <h3>The onX rating-prompt burst</h3>
+        <p>From <span class="mono" data-k="android_comparison.burst.from" data-fmt="date"></span> to <span class="mono" data-k="android_comparison.burst.until" data-fmt="date"></span>, onX received <span data-k="android_comparison.burst.n" data-fmt="n"></span> Google Play reviews, against a median of <span data-k="android_comparison.burst.median_other_month"></span> a month in the rest of the period. <span data-k="android_comparison.burst.n_5star" data-fmt="n"></span> of them are 5-star, most are a few words long, they cluster in the first week of the month, and <span data-k="android_comparison.burst.top_version_n" data-fmt="n"></span> came from one version (<span data-k="android_comparison.burst.top_version"></span>). That is the pattern of an in-app prompt asking for a rating, not of a change in the app. The main Google Play figures leave out that month of onX reviews. With them, the reliability ratio is <span data-k="android_comparison.with_burst.derived.reliability_ratio" data-fmt="x"></span> (95% range <span data-k="android_comparison.with_burst.derived.reliability_ratio_ci.lo" data-fmt="x"></span> to <span data-k="android_comparison.with_burst.derived.reliability_ratio_ci.hi" data-fmt="x"></span>) and onX's 1 and 2-star share falls to <span data-k="android_comparison.with_burst.onx_offroad.low_share" data-fmt="pct"></span>.</p>
+      </div>
+      <div class="tbl-wrap"><table class="data" id="tbl-android"></table></div>
     </div>
   </section>
 
@@ -93,9 +110,11 @@
   <section class="band" aria-labelledby="s-other">
     <div><div class="col flow">
       <h2 id="s-other">Other sources</h2>
-      <p><b>Reddit.</b> Posts and comments from r/GaiaGPS and from off-road, overlanding and BC subreddits that mention Gaia, onX or Trailforks, collected through the Arctic Shift archive of public Reddit data. Usernames are dropped when saved. Reddit has no star ratings, so a post counts as a complaint of a given type only when problem language ("doesn't work", "crash", "lost", "broken") appears within about 150 characters of that type's phrases. Hand-checked precision was lower than for app reviews: <span id="reddit-precision">see the data build</span>. The archive refused text searches in several off-road and BC subreddits even with slow retries, and capped Gaia comments in r/overlanding at the newest 100. So the Gaia vs onX Reddit comparison uses only r/overlanding, over the dates both searches fully cover (<span class="mono" data-k="ext.reddit.neutral_scope.from" data-fmt="date"></span> to <span class="mono" data-k="ext.reddit.neutral_scope.until" data-fmt="date"></span>).</p>
-      <p><b>Gaia's community forum.</b> The newest public posts at help.gaiagps.com, read on <span class="mono" data-k="ext.gaia_forum.checked" data-fmt="date"></span>. Each one shown on these pages is linked to its source.</p>
-      <p><b>BC off-road Facebook groups.</b> Groups I'm a member of, searched for app names using Facebook's own group search, limited to posts since <span class="mono" data-k="ext.facebook_bc.window_from" data-fmt="date"></span>. I read <span data-k="ext.facebook_bc.threads"></span> relevant threads across <span data-k="ext.facebook_bc.groups_searched"></span> groups. Because the groups are members-only, I recorded no names and no verbatim text, and these pages only summarise themes. Facebook search returns few posts per query, so this is a small sample used for direction only.</p>
+      <p><b>Reddit.</b> Posts and comments from r/GaiaGPS and from off-road and overlanding subreddits that mention Gaia, onX or Trailforks, collected through the Arctic Shift archive of public Reddit data. Usernames are dropped when saved. Reddit has no star ratings, so a post counts as a complaint of a given type only when problem language ("doesn't work", "crash", "lost", "broken") appears within about 150 characters of that type's phrases. Hand-checked precision was lower than for app reviews: <span id="reddit-precision">see the data build</span>. The Gaia vs onX Reddit comparison uses only r/overlanding, where both apps were collected the same way, over the dates both searches cover (<span class="mono" data-k="ext.reddit.neutral_scope.from" data-fmt="date"></span> to <span class="mono" data-k="ext.reddit.neutral_scope.until" data-fmt="date"></span>). There I read every mention the phrase lists flagged as a reliability problem. <span data-k="ext.reddit.neutral_reliability.gaia.0"></span> of <span data-k="ext.reddit.neutral_reliability.gaia.1"></span> for Gaia and <span data-k="ext.reddit.neutral_reliability.onx.0"></span> of <span data-k="ext.reddit.neutral_reliability.onx.1"></span> for onX were genuine reliability complaints (hand check of <span class="mono" data-k="ext.reddit.neutral_reliability.checked" data-fmt="date"></span>), so the case study reports those counts, not the raw rates.</p>
+      <p><b>Reddit coverage gaps.</b> Collected so far: <span id="reddit-subs"></span>. Never collected: <span id="reddit-missing"></span>. r/onXmaps returns <span data-k="ext.reddit.coverage_gaps.onxmaps_items"></span> items from the archive, so onX items come from other subreddits. The archive holds very few r/GaiaGPS items from <span class="mono" data-k="ext.reddit.coverage_gaps.gaiagps_incomplete_from" data-fmt="date"></span> on, either an archive gap or a real drop in activity, so treat r/GaiaGPS as incomplete from then. Reading Reddit directly in the browser was blocked by the browser extension, so these gaps were disclosed rather than filled (checked <span class="mono" data-k="ext.reddit.coverage_gaps.checked" data-fmt="date"></span>).</p>
+      <p><b>Gaia's community forum.</b> The newest public posts at help.gaiagps.com, read on <span class="mono" data-k="ext.gaia_forum.checked" data-fmt="date"></span> (<span data-k="ext.gaia_forum.window"></span>, no newer posts). Each one shown on these pages is linked to its source. A Gaia help-center author account replied on <span data-k="ext.gaia_forum.staff_replies.n"></span> of the <span data-k="ext.gaia_forum.staff_replies.of"></span> newest posts, none of them about CarPlay, offline maps or sync.</p>
+      <p><b>Gaia release notes.</b> Read from the App Store version history and an Android release listing on <span class="mono" data-k="ext.gaia_releases.ios_offline.checked" data-fmt="date"></span>. iOS <span data-k="ext.gaia_releases.ios_offline.version"></span> (<span class="mono" data-k="ext.gaia_releases.ios_offline.date" data-fmt="date"></span>): "<span data-k="ext.gaia_releases.ios_offline.note"></span>" Android <span data-k="ext.gaia_releases.android_reauth.version"></span> (<span class="mono" data-k="ext.gaia_releases.android_reauth.date" data-fmt="date"></span>): "<span data-k="ext.gaia_releases.android_reauth.note"></span>" No release note since <span data-k="ext.gaia_releases.carplay_suspect.version"></span> mentions CarPlay.</p>
+      <p><b>BC off-road Facebook groups.</b> <span data-k="ext.facebook_bc.groups_searched"></span> groups I'm a member of, searched for app names using Facebook's own group search, limited to posts since <span class="mono" data-k="ext.facebook_bc.window_from" data-fmt="date"></span>. On <span class="mono" data-k="ext.facebook_bc.passes.first.date" data-fmt="date"></span> I read <span data-k="ext.facebook_bc.passes.first.read_in_depth"></span> relevant threads in depth. On <span class="mono" data-k="ext.facebook_bc.passes.second.date" data-fmt="date"></span> I searched again with more terms, read <span data-k="ext.facebook_bc.passes.second.read_in_depth"></span> more in depth, and counted by hand every thread whose opening post is about navigation apps: about <span data-k="ext.facebook_bc.threads_total"></span>, with <span data-k="ext.facebook_bc.new_since_prev"></span> new since the first pass. Facebook search is fuzzy and returns different counts on different runs, so the total is approximate and the threads are used for direction only. Because the groups are members-only, I recorded no names and no verbatim text, and these pages only summarise themes.</p>
       <p><b>Help pages.</b> The shared Outside account sign-in for Gaia GPS and Trailforks comes from Trailforks' public help page, checked on the same date.</p>
     </div></div>
   </section>
@@ -105,8 +124,8 @@
     <div><div class="col flow">
       <h2 id="s-limits">What this data can't tell you, and what would</h2>
       <ul class="clean">
-        <li><b>Who writes reviews.</b> Unhappy users write more reviews, and many apps ask happy users for a star rating without a written review. Reviews compare which problems apps have. They don't measure overall satisfaction or how many users leave. <span class="close">What would: cancellation rates after reliability failures, from Outside's own data.</span></li>
-        <li><b>Phrase matching makes mistakes.</b> Sampled precision was 80% to 94% per type, and reviews with unusual wording are missed. Counts are approximate: some false matches, some misses. <span class="close">What would: support-ticket categories, or a language model classifying every review with the same hand check.</span></li>
+        <li><b>Who writes reviews.</b> Unhappy users write more reviews, and many apps ask happy users for a star rating without a written review. Reviews compare which problems apps have. They don't measure overall satisfaction or how many users leave. The Google Play check above shows how much the store matters: the same comparison gives a much smaller gap there. <span class="close">What would: cancellation rates after reliability failures, from Outside's own data.</span></li>
+        <li><b>Phrase matching makes mistakes.</b> Sampled precision was <span id="prec-range"></span> per type, and reviews with unusual wording are missed. Counts are approximate: some false matches, some misses. <span class="close">What would: support-ticket categories, or a language model classifying every review with the same hand check.</span></li>
         <li><b>Small numbers.</b> Some onX complaint types have only a handful of reviews, so single-type ratios show direction only. The combined reliability figure rests on <span data-k="ios_comparison.gaia.reliability_count"></span> Gaia and <span data-k="ios_comparison.onx_offroad.reliability_count"></span> onX reviews, so the <span data-k="derived.reliability_ratio" data-fmt="x"></span> ratio has a 95% confidence interval of <span data-k="derived.reliability_ratio_ci.lo" data-fmt="x"></span> to <span data-k="derived.reliability_ratio_ci.hi" data-fmt="x"></span>. Even the low end is a large gap. <span class="close">What would: the same comparison on app telemetry, which has no sample-size problem.</span></li>
         <li><b>No internal data.</b> Telemetry, cancellation reasons and conversion rates would outweigh everything here. The case study ends with the checks I'd run first and the result that would change the plan.</li>
       </ul>
@@ -135,21 +154,34 @@
   </div>
 </footer>
 
-<script src="data/reviews_summary.js?v=202611132039"></script>
-<script src="data/external.js?v=202611132039"></script>
-<script src="assets/charts.js?v=202611132039"></script>
+<script src="data/reviews_summary.js?v=202611132227"></script>
+<script src="data/external.js?v=202611132227"></script>
+<script src="assets/charts.js?v=202611132227"></script>
 <script>
 (function () {
   const R = window.REVIEWS, C = window.Charts;
   C.bind(document, Object.assign({}, R, { ext: window.EXTERNAL }));
   const RP = window.EXTERNAL.reddit && window.EXTERNAL.reddit.precision;
-  if (RP) document.getElementById("reddit-precision").textContent = Object.entries(RP).map(([k, v]) => `${(R.stages.find((s) => s.key === k) || {}).label || k}: ${v[0]} of ${v[1]}`).join("; ") + " (Gaia mentions)";
+  if (RP) document.getElementById("reddit-precision").textContent = Object.entries(RP).map(([k, v]) => `${(R.stages.find((s) => s.key === k) || {}).label || k}: ${v[0]} of ${v[1]}`).join(", ") + " (Gaia mentions)";
   const NAMES = { gaia: "Gaia GPS", trailforks: "Trailforks", onx_offroad: "onX Offroad", mapmyride: "Map My Ride", caltopo: "CalTopo", outside: "Outside app" };
   const apps = {};
   Object.entries(R.corpus).forEach(([k, v]) => { const [a, st] = k.split("|"); (apps[a] = apps[a] || { ios: 0, android: 0 })[st] = v; });
   document.getElementById("tbl-corpus").innerHTML = "<thead><tr><th>App</th><th class='r'>App Store</th><th class='r'>Google Play</th><th>Used for</th></tr></thead><tbody>" +
     Object.entries(apps).map(([a, v]) => `<tr><td>${NAMES[a] || a}</td><td class='r'>${v.ios.toLocaleString("en-CA")}</td><td class='r'>${v.android ? v.android.toLocaleString("en-CA") : "none"}</td><td>${
-      { gaia: "Case study", onx_offroad: "Benchmark" }[a] || "Background only"}</td></tr>`).join("") + "</tbody>";
+      { gaia: "Case study", onx_offroad: "Benchmark (Google Play: check only)" }[a] || "Background only"}</td></tr>`).join("") + "</tbody>";
+  const RD = window.EXTERNAL.reddit;
+  if (RD) {
+    document.getElementById("reddit-subs").textContent = Object.keys(RD.subs).map((k) => "r/" + k).join(", ");
+    document.getElementById("reddit-missing").textContent = RD.coverage_gaps.never_collected.join(", ");
+  }
+  const pr = Object.values(R.precision).map(([a, b]) => a / b);
+  document.getElementById("prec-range").textContent = `${Math.round(Math.min(...pr) * 100)}% to ${Math.round(Math.max(...pr) * 100)}%`;
+  // Google Play check: App Store head-to-head, then Google Play without and with the onX rating-prompt burst.
+  const A = R.android_comparison, pc = (v) => Math.round(v * 100) + "%", x = (v) => v.toFixed(1) + "×";
+  const arow = (label, c, d) => `<tr><td>${label}</td><td class='r'>${c.gaia.n.toLocaleString("en-CA")} vs ${c.onx_offroad.n.toLocaleString("en-CA")}</td><td class='r'>${pc(c.gaia.low_share)} vs ${pc(c.onx_offroad.low_share)}</td><td class='r'>${c.gaia.reliability_per100.toFixed(1)} vs ${c.onx_offroad.reliability_per100.toFixed(1)}</td><td class='r'>${x(d.reliability_ratio)} (${x(d.reliability_ratio_ci.lo)} to ${x(d.reliability_ratio_ci.hi)})</td><td class='r'>${x(d.pay_ratio)}</td><td class='r'>${pc(c.gaia.loyal_share_of_low)} vs ${pc(c.onx_offroad.loyal_share_of_low)}</td></tr>`;
+  document.getElementById("tbl-android").innerHTML = "<thead><tr><th>Store</th><th class='r'>Reviews</th><th class='r'>1 and 2 stars</th><th class='r'>Reliability per 100</th><th class='r'>Reliability ratio (95% range)</th><th class='r'>Price ratio</th><th class='r'>Long-time among 1 and 2 stars</th></tr></thead><tbody>" +
+    arow("App Store", R.ios_comparison, R.derived) + arow("Google Play, burst out", A.excl_burst, A.excl_burst.derived) + arow("Google Play, burst in", A.with_burst, A.with_burst.derived) +
+    `</tbody><caption class="small muted" style="caption-side:bottom;text-align:left;padding-top:6px">${R.cmp_window.since} to ${R.cmp_window.until}. Pairs are Gaia vs onX. Ratios are Gaia ÷ onX per 100 reviews. The burst is onX's Google Play reviews from ${A.burst.from} to ${A.burst.until}.</caption>`;
   const esc = (t) => t.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]);
   const EXAMPLES = {
     pay: ["paywall", "too expensive", "price went up", "locked behind", "have to pay", "free version", "refund", "cancel my subscription"],
