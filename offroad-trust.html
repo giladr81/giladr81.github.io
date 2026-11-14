@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400&family=Schibsted+Grotesk:wght@400..800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=20261113194418">
+<link rel="stylesheet" href="assets/style.css?v=202611132039">
 <style>
   .src-note { font-size: var(--step--1); color: var(--ink-3); }
   table.worth { max-width: 720px; }
@@ -147,10 +147,16 @@
 
   <section class="band" aria-labelledby="s-where">
     <div class="flow-lg">
+      <div class="sec-photo">
       <div class="sec-head">
         <p class="marker">Evidence 3 of 3</p>
         <h2 id="s-where">Trust breaks in the vehicle first. The offline lockout is rarer but worse.</h2>
         <p>"Navigating" (crashes, freezes, GPS errors, CarPlay, tracks that stop recording) is Gaia's biggest complaint after price: <span data-k="ios_comparison.gaia.per100.on_route"></span> per 100 App Store reviews, against <span data-k="ios_comparison.onx_offroad.per100.on_route"></span> for onX. The offline lockout, a login demand with no signal, is absent from the comparison period and appears in <span data-k="apps.gaia.stage_low.trailhead.n"></span> Gaia reviews across both stores since <span class="mono" data-k="window.since" data-fmt="date"></span>. Rare, but the worst failure a navigation app can have.</p>
+      </div>
+        <figure class="field-photo">
+          <img src="assets/salsbury-crossing.jpg" width="768" height="1024" loading="lazy" alt="My pickup crossing a shallow creek on a rocky forest road, with other off-road vehicles waiting up the hill">
+          <figcaption><b>Where these failures happen.</b> My truck on a group run to Salsbury Lake, BC, with no phone signal. A frozen map or a login prompt here can't be fixed by reconnecting.</figcaption>
+        </figure>
       </div>
       <div class="quotes">
         <blockquote class="q" data-q="on_route"></blockquote>
@@ -350,9 +356,9 @@
   </div>
 </footer>
 
-<script src="data/reviews_summary.js?v=202611131935"></script>
-<script src="data/external.js?v=202611131935"></script>
-<script src="assets/charts.js?v=20261113193656"></script>
+<script src="data/reviews_summary.js?v=202611132039"></script>
+<script src="data/external.js?v=202611132039"></script>
+<script src="assets/charts.js?v=202611132039"></script>
 <script>
 window.renderReddit = function (D, R) {
   const g = D.apps.gaia.neutral, o = D.apps.onx.neutral, sc = D.neutral_scope, fmt = (n) => Number(n).toLocaleString("en-CA");

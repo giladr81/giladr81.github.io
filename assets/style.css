@@ -199,6 +199,14 @@ figure.fig figcaption { display: grid; gap: 6px; }
 figure.fig .fig-title { font-weight: 650; font-size: var(--step-0); letter-spacing: -0.01em; }
 figure.fig .fig-note { font-size: var(--step--1); color: var(--ink-3); line-height: 1.55; }
 @media (max-width: 480px) { figure.fig { padding: 18px; } }
+
+/* Field photo: a real, first-hand photo beside a section head (.sec-photo). Real photos only, never generated. */
+.sec-photo { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+.field-photo { margin: 0; display: grid; gap: 10px; min-width: 0; }
+.field-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 58%; border-radius: var(--radius); background: var(--mist); }
+.field-photo figcaption { font-size: var(--step--1); line-height: 1.55; color: var(--ink-2); }
+.field-photo figcaption b { color: var(--ink); font-weight: 650; }
+@media (max-width: 760px) { .sec-photo { grid-template-columns: 1fr; gap: 24px; } .field-photo img { aspect-ratio: 4 / 3; } }
 .chart { width: 100%; overflow-x: auto; }
 .chart svg { display: block; width: 100%; height: auto; }
 .chart svg.wide { min-width: 600px; }
