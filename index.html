@@ -13,22 +13,23 @@
 <link rel="stylesheet" href="assets/style.css?v=202611151353">
 <style>
   /* Hero: who Gilad is, with career outcomes beside it */
-  .intro { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 40px 64px; align-items: end; padding-block: 64px 72px; }
-  .intro .hero-text { display: grid; gap: 22px; }
-  .intro h1 { max-width: 17ch; font-size: clamp(2.5rem, 4.4vw, 3.6rem); }
-  .intro .dek { font-size: var(--step-1); line-height: 1.55; color: var(--on-forest-2); max-width: 50ch; }
+  .intro { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 32px 56px; align-items: center; padding-block: 32px 48px; }
+  .intro .hero-text { display: grid; gap: 16px; }
+  .intro h1 { max-width: 24ch; font-size: clamp(1.9rem, 3vw, 2.5rem); line-height: 1.12; }
+  .intro .dek { font-size: var(--step-0); line-height: 1.55; color: var(--on-forest-2); max-width: 50ch; }
   .intro .dek b { color: var(--on-forest); font-weight: 600; }
   .intro .where { font-size: var(--step--1); color: var(--on-forest-2); }
-  @media (max-width: 960px) { .intro { grid-template-columns: 1fr; align-items: start; padding-block: 40px 56px; } }
+  @media (max-width: 960px) { .intro { grid-template-columns: 1fr; align-items: start; padding-block: 24px 40px; } }
 
   /* Outcomes panel. Neutral colour: orange is reserved for Gaia. */
   .proof { background: var(--forest-2); border: 1px solid var(--forest-line); border-radius: 20px; padding: 8px 24px; display: grid; }
-  .proof .row { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 6px 16px; align-items: baseline; padding-block: 16px; border-top: 1px solid var(--forest-line); }
+  .proof .row { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 6px 16px; align-items: baseline; padding-block: 12px; border-top: 1px solid var(--forest-line); }
   .proof .row:first-child { border-top: 0; }
-  .proof .n { font-size: 1.9rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--on-forest); }
+  .proof .n { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--on-forest); }
   .proof .n small { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
   .proof p { font-size: var(--step--1); line-height: 1.5; color: var(--on-forest-2); }
   .proof p b { color: var(--on-forest); font-weight: 600; }
+  .proof p a { color: var(--on-forest); }
   @media (max-width: 520px) { .proof .row { grid-template-columns: 1fr; } }
 
   .home section.band { padding-block: 64px; }
@@ -37,15 +38,20 @@
   .split .lede { color: var(--ink-3); font-size: var(--step--1); margin-top: 8px; }
   @media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
 
+  /* Career timeline: one rail, one dot per role, filled dot for the current role */
   ol.career { list-style: none; margin: 0; padding: 0; display: grid; }
-  ol.career li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 4px 24px; padding-block: 18px; border-top: 1px solid var(--line); }
-  ol.career li:first-child { border-top: 0; padding-top: 0; }
+  ol.career li { --dot: 12px; --top: 0.42em; position: relative; display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 4px 24px; padding: 0 0 32px 32px; }
+  ol.career li:last-child { padding-bottom: 0; }
+  ol.career li::before { content: ""; position: absolute; left: 0; top: var(--top); width: var(--dot); height: var(--dot); box-sizing: border-box; border-radius: 50%; border: 2px solid var(--link); background: var(--bg); z-index: 1; }
+  ol.career li:first-child::before { background: var(--link); }
+  ol.career li::after { content: ""; position: absolute; left: calc(var(--dot) / 2 - 1px); top: var(--top); bottom: calc(-1 * var(--top)); width: 2px; background: var(--line-2); }
+  ol.career li:last-child::after { display: none; }
   ol.career .when { font-size: var(--step--1); color: var(--ink-3); padding-top: 2px; }
   ol.career .what { display: grid; gap: 4px; }
   ol.career .what b { font-weight: 650; }
   ol.career .what i { font-style: normal; color: var(--ink-3); font-size: var(--step--1); }
   ol.career .what span { color: var(--ink-2); }
-  @media (max-width: 520px) { ol.career li { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) { ol.career li { grid-template-columns: 1fr; padding-left: 28px; } }
 
   .idline { display: flex; align-items: center; gap: 14px; }
   .headshot { flex: none; width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid var(--forest-line); background: var(--forest-2); }
@@ -70,7 +76,7 @@
     <div class="intro">
       <div class="hero-text">
         <div class="idline"><img class="headshot" src="assets/headshot.jpg" alt="Gilad Rainer" width="64" height="64"><p class="where">Senior Product Manager, Richmond, BC</p></div>
-        <h1>Most hard problems aren't only technical. I build products that solve the whole problem.</h1>
+        <h1>Most hard problems aren't only technical. I&nbsp;build products that solve the whole problem.</h1>
         <p class="dek"><b>Senior Product Manager - Technical at Amazon</b>, previously at AWS and Cisco. AI agents and API products, built on a background in data science and financial risk.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://www.linkedin.com/in/gilad-rainer">LinkedIn</a>
@@ -80,7 +86,7 @@
         <div class="row" role="listitem"><span class="n"><small>Months to</small> weeks</span><p><b>Customer migration planning time</b>, helped by two customer-facing AI agents, AWS Transform</p></div>
         <div class="row" role="listitem"><span class="n">80%</span><p><b>Fewer data processing errors</b> on an internal tracking platform for AWS's $5B+ Migration Acceleration Program, AWS Migration Services</p></div>
         <div class="row" role="listitem"><span class="n">+10%</span><p><b>API revenue</b>, with API-related support tickets down 35%, Cisco Investigate</p></div>
-        <div class="row" role="listitem"><span class="n">US patent</span><p><b>Co-inventor</b> on DNS tunneling detection, Cisco</p></div>
+        <div class="row" role="listitem"><span class="n">US patent</span><p><b>Co-inventor</b> on DNS tunneling detection, Cisco. <a href="https://patents.google.com/patent/US11595357B2">US11595357B2</a></p></div>
       </div>
     </div>
   </div>
