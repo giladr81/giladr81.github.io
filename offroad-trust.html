@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400&family=Schibsted+Grotesk:wght@400..800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=202611171143">
+<link rel="stylesheet" href="assets/style.css?v=202611171157">
 <style>
   .src-note { font-size: var(--step--1); color: var(--ink-3); }
   ul.eng { margin: 0; padding-left: 1.2rem; display: grid; gap: 6px; }
@@ -154,7 +154,7 @@
         <figure class="fig">
           <figcaption>
             <span class="fig-title">What Gaia's unhappy reviewers complain about, by store</span>
-            <span class="fig-note">Left pair Google Play, right pair App Store. All 1 and 2-star Gaia reviews since <span class="mono" data-k="window.since" data-fmt="date"></span>. The table adds long-time critics only. A review can mention both.</span>
+            <span class="fig-note">All 1 and 2-star Gaia reviews since <span class="mono" data-k="window.since" data-fmt="date"></span>. The table adds long-time critics only. A review can mention both.</span>
           </figcaption>
           <div class="chart" id="chart-mix"></div>
           <details class="table-view"><summary>Show as table</summary><div class="tbl-wrap"><table class="data" id="tbl-mix"></table></div></details>
@@ -403,9 +403,9 @@
   </div>
 </footer>
 
-<script src="data/reviews_summary.js?v=202611171143"></script>
-<script src="data/external.js?v=202611171143"></script>
-<script src="assets/charts.js?v=202611171143"></script>
+<script src="data/reviews_summary.js?v=202611171157"></script>
+<script src="data/external.js?v=202611171157"></script>
+<script src="assets/charts.js?v=202611171157"></script>
 <script>
 (function () {
   const R = window.REVIEWS, C = window.Charts;
@@ -442,10 +442,10 @@
     aria: `Share of unhappy reviewers who are long-time users: Gaia ${Math.round(g.loyal_share_of_low * 100)} percent, onX ${Math.round(o.loyal_share_of_low * 100)} percent` });
 
   const pc = (v) => Math.round(v * 100) + "%", SS = R.store_split;
-  const mix = [["Paywall", "android", "pay", "Google Play"], ["Failed", "android", "reliability", "Google Play"], ["Paywall", "ios", "pay", "App Store"], ["Failed", "ios", "reliability", "App Store"]];
+  const mix = [["Paywall", "android", "pay", "Google Play"], ["App failed", "android", "reliability", "Google Play"], ["Paywall", "ios", "pay", "App Store"], ["App failed", "ios", "reliability", "App Store"]];
   C.columns(document.getElementById("chart-mix"), mix.map(([label, st, k, store]) =>
     ({ label, value: SS.all[st][k + "_share"], tip: `${store}, ${label.toLowerCase()}: ${pc(SS.all[st][k + "_share"])} of ${SS.all[st].n} unhappy reviewers` })),
-    { w: 420, h: 220, max: 0.5, ticks: [0, 0.25, 0.5], fmt: pc, highlight: [0, 1, 2, 3],
+    { w: 420, h: 240, bottom: 52, max: 0.5, ticks: [0, 0.25, 0.5], fmt: pc, highlight: [0, 1, 2, 3], groups: [{ from: 0, to: 1, label: "Google Play" }, { from: 2, to: 3, label: "App Store" }],
       aria: `What Gaia's unhappy reviewers complain about. Google Play: paywall ${pc(SS.all.android.pay_share)}, failed ${pc(SS.all.android.reliability_share)}. App Store: paywall ${pc(SS.all.ios.pay_share)}, failed ${pc(SS.all.ios.reliability_share)}` });
   document.getElementById("tbl-mix").innerHTML =
     "<thead><tr><th>Group</th><th class='r'>Reviews</th><th class='r'>Paywall</th><th class='r'>The app failed</th></tr></thead><tbody>" +
@@ -464,6 +464,6 @@
   document.getElementById("prec-range").textContent = `${Math.round(Math.min(...pr) * 100)}% to ${Math.round(Math.max(...pr) * 100)}%`;
 })();
 </script>
-<script src="assets/site.js?v=202611171143"></script>
+<script src="assets/site.js?v=202611171157"></script>
 </body>
 </html>

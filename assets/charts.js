@@ -66,11 +66,17 @@
     data.forEach((d, i) => {
       const cx = o.left + i * bw, w = Math.min(28, bw * 0.62), hl = o.highlight.includes(i);
       const r = el("rect", { x: cx + (bw - w) / 2, y: y(d.value), width: w, height: Math.max(1, y(0) - y(d.value)), rx: 2, class: hl ? "hl" : "bm" }, svg);
-      if (d.label) txt(svg, cx + bw / 2, d.sub != null ? o.h - 20 : o.h - 12, d.label, { "text-anchor": "middle", "font-size": 11 });
+      if (d.label) txt(svg, cx + bw / 2, o.groups ? o.top + plotH + 16 : d.sub != null ? o.h - 20 : o.h - 12, d.label, { "text-anchor": "middle", "font-size": 11 });
       if (d.sub) txt(svg, cx + bw / 2, o.h - 5, d.sub, { "text-anchor": "middle", "font-size": 10 });
       if (hl) txt(svg, cx + bw / 2, y(d.value) - 6, o.fmt(d.value), { "text-anchor": "middle", class: "lab", "font-family": "var(--font-data)" });
       const hit = el("rect", { x: cx, y: o.top, width: bw, height: plotH, class: "hit" }, svg);
       hover(hit, d.tip || `${d.label}: ${o.fmt(d.value)}`);
+    });
+    // Optional group labels under runs of columns, e.g. [{ from: 0, to: 1, label: "Google Play" }]
+    (o.groups || []).forEach((g) => {
+      const x1 = o.left + g.from * bw + bw * 0.15, x2 = o.left + (g.to + 1) * bw - bw * 0.15, gy = o.h - 22;
+      el("line", { x1, x2, y1: gy, y2: gy, class: "grid" }, svg);
+      txt(svg, (x1 + x2) / 2, o.h - 6, g.label, { "text-anchor": "middle", "font-size": 12, "font-weight": 600 });
     });
     if (o.annotate) txt(svg, o.annotate.x, o.annotate.y, o.annotate.text, { class: "lab", "font-size": 12 });
     container.appendChild(svg);
