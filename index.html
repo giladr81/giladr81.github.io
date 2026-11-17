@@ -37,22 +37,6 @@
   .split .lede { color: var(--ink-3); font-size: var(--step--1); margin-top: 8px; }
   @media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
 
-  /* Case study card with its headline finding */
-  .feature { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 28px 40px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 32px; text-decoration: none; color: inherit; transition: border-color .2s, box-shadow .2s; }
-  .feature:hover { border-color: var(--line-2); box-shadow: 0 20px 40px -28px rgba(15, 59, 51, 0.35); }
-  .feature:hover h3 { color: var(--link); }
-  .feature .body { display: grid; gap: 12px; align-content: start; min-width: 0; }
-  .feature .meta { font-size: var(--step--1); color: var(--ink-3); }
-  .feature h3 { font-size: var(--step-2); font-weight: 700; letter-spacing: -0.02em; }
-  .feature p { color: var(--ink-2); max-width: 58ch; }
-  .feature .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
-  .feature .skills span { font-size: var(--step--1); padding: 4px 10px; border-radius: 999px; background: var(--mist); color: var(--ink-2); }
-  .feature .cta { font-weight: 600; color: var(--link); margin-top: 6px; }
-  .peek { background: var(--mist); border-radius: 12px; padding: 20px; display: grid; gap: 8px; align-content: center; }
-  .peek .big { font-size: 3rem; font-weight: 700; letter-spacing: -0.035em; line-height: 1; color: var(--blaze-ink); }
-  .peek p { font-size: var(--step--1); line-height: 1.5; color: var(--ink-2); }
-  @media (max-width: 760px) { .feature { grid-template-columns: 1fr; padding: 22px; } }
-
   ol.career { list-style: none; margin: 0; padding: 0; display: grid; }
   ol.career li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 4px 24px; padding-block: 18px; border-top: 1px solid var(--line); }
   ol.career li:first-child { border-top: 0; padding-top: 0; }
@@ -62,6 +46,15 @@
   ol.career .what i { font-style: normal; color: var(--ink-3); font-size: var(--step--1); }
   ol.career .what span { color: var(--ink-2); }
   @media (max-width: 520px) { ol.career li { grid-template-columns: 1fr; } }
+
+  .idline { display: flex; align-items: center; gap: 14px; }
+  .headshot { flex: none; width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid var(--forest-line); background: var(--forest-2); }
+
+  ul.tenets { list-style: none; margin: 0; padding: 0; display: grid; }
+  ul.tenets li { display: grid; gap: 6px; padding-block: 18px; border-top: 1px solid var(--line); max-width: var(--measure); }
+  ul.tenets li:first-child { border-top: 0; padding-top: 0; }
+  ul.tenets b { font-weight: 650; font-size: var(--step-1); letter-spacing: -0.01em; }
+  ul.tenets span { color: var(--ink-2); }
 </style>
 </head>
 <body>
@@ -76,8 +69,8 @@
     </div>
     <div class="intro">
       <div class="hero-text">
-        <p class="where">Senior Product Manager, Richmond, BC</p>
-        <h1>I build products that turn complex data into decisions.</h1>
+        <div class="idline"><img class="headshot" src="assets/headshot.jpg" alt="Gilad Rainer" width="64" height="64"><p class="where">Senior Product Manager, Richmond, BC</p></div>
+        <h1>Most hard problems aren't only technical. I build products that solve the whole problem.</h1>
         <p class="dek"><b>Senior Product Manager - Technical at Amazon</b>, previously at AWS and Cisco. AI agents and API products, built on a background in data science and financial risk.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://www.linkedin.com/in/gilad-rainer">LinkedIn</a>
@@ -99,11 +92,22 @@
       <h2 id="s-about">Experience</h2>
       <ol class="career">
         <li><span class="when">2026 to now</span><div class="what"><b>Amazon, Supply Chain Optimization Technologies</b><i>Senior Product Manager - Technical</i><span>Fulfillment Optimization. Turning business requirements into scope and sequencing across multiple engineering teams.</span></div></li>
-        <li><span class="when">2022 to 2026</span><div class="what"><b>AWS Transform (formerly AWS Migration Services)</b><i>Senior Product Manager - Technical</i><span>Two customer-facing AI agents that helped hundreds of enterprise customers cut migration planning time from months to weeks. Earlier, on the Migration Acceleration Services team, product direction for an internal migration tracking platform supporting AWS's $5B+ Migration Acceleration Program (MAP), where automation and self-service tools reduced data processing errors by 80%.</span></div></li>
+        <li><span class="when">2022 to 2026</span><div class="what"><b>AWS Transform (formerly AWS Migration Services)</b><i>Senior Product Manager - Technical</i><span>Two customer-facing AI agents that helped hundreds of enterprise customers cut migration planning time from months to weeks. Earlier, on the Migration Acceleration Services team, product direction for an internal tracking platform for AWS's $5B+ Migration Acceleration Program (MAP), which cut data processing errors by 80%.</span></div></li>
         <li><span class="when">2020 to 2022</span><div class="what"><b>Cisco Umbrella</b><i>Product Manager</i><span>Investigate, a paid threat-intelligence data product delivered through a console and an API. Integrated it into the Umbrella console, which increased usage and made it part of analysts' investigation workflow.</span></div></li>
         <li><span class="when">2014 to 2019</span><div class="what"><b>Cisco Cloudlock and BillGuard</b><i>Data Scientist, Team Lead</i><span>ML for threat detection and personal finance. Predictive models and personalization contributed to 15% higher user acquisition and 5% lower churn.</span></div></li>
         <li><span class="when">2005 to 2014</span><div class="what"><b>Bank of Israel</b><i>Economist</i><span>Financial risk analysis and stress testing of the banking system.</span></div></li>
       </ol>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="s-how">
+    <div class="split">
+      <h2 id="s-how">How I work</h2>
+      <ul class="tenets">
+        <li><b>Start with customers and the people who talk to them every day.</b><span>Before changing Cisco Investigate, I spoke with customers directly, from universities to large enterprises, and worked with our research team on more customer calls and recordings. I also interviewed about 40 customer success managers, account managers and support staff. One finding shaped the redesign: before blocking a suspicious domain, analysts needed to know what blocking it would break, so I made sure that information was the first thing they saw. After launch, usage analytics showed analysts opening Investigate from the console as part of their regular investigations, not just once.</span></li>
+        <li><b>Design for the strictest customer first.</b><span>At AWS, some customers, in regulated industries for example, needed application discovery to run offline. I chose an offline-first design, which meant giving up the telemetry engineering relies on to see failures. I worked out a path with our principal engineer: offline first, then opt-in telemetry that customers control. I set up a support runbook to cover the gap.</span></li>
+        <li><b>Make the impact case before the build.</b><span>On the internal platform for AWS's Migration Acceleration Program, the program team asked for fully automated customer onboarding. I walked them through impact and cost, prioritized a self-service progress view for customers, and launched a small version of the automation first.</span></li>
+      </ul>
     </div>
   </section>
 </main>
@@ -118,13 +122,10 @@
       <a class="btn btn-primary" href="mailto:giladrainer@gmail.com">Email me <span class="arrow" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="fine">
-      <p>I built this site and its data pipeline with Claude Code. Independent work, not affiliated with or endorsed by Outside Interactive or onX.</p>
+      <p>I built this site and its data pipeline with Claude Code.</p>
     </div>
   </div>
 </footer>
 
-<script src="data/reviews_summary.js?v=202611151353"></script>
-<script src="assets/charts.js?v=202611151353"></script>
-<script>Charts.bind(document, window.REVIEWS);</script>
 </body>
 </html>
