@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400&family=Schibsted+Grotesk:wght@400..800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=202611151353">
+<link rel="stylesheet" href="assets/style.css?v=202611171124">
 <style>
   .src-note { font-size: var(--step--1); color: var(--ink-3); }
   ul.eng { margin: 0; padding-left: 1.2rem; display: grid; gap: 6px; }
@@ -34,8 +34,8 @@
     <div class="hero">
       <div class="hero-text">
         <p class="kicker"><span class="pill">Case study</span>Gaia GPS and onX Offroad, from public app-store reviews</p>
-        <h1>Gaia's critics are long-time users, and its failures show up on the App Store.</h1>
-        <p class="dek">Paywall complaints are as common on Google Play as on the App Store, but failures are <span data-k="store_split.all.fail_ratio_ios_over_android" data-fmt="x"></span> as common on the App Store. onX's critics are mostly new users. I off-road in BC and have used Gaia GPS several times. I'm weighing a switch to onX Offroad because I like its trail recommendations, and I haven't found anything like them in Gaia. So I read what other users wrote when they faced the same choice, and worked out what Outside's own data would need to show before committing a team.</p>
+        <h1>Many of Gaia GPS's critics are long-time users. onX&nbsp;Offroad's are mostly new.</h1>
+        <p class="dek">Among 1 and 2-star App Store reviewers, <span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's are long-time users, against <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span> of onX's. These are the users Gaia can least afford to lose, and their reviews point to two problems: features that moved behind the paywall, and an app that fails with no signal or in the vehicle. Reviews can't show which one ends subscriptions. This case lays out what the evidence supports and the low-cost checks on Outside's own data that could settle it in weeks, before committing a team. I off-road in BC and I'm weighing the same switch to onX.</p>
         <div class="byline"><span class="mark" aria-hidden="true">GR</span><span><b>Gilad Rainer</b>Senior Product Manager - Technical at Amazon</span></div>
       </div>
       <div class="explorer" data-explorer aria-label="Gaia GPS and onX Offroad compared, from 1 and 2-star App Store reviews"></div>
@@ -68,11 +68,12 @@
         <h2 id="s-summary">The two-minute version</h2>
       </div>
       <dl class="summary">
-        <dt>The bet</dt><dd>Gaia's long-time users have two complaints: features that moved behind the paywall, like saving routes, and an app that fails with no signal or in the vehicle. Paywall complaints are common on both stores, and failures concentrate on the App Store. Reviews can't say which one ends a subscription. My bet is that they hit different people: the paywall pushes away long-time free users, and failures push away subscribers at renewal. The store split fits that bet but doesn't prove it. There's a third reason, and it's mine: trail discovery. onX recommends trails, and reviews barely capture that reason. All three can be tested before committing a team: the first two in weeks, discovery after a small build.</dd>
-        <dt>Evidence</dt><dd><span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's 1 and 2-star App Store reviewers are long-time users, against <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span> of onX's, and Google Play shows the same split. Among all of Gaia's unhappy reviewers, <span data-k="store_split.all.android.pay_share" data-fmt="pct"></span> on Google Play and <span data-k="store_split.all.ios.pay_share" data-fmt="pct"></span> on the App Store mention the paywall, but <span data-k="store_split.all.ios.reliability_share" data-fmt="pct"></span> on the App Store say the app failed against <span data-k="store_split.all.android.reliability_share" data-fmt="pct"></span> on Google Play. Long-time Google Play critics name the paywall over failures (<span data-k="store_split.loyal.android.pay_share" data-fmt="pct"></span> against <span data-k="store_split.loyal.android.reliability_share" data-fmt="pct"></span>). <span data-k="plan_overlap.gaia.loyal_pay_n" data-fmt="n"></span> of <span data-k="plan_overlap.gaia.loyal_n" data-fmt="n"></span> long-time complaints about route planning are about price, mostly saving routes moving behind the paywall. On the App Store, Gaia's unhappy reviewers say the app failed <span data-k="derived.reliability_share_ratio.ratio" data-fmt="x"></span> as often as onX's. On Google Play that gap is small (<span data-k="android_comparison.excl_burst.derived.reliability_share_ratio.ratio" data-fmt="x"></span>).</dd>
-        <dt>First move</dt><dd>Make the in-vehicle map a release gate now, since it's cheap. Then run two tests before committing a team: do cancellations rise after a failure, and does a limited free route-saving allowance bring long-time users back without cutting paid conversion?</dd>
-        <dt>How to test it on Outside's data</dt><dd>Compare cancellations among second-year subscribers in the 60 days after a crash, failed offline launch or sync error with similar subscribers who had none. Separately, offer a random group of lapsed long-time free users a small free route-saving allowance and measure reactivation and paid conversion against a holdout.</dd>
-        <dt>What would kill it</dt><dd>If failures don't move cancellations, reliability isn't driving churn. If the allowance doesn't bring users back, or cuts paid conversion, packaging isn't the lever. If showing popular trails doesn't move retention, discovery isn't either. If none of the three moves, the problem is the price level, and pricing goes first.</dd>
+        <dt>The decision</dt><dd>Long-time users make up a large share of Gaia's unhappy reviewers and almost none of onX's. Outside can try to keep them in three ways: change what the paywall covers, fix reliability, or add trail discovery. This case is about which one to fund first, and how to find out cheaply.</dd>
+        <dt>What the reviews show</dt><dd>Two complaints dominate. Paywall complaints are equally common on both stores (<span data-k="store_split.all.android.pay_share" data-fmt="pct"></span> on Google Play, <span data-k="store_split.all.ios.pay_share" data-fmt="pct"></span> on the App Store), mostly about saving routes moving behind the paywall. Failures, the app breaking during a trip, concentrate on the App Store (<span data-k="store_split.all.ios.reliability_share" data-fmt="pct"></span> against <span data-k="store_split.all.android.reliability_share" data-fmt="pct"></span> on Google Play). There, Gaia's unhappy reviewers report failures <span data-k="derived.reliability_share_ratio.ratio" data-fmt="x"></span> as often as onX's.</dd>
+        <dt>My hypothesis</dt><dd>The two complaints push away different users: the paywall loses long-time free users, and failures lose paying subscribers at renewal. Reviews can't confirm this, because they show who complains, not who cancels. A third reason may matter too: trail discovery. onX recommends trails, I haven't found anything like that in Gaia, and reviews barely mention it.</dd>
+        <dt>What I'd do first</dt><dd>Add CarPlay and Android Auto checks to every release now. Users reported a blank CarPlay map after a recent release, and the check is cheap. Then, before committing a team, run the cheapest checks first: ask lapsed long-time users why they left (1 to 2 weeks), compare cancellations after a failure with similar subscribers who had none (1 to 2 weeks), and offer lapsed free users a small free route-saving allowance against a holdout (2 to 4 weeks). Trail discovery comes after a small build.</dd>
+        <dt>What would change the plan</dt><dd>If cancellations don't rise after a failure, reliability isn't driving churn. If the allowance doesn't bring users back, or cuts paid conversion, the paywall stays. If discovery doesn't move retention, it isn't worth the trail content. If nothing moves, the problem is the price itself.</dd>
+        <dt>What this can't tell you</dt><dd>The comparison rests on <span data-k="ios_comparison.gaia.n_low" data-fmt="n"></span> Gaia and <span data-k="ios_comparison.onx_offroad.n_low" data-fmt="n"></span> onX 1 and 2-star App Store reviews, checked against Google Play and user forums. It shows where to look, not how many users leave or what a fix is worth. Only Outside's data can size that.</dd>
       </dl>
       <p class="col">I compared <span data-k="ios_comparison.gaia.n" data-fmt="n"></span> App Store reviews of Gaia GPS with <span data-k="ios_comparison.onx_offroad.n" data-fmt="n"></span> of onX Offroad from <span class="mono" data-k="cmp_window.since" data-fmt="date"></span> to <span class="mono" data-k="cmp_window.until" data-fmt="date"></span>, the period both review feeds fully cover (<a href="methods.html">method</a>), and sorted each complaint into price, route planning or the app failing during a trip, then repeated the comparison on Google Play.</p>
       <div class="stats" aria-label="Headline figures">
@@ -384,9 +385,9 @@
   </div>
 </footer>
 
-<script src="data/reviews_summary.js?v=202611151353"></script>
-<script src="data/external.js?v=202611151353"></script>
-<script src="assets/charts.js?v=202611151353"></script>
+<script src="data/reviews_summary.js?v=202611171124"></script>
+<script src="data/external.js?v=202611171124"></script>
+<script src="assets/charts.js?v=202611171124"></script>
 <script>
 (function () {
   const R = window.REVIEWS, C = window.Charts;
@@ -445,6 +446,6 @@
   document.getElementById("prec-range").textContent = `${Math.round(Math.min(...pr) * 100)}% to ${Math.round(Math.max(...pr) * 100)}%`;
 })();
 </script>
-<script src="assets/site.js?v=202611151353"></script>
+<script src="assets/site.js?v=202611171124"></script>
 </body>
 </html>
