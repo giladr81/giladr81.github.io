@@ -112,6 +112,15 @@
     update();
   }
 
+  /* Contents: always open as a rail on wide screens, a collapsed bar on narrow ones */
+  const tocBox = document.querySelector(".toc details");
+  if (tocBox) {
+    const wide = matchMedia("(min-width: 1081px)");
+    const sync = () => { tocBox.open = wide.matches; };
+    wide.addEventListener("change", sync); sync();
+    tocBox.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => { if (!wide.matches) tocBox.open = false; }));
+  }
+
   document.querySelectorAll("[data-explorer]").forEach((el) => window.REVIEWS && explorer(el, window.REVIEWS));
   reading();
 })();
