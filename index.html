@@ -13,24 +13,32 @@
 <link rel="stylesheet" href="assets/style.css?v=202611181104">
 <style>
   /* Hero: who Gilad is, with career outcomes beside it */
-  .intro { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 32px 56px; align-items: center; padding-block: 32px 48px; }
+  .intro { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 32px 56px; align-items: center; padding-block: 32px 48px; }
   .intro .hero-text { display: grid; gap: 16px; }
   .intro h1 { max-width: 24ch; font-size: clamp(1.9rem, 3vw, 2.5rem); line-height: 1.12; }
   .intro .dek { font-size: var(--step-0); line-height: 1.55; color: var(--on-forest-2); max-width: 50ch; }
   .intro .dek b { color: var(--on-forest); font-weight: 600; }
   .intro .where { font-size: var(--step--1); color: var(--on-forest-2); }
-  @media (max-width: 960px) { .intro { grid-template-columns: 1fr; align-items: start; padding-block: 24px 40px; } }
+  @media (max-width: 960px) { .intro { grid-template-columns: 1fr; align-items: start; padding-block: 24px 40px; } .proof { justify-self: stretch; max-width: none; } }
 
   /* Outcomes panel. Neutral colour: orange is reserved for Gaia. */
-  .proof { background: var(--forest-2); border: 1px solid var(--forest-line); border-radius: 20px; padding: 8px 24px; display: grid; }
-  .proof .row { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 6px 16px; align-items: baseline; padding-block: 12px; border-top: 1px solid var(--forest-line); }
+  .proof { background: var(--forest-2); border: 1px solid var(--forest-line); border-radius: 16px; padding: 4px 20px; display: grid; width: 100%; max-width: 480px; justify-self: end; }
+  .proof .row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; padding-block: 12px; border-top: 1px solid var(--forest-line); }
   .proof .row:first-child { border-top: 0; }
-  .proof .n { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--on-forest); }
+  .proof .n { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--on-forest); }
   .proof .n small { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
   .proof p { font-size: var(--step--1); line-height: 1.5; color: var(--on-forest-2); }
   .proof p b { color: var(--on-forest); font-weight: 600; }
+  /* The number and the metric it measures sit on one line, context below */
+  .proof p.m { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 10px; row-gap: 2px; font-size: var(--step-0); }
+  .proof p.m b { font-weight: 650; }
   .proof p a { color: var(--on-forest); }
-  @media (max-width: 520px) { .proof .row { grid-template-columns: 1fr; } }
+  /* How each outcome was measured: a note shown on hover, focus or tap (the row is focusable) */
+  .proof .row { position: relative; }
+  .proof .row[tabindex] { cursor: help; outline-offset: 4px; border-radius: 4px; }
+  .proof .row[tabindex] .n { text-decoration: underline dotted 2px; text-decoration-color: var(--on-forest-2); text-underline-offset: 6px; }
+  .proof .src { position: absolute; left: 0; right: 0; top: calc(100% - 6px); z-index: 5; visibility: hidden; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: var(--step--1); line-height: 1.45; }
+  .proof .row:hover .src, .proof .row:focus .src, .proof .row:focus-within .src { visibility: visible; }
 
   .split { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 20px 40px; }
   .split > h2, .split > div > h2 { font-size: var(--step-2); }
@@ -75,12 +83,10 @@
   ul.cases .type { justify-self: start; font-size: var(--step--1); font-weight: 600; padding: 2px 10px; border-radius: 999px; background: var(--mist); color: var(--ink-2); }
   ul.cases .t { font-size: var(--step-1); font-weight: 650; line-height: 1.3; letter-spacing: -0.01em; color: var(--link); }
   ul.cases a:hover .t, ul.cases a:focus-visible .t { text-decoration: underline; }
-  /* Wide screens: the two case studies side by side, each under its own rule */
-  @media (min-width: 900px) {
-    ul.cases { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; }
-    ul.cases li, ul.cases li:first-child { border-top: 1px solid var(--line-2); max-width: none; }
-    ul.cases a, ul.cases li:first-child a { padding: 14px 0 0; }
-  }
+  /* Shipped work first as the lead entry, independent analysis below it in a quieter row */
+  ul.cases li:first-child .t { font-size: var(--step-2); }
+  ul.cases li + li .t { font-size: var(--step-0); }
+  ul.cases li + li .d { font-size: var(--step--1); }
   ul.cases .d { color: var(--ink-2); }
   ul.cases .d b { color: var(--ink); font-weight: 650; }
   ul.cases .meta { font-size: var(--step--1); color: var(--ink-3); }
@@ -102,16 +108,16 @@
       <div class="hero-text">
         <div class="idline"><img class="headshot" src="assets/headshot.jpg" alt="Gilad Rainer" width="64" height="64"><p class="where">Senior Product Manager, Richmond, BC</p></div>
         <h1>Most hard problems aren't only technical. I&nbsp;build products that solve the whole problem.</h1>
-        <p class="dek"><b>Senior Product Manager - Technical at Amazon</b>, previously at AWS and Cisco. AI agents and API products, built on a background in data science and financial risk.</p>
+        <p class="dek"><b>Senior Product Manager - Technical at Amazon.</b> AI agents and migration data platforms at AWS, threat intelligence APIs at Cisco. Background in data science and financial risk.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://www.linkedin.com/in/gilad-rainer">LinkedIn</a>
         </div>
       </div>
       <div class="proof" role="list" aria-label="Selected outcomes">
-        <div class="row" role="listitem"><span class="n">Months to weeks</span><p><b>Customer migration planning time</b>, helped by two customer-facing AI agents, AWS Transform</p></div>
-        <div class="row" role="listitem"><span class="n">$2.5M a quarter</span><p><b>Ineligible incentive credits prevented</b> through eligibility enforcement I automated, AWS Migration Acceleration Program</p></div>
-        <div class="row" role="listitem"><span class="n">+10%</span><p><b>API revenue</b>, with API-related support tickets down 35%, Cisco Investigate</p></div>
-        <div class="row" role="listitem"><span class="n">US patent</span><p><b>Co-inventor</b> on DNS tunneling detection, Cisco. <a href="https://patents.google.com/patent/US11595357B2">US11595357B2</a></p></div>
+        <div class="row" role="listitem" tabindex="0" aria-describedby="src-plan"><p class="m"><span class="n">Months to weeks</span> <b>migration planning time</b></p><p>For enterprise customers, helped by two customer-facing AI agents, AWS Transform</p><span class="src" id="src-plan">Before vs after analysis of customer planning time, plus feedback from solution architects who were design partners.</span></div>
+        <div class="row" role="listitem" tabindex="0" aria-describedby="src-credits"><p class="m"><span class="n">&minus;80%</span> <b>errors in customers' migration credits</b></p><p>Separately, customer success managers spent an estimated 25% less time on customer issues, AWS Migration Acceleration Program</p><span class="src" id="src-credits">Errors measured from error logs, before vs after. The 25% is customer success managers' own estimate, not a measurement.</span></div>
+        <div class="row" role="listitem" tabindex="0" aria-describedby="src-api"><p class="m"><span class="n">+10%</span> <b>API revenue</b></p><p>API-related support tickets down 35%, Cisco Investigate</p><span class="src" id="src-api">Both measured before vs after with product analytics. I attribute the revenue gain to the API cleanup.</span></div>
+        <div class="row" role="listitem"><p class="m"><span class="n">US patent</span> <b>co-inventor</b></p><p>DNS tunneling detection, Cisco. <a href="https://patents.google.com/patent/US11595357B2">US11595357B2</a></p></div>
       </div>
     </div>
   </div>
@@ -130,9 +136,9 @@
         </a></li>
         <li><a href="offroad-trust.html">
           <span class="type">Independent analysis</span>
-          <span class="t">Many of Gaia GPS's critics are long-time users. onX Offroad's are mostly new.</span>
-          <span class="d">My own analysis of public reviews and forums: why long-time users lose trust in an off-road navigation app, which fix to fund first, and the low-cost checks I'd run before committing a team. Not affiliated with Outside, Gaia GPS or onX, and built without company data.</span>
-          <span class="meta">Two-minute summary at the top. 16 min read in full.</span>
+          <span class="t">Long-time users are a large share of Gaia GPS's critics and almost none of onX Offroad's.</span>
+          <span class="d">My own analysis of public reviews and forums: what long-time users of an off-road navigation app complain about, and whether price or failures is more likely behind it. Not affiliated with Outside, Gaia GPS or onX, and built without company data.</span>
+          <span class="meta">Two-minute summary at the top. 15 min read in full.</span>
         </a></li>
       </ul>
     </div>
@@ -143,7 +149,7 @@
       <h2 id="s-about">Experience</h2>
       <ol class="career">
         <li><span class="when">2026 to now</span><div class="what"><b>Amazon, Supply Chain Optimization Technologies</b><i>Senior Product Manager - Technical</i><span>Fulfillment Optimization. Turning business requirements into scope and sequencing across multiple engineering teams.</span></div></li>
-        <li><span class="when">2022 to 2026</span><div class="what"><b>AWS Transform (formerly AWS Migration Services)</b><i>Senior Product Manager - Technical</i><span>Two customer-facing AI agents that helped hundreds of enterprise customers cut migration planning time from months to weeks. Earlier, on the Migration Acceleration Services team, product direction for an internal tracking platform for AWS's $5B+ Migration Acceleration Program (MAP), which cut data processing errors by 80%.</span></div></li>
+        <li><span class="when">2022 to 2026</span><div class="what"><b>AWS Transform (formerly AWS Migration Services)</b><i>Senior Product Manager - Technical</i><span>Two customer-facing AI agents that helped hundreds of enterprise customers cut migration planning time from months to weeks. Earlier, on the Migration Acceleration Services team, product direction for an internal tracking platform for AWS's $5B+ Migration Acceleration Program (MAP), which cut errors in customers' migration credits by 80%.</span></div></li>
         <li><span class="when">2020 to 2022</span><div class="what"><b>Cisco Umbrella</b><i>Product Manager</i><span>Investigate, a paid threat-intelligence data product delivered through a console and an API. Integrated it into the Umbrella console, which increased usage and made it part of analysts' investigation workflow.</span><a href="investigate.html">Read the case study</a></div></li>
         <li><span class="when">2017 to 2019</span><div class="what"><b>Cisco Cloudlock</b><i>Data Scientist</i><span>ML models that strengthened rule-based threat detection, improving F1 by 15%. Feeding customer feedback into the models cut false positives by 35%. Co-inventor on a US patent for DNS tunneling detection.</span></div></li>
         <li><span class="when">2014 to 2016</span><div class="what"><b>BillGuard (acquired by Prosper Marketplace)</b><i>Data Scientist and Team Lead</i><span>Led three data scientists building ML for a personal finance app. Predictive models and personalization contributed to 15% higher user acquisition and 5% lower churn.</span></div></li>
