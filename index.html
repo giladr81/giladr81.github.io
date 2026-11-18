@@ -61,6 +61,20 @@
   ul.tenets li:first-child { border-top: 0; padding-top: 0; }
   ul.tenets b { font-weight: 650; font-size: var(--step-1); letter-spacing: -0.01em; }
   ul.tenets span { color: var(--ink-2); }
+
+  /* Case studies: ruled list in the tenets' visual language. Neutral colour: orange is reserved for Gaia. */
+  ul.cases { list-style: none; margin: 0; padding: 0; display: grid; }
+  ul.cases li { border-top: 1px solid var(--line); max-width: var(--measure); }
+  ul.cases li:first-child { border-top: 0; }
+  ul.cases a { display: grid; gap: 6px; padding-block: 18px; color: inherit; text-decoration: none; }
+  ul.cases li:first-child a { padding-top: 0; }
+  ul.cases .type { justify-self: start; font-size: var(--step--1); font-weight: 600; padding: 2px 10px; border-radius: 999px; background: var(--mist); color: var(--ink-2); }
+  ul.cases .t { font-size: var(--step-1); font-weight: 650; letter-spacing: -0.01em; }
+  ul.cases a:hover .t, ul.cases a:focus-visible .t { color: var(--link); text-decoration: underline; }
+  ul.cases .d { color: var(--ink-2); }
+  ul.cases .d b { color: var(--ink); font-weight: 650; }
+  ul.cases .meta { font-size: var(--step--1); color: var(--ink-3); }
+  ol.career .what a, ul.tenets span a { font-size: var(--step--1); }
 </style>
 </head>
 <body>
@@ -70,6 +84,7 @@
     <div class="topbar">
       <a class="who" href="index.html" aria-current="page"><span class="mark" aria-hidden="true">GR</span>Gilad Rainer</a>
       <nav class="topnav" aria-label="Site">
+        <a href="#s-cases">Case studies</a>
         <a class="btn btn-ghost" href="mailto:giladrainer@gmail.com">Get in touch</a>
       </nav>
     </div>
@@ -93,13 +108,33 @@
 </header>
 
 <main id="main" class="wrap home">
-  <section class="band" style="border-top:0" aria-labelledby="s-about">
+  <section class="band" style="border-top:0" aria-labelledby="s-cases">
+    <div class="split">
+      <h2 id="s-cases">Case studies</h2>
+      <ul class="cases">
+        <li><a href="investigate.html">
+          <span class="type">Shipped product work</span>
+          <span class="t">Making threat intelligence part of analysts' workflow, without breaking it for standalone users</span>
+          <span class="d">Cisco Investigate was a paid threat-intelligence product with its own app and an API. I decided what to integrate into the Umbrella console and what to keep standalone, and cleaned up the API without breaking changes. <b>API revenue rose 10% and API-related support tickets fell 35%.</b></span>
+          <span class="meta">Cisco Umbrella, 2020 to 2022. 6 min read.</span>
+        </a></li>
+        <li><a href="offroad-trust.html">
+          <span class="type">Independent analysis</span>
+          <span class="t">Many of Gaia GPS's critics are long-time users. onX Offroad's are mostly new.</span>
+          <span class="d">My own analysis of public reviews and forums: why long-time users lose trust in an off-road navigation app, which fix to fund first, and the low-cost checks I'd run before committing a team. Not affiliated with Outside, Gaia GPS or onX, and built without company data.</span>
+          <span class="meta">Two-minute summary at the top. 17 min read in full.</span>
+        </a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="s-about">
     <div class="split">
       <h2 id="s-about">Experience</h2>
       <ol class="career">
         <li><span class="when">2026 to now</span><div class="what"><b>Amazon, Supply Chain Optimization Technologies</b><i>Senior Product Manager - Technical</i><span>Fulfillment Optimization. Turning business requirements into scope and sequencing across multiple engineering teams.</span></div></li>
         <li><span class="when">2022 to 2026</span><div class="what"><b>AWS Transform (formerly AWS Migration Services)</b><i>Senior Product Manager - Technical</i><span>Two customer-facing AI agents that helped hundreds of enterprise customers cut migration planning time from months to weeks. Earlier, on the Migration Acceleration Services team, product direction for an internal tracking platform for AWS's $5B+ Migration Acceleration Program (MAP), which cut data processing errors by 80%.</span></div></li>
-        <li><span class="when">2020 to 2022</span><div class="what"><b>Cisco Umbrella</b><i>Product Manager</i><span>Investigate, a paid threat-intelligence data product delivered through a console and an API. Integrated it into the Umbrella console, which increased usage and made it part of analysts' investigation workflow.</span></div></li>
+        <li><span class="when">2020 to 2022</span><div class="what"><b>Cisco Umbrella</b><i>Product Manager</i><span>Investigate, a paid threat-intelligence data product delivered through a console and an API. Integrated it into the Umbrella console, which increased usage and made it part of analysts' investigation workflow.</span><a href="investigate.html">Read the case study</a></div></li>
         <li><span class="when">2017 to 2019</span><div class="what"><b>Cisco Cloudlock</b><i>Data Scientist</i><span>ML models that strengthened rule-based threat detection, improving F1 by 15%. Feeding customer feedback into the models cut false positives by 35%. Co-inventor on a US patent for DNS tunneling detection.</span></div></li>
         <li><span class="when">2014 to 2016</span><div class="what"><b>BillGuard (acquired by Prosper Marketplace)</b><i>Data Scientist and Team Lead</i><span>Led three data scientists building ML for a personal finance app. Predictive models and personalization contributed to 15% higher user acquisition and 5% lower churn.</span></div></li>
         <li><span class="when">2005 to 2014</span><div class="what"><b>Bank of Israel</b><i>Economist</i><span>Financial risk analysis and stress testing of the banking system.</span></div></li>
@@ -111,8 +146,8 @@
     <div class="split">
       <h2 id="s-how">How I work</h2>
       <ul class="tenets">
-        <li><b>Start with customers and the people who talk to them every day.</b><span>Before changing Cisco Investigate, I spoke with customers directly, from universities to large enterprises, and worked with our research team on more customer calls and recordings. I also interviewed about 40 customer success managers, account managers and support staff. One finding shaped the redesign: before blocking a suspicious domain, analysts needed to know what blocking it would break, so I made sure that information was the first thing they saw. After launch, usage analytics showed analysts opening Investigate from the console as part of their regular investigations, not just once.</span></li>
-        <li><b>Don't make customers pay for our internal changes.</b><span>At Cisco, my director asked me to consider folding Investigate fully into Umbrella, with no standalone product. Customers who used Investigate without Umbrella, and our advanced researchers, depended on it. Sales also used it as a window into Umbrella's security efficacy. So I kept the standalone experience and integrated where it helped analysts. At AWS, when a new credit calculation service replaced the old one, I chose not to force existing customers to migrate. New customers started on the new service, and the old one wound down as existing agreements ended.</span></li>
+        <li><b>Start with customers and the people who talk to them every day.</b><span>Before changing Cisco Investigate, I spoke with customers directly and interviewed about 40 customer success managers, account managers and support staff. One finding shaped the redesign: before blocking a suspicious domain, analysts needed to know what blocking it would break, so that became the first thing they saw. <a href="investigate.html">Read the case study</a></span></li>
+        <li><b>Don't make customers pay for our internal changes.</b><span>At AWS, when a new credit calculation service replaced the old one, I worked with engineering on what a forced move would cost: at least a quarter of engineering work, and a worse experience for customers mid-agreement. I chose not to force it. New customers started on the new service, and the old one wound down as existing agreements ended.</span></li>
         <li><b>Make the impact case before the build.</b><span>On the internal platform for AWS's Migration Acceleration Program, the program team asked for fully automated customer onboarding. I walked them through impact and cost, prioritized a self-service progress view for customers, and launched a small version of the automation first.</span></li>
       </ul>
     </div>
