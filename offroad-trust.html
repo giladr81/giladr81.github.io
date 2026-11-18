@@ -15,6 +15,8 @@
   .src-note { font-size: var(--step--1); color: var(--ink-3); }
   ul.eng { margin: 0; padding-left: 1.2rem; display: grid; gap: 6px; }
   .def .hyp { margin-right: 6px; }
+  .callout h2 { font-size: var(--step-1); font-weight: 650; line-height: 1.3; letter-spacing: -0.01em; }
+  .callout.own-work { background: color-mix(in srgb, var(--link) 12%, var(--bg)); border-left: 4px solid var(--link); }
   #chart-comp .hl { fill: var(--ink-2); } /* onX is not Gaia: keep orange for Gaia only */
 </style>
 </head>
@@ -48,7 +50,7 @@
     <details open>
       <summary>On this page</summary>
       <ol>
-        <li class="grp"><p class="grp-label">Overview</p><ol><li><a href="#s-summary">Two-minute version</a></li><li><a href="#s-approach">How I approached it</a></li></ol></li>
+        <li class="grp"><p class="grp-label">Overview</p><ol><li><a href="#s-context">The two apps</a></li><li><a href="#s-summary">Two-minute version</a></li><li><a href="#s-approach">How I approached it</a></li></ol></li>
         <li class="grp"><p class="grp-label">Evidence</p><ol><li><a href="#s-stages">Price and failures</a></li><li><a href="#s-who">Who is leaving</a></li><li><a href="#s-where">Where trust breaks</a></li><li><a href="#s-beyond">Other channels</a></li></ol></li>
         <li class="grp"><p class="grp-label">Recommendation</p><ol><li><a href="#s-contract">Measurable offline trust</a></li><li><a href="#s-compete">Where to compete</a></li><li><a href="#s-order">Order of work</a></li><li><a href="#s-worth">Business case</a></li></ol></li>
         <li class="grp"><p class="grp-label">Before committing a team</p><ol><li><a href="#s-test">Testing the bet</a></li><li><a href="#s-limits">Limits of the evidence</a></li></ol></li>
@@ -57,15 +59,24 @@
     </details>
   </nav>
   <main id="main" class="doc-main">
+  <section class="band" aria-labelledby="s-context">
+    <div class="flow-lg">
+    <aside class="callout own-work" aria-label="About this case study">
+      <p><b>This is my own work.</b> I'm not affiliated with Outside, Gaia GPS or onX in any way, and nobody there asked for or reviewed it. It's built from public reviews, forums and product pages, with no access to company data. Treat it as a starting point: the findings need further research and user discovery to confirm them, and then the actual product delivery work.</p>
+    </aside>
+    <div class="callout apps">
+      <h2 id="s-context">The two apps</h2>
+      <p><b>Gaia GPS</b> is a navigation app for hiking, camping, overlanding and off-roading, built around offline maps for places with no cell service. It's part of the Outside network of outdoor brands, free to use, with a paid Premium subscription (<a href="https://apps.apple.com/us/app/id1201979492">App Store listing</a>).</p>
+      <p><b>onX Offroad</b> is built for off-roaders: trail maps for 4x4s, side-by-sides, ATVs and dirt bikes, plus offline maps, route planning and land ownership. It's also free to use, with paid Premium and Elite plans (<a href="https://www.onxmaps.com/offroad">onX's product page</a>).</p>
+      <p>Both are used far from cell service, so an app that fails there fails at the worst time.</p>
+    </div>
+    </div>
+  </section>
+
   <section class="band" aria-labelledby="s-summary">
     <div class="flow-lg">
       <div class="sec-head">
         <h2 id="s-summary">The two-minute version</h2>
-      </div>
-      <div class="callout apps">
-        <p><b>Gaia GPS</b> is a navigation app for hiking, camping, overlanding and off-roading, built around offline maps for places with no cell service. It's part of the Outside network of outdoor brands, free to use, with a paid Premium subscription (<a href="https://apps.apple.com/us/app/id1201979492">App Store listing</a>).</p>
-        <p><b>onX Offroad</b> is built for off-roaders: trail maps for 4x4s, side-by-sides, ATVs and dirt bikes, plus offline maps, route planning and land ownership. It's also free to use, with paid Premium and Elite plans (<a href="https://www.onxmaps.com/offroad">onX's product page</a>).</p>
-        <p>Both are used far from cell service, so an app that fails there fails at the worst time.</p>
       </div>
       <dl class="summary">
         <dt>The decision</dt><dd>Long-time users make up a large share of Gaia's unhappy reviewers and almost none of onX's. Outside can try to keep them in three ways: change what the paywall covers, fix reliability, or add trail discovery. This case is about which one to fund first, and how to find out cheaply.</dd>
