@@ -19,6 +19,8 @@
   .waymap .wm-stat + .wm-stat { border-left: 1px solid var(--forest-line); }
   .waymap .wm-stat b { font-size: clamp(3rem, 5.6vw, 4.5rem); line-height: 0.95; font-weight: 700; letter-spacing: -0.04em; color: var(--chg); }
   .waymap .wm-stat span { font-size: 15px; line-height: 1.3; color: var(--on-forest); font-weight: 550; }
+  .waymap .wm-stat.qual b { font-size: clamp(1.5rem, 2.4vw, 1.9rem); line-height: 1.1; letter-spacing: -0.025em; }
+  .waymap .wm-stat.qual span { font-weight: 450; color: var(--on-forest-2); }
   .waymap .wm-flow { margin: 0; border-top: 1px solid var(--forest-line); }
   .waymap .wm-row { display: grid; grid-template-columns: 4.5rem 1fr; gap: 12px; padding: 14px 22px; align-items: baseline; }
   .waymap .wm-row + .wm-row { border-top: 1px solid var(--forest-line); background: color-mix(in srgb, var(--chg) 8%, transparent); }
@@ -61,8 +63,8 @@
       </div>
       <figure class="waymap" role="group" aria-label="Investigate before and after the platform work, with results">
         <div class="wm-res">
-          <p class="wm-stat"><b>&minus;35%</b><span>API-related support tickets</span></p>
-          <p class="wm-stat"><b>+10%</b><span>API revenue</span></p>
+          <p class="wm-stat"><b>+10%</b><span>API revenue after the API cleanup</span></p>
+          <p class="wm-stat qual"><b>Part of the daily workflow</b><span>Analysts opened Investigate from the Umbrella console and went back to their investigation</span></p>
         </div>
         <dl class="wm-flow">
           <div class="wm-row">
@@ -104,7 +106,7 @@
         <dt>The problem</dt><dd>Investigate was a separate product from Umbrella, with its own authentication. Investigation workflows were fragmented, and the API's access model didn't match the rest of Umbrella.</dd>
         <dt>The key call</dt><dd>My director suggested folding Investigate fully into Umbrella and rebranding it as a data feed. Research and marketing showed that would hurt customers who had Investigate without Umbrella, advanced researchers, and possibly the sales pipeline. I kept the standalone product, integrated where it helped analysts, and presented that as a strategy. The director agreed.</dd>
         <dt>What I did</dt><dd>Brought Investigate into the Umbrella console as a micro-app, cleaned up the API without breaking changes, and decided to unify its authentication with Umbrella's, which the platform team built.</dd>
-        <dt>What changed</dt><dd>API revenue rose 10%, a gain I attribute to the API cleanup, and API-related support tickets fell 35%. Usage went up, and analysts started opening Investigate from the console as part of their regular investigations.</dd>
+        <dt>What changed</dt><dd>Each kind of user got something. Admins who need a quick verdict scrolled less and used Investigate more. Researchers kept the full standalone experience and got richer data. Teams on the API got a cleaner API: API revenue rose 10%, a gain I attribute to the cleanup, and API-related support tickets fell 35%. Across all of them, usage went up, Investigate became part of regular investigations, and access and login tickets fell after the auth merge.</dd>
         <dt>What I'd change</dt><dd>Set explicit success criteria for each phase before starting it, so the call to move on is a decision, not a default.</dd>
       </dl>
       <div class="stats" aria-label="Headline figures">
@@ -184,6 +186,7 @@
             <dt>The call</dt><dd>Remove Investigate's separate authentication and merge it with Umbrella's, so customers had one access model</dd>
             <dt>Why</dt><dd>Customer conversations, UX research and CSMs all pointed the same way</dd>
             <dt>My part</dt><dd>The product decision, and the API access model in the console: UX integration, user permissions and API token usage. The platform team built the merge.</dd>
+            <dt>Result</dt><dd>Fewer access and login tickets, and fewer complaints from customers and internal teams</dd>
           </dl>
         </div>
         <div class="def">
@@ -191,7 +194,7 @@
           <h3>A late launch over throwaway work</h3>
           <dl>
             <dt>What happened</dt><dd>The platform team's work to host Investigate as a micro-app took longer than they had estimated</dd>
-            <dt>The call</dt><dd>Accept a later date rather than build a workaround we'd throw away, and use the time to upgrade existing features so customers still got improvements</dd>
+            <dt>The call</dt><dd>Accept a later date rather than build a workaround we'd throw away, and use the time to upgrade existing features so customers still got improvements, such as an interactive DNS traffic chart with a selectable time range</dd>
             <dt>Result</dt><dd>The micro-app launched about a month late</dd>
           </dl>
         </div>
@@ -217,20 +220,50 @@
       <ol class="timeline phases col">
         <li><b>1. Console integration</b> <span class="tag-stage">About 3 to 4 months</span><br><span class="muted">Investigate rebuilt as a micro-app on the Umbrella platform, with the platform and UX teams, for easier integration, a consistent UX and no duplicate work.</span></li>
         <li><b>2. API cleanup</b><br><span class="muted">Prioritized by revenue and by what mattered to customers, with no breaking changes. I owned the API contract and endpoints, and versioning and deprecation decisions.</span></li>
-        <li><b>3. More data points</b><br><span class="muted">New data to line up with Umbrella's product features.</span></li>
+        <li><b>3. More data points</b><br><span class="muted">New data to line up with Umbrella's product features, such as whether a domain belongs to a SaaS service.</span></li>
         <li class="off"><b>4. Data platform</b> <span class="tag-stage">Did not launch</span><br><span class="muted">The plan was for Cisco Talos to take over the feeds Investigate used, and for Investigate to read from Talos. SecureX had already been consuming Investigate's feeds directly.</span></li>
       </ol>
     </div>
   </section>
 
   <section class="band" aria-labelledby="s-results">
-    <div class="col flow">
-      <h2 id="s-results">What changed, and how I know</h2>
-      <p><b>API revenue rose 10%, and API-related support tickets fell 35%.</b> I measured both before and after with our analytics tools, and I attribute the revenue gain to the API cleanup.</p>
-      <p><b>Usage went up after the console integration.</b> Click heat maps showed customers opening Investigate from the Umbrella console and then returning to their investigation. That pattern meant it was becoming part of their workflow, not a one-time spike.</p>
-      <div class="callout">
-        <h3>What I don't claim</h3>
-        <p>I don't give a usage percentage. I left Cisco in 2022, Cisco retired Investigate around October 2026, and I can't check the original figures, so I won't put a number on it.</p>
+    <div class="flow-lg">
+      <div class="sec-head">
+        <h2 id="s-results">What changed for each kind of user, and how I know</h2>
+        <p class="col">Only the API results have numbers I measured and can stand behind. The rest are signals I saw in product analytics and support tickets, without figures I can check today.</p>
+      </div>
+      <div class="defs">
+        <div class="def">
+          <h3>Quick verdict</h3>
+          <dl>
+            <dt>What shipped</dt><dd>Risk indicators at the top of the page, hover insights, and context such as whether a domain belongs to a SaaS service</dd>
+            <dt>What changed</dt><dd>Users scrolled less and used Investigate more</dd>
+            <dt>How I know</dt><dd>Product analytics, before and after</dd>
+          </dl>
+        </div>
+        <div class="def">
+          <h3>Deep dive</h3>
+          <dl>
+            <dt>What shipped</dt><dd>The standalone app stayed, with an interactive DNS traffic chart and more data points</dd>
+            <dt>What changed</dt><dd>Researchers kept the full experience they depended on, which a complete fold-in into Umbrella would have removed</dd>
+            <dt>How I know</dt><dd>No separate measure for this group</dd>
+          </dl>
+        </div>
+        <div class="def">
+          <h3>Automation</h3>
+          <dl>
+            <dt>What shipped</dt><dd>A cleaned-up API with no breaking changes, prioritized by revenue and by what mattered to customers</dd>
+            <dt>What changed</dt><dd>API revenue rose 10%, and API-related support tickets fell 35%</dd>
+            <dt>How I know</dt><dd>I measured both before and after with our analytics tools, and I attribute the revenue gain to the API cleanup</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="col flow">
+        <p><b>Across all three, Investigate became part of the workflow.</b> After the console integration, click heat maps showed customers opening Investigate from the Umbrella console and then returning to their investigation. That pattern meant it was becoming part of their workflow, not a one-time spike. After the auth merge, access and login tickets fell, and so did complaints from customers and internal teams.</p>
+        <div class="callout">
+          <h3>What I don't claim</h3>
+          <p>I don't put numbers on usage, scrolling or login tickets. I left Cisco in 2022, Cisco retired Investigate around October 2026, and I can't check the original figures.</p>
+        </div>
       </div>
     </div>
   </section>
