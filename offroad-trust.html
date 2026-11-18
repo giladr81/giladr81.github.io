@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400&family=Schibsted+Grotesk:wght@400..800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=202611171157">
+<link rel="stylesheet" href="assets/style.css?v=202611181104">
 <style>
   .src-note { font-size: var(--step--1); color: var(--ink-3); }
   ul.eng { margin: 0; padding-left: 1.2rem; display: grid; gap: 6px; }
@@ -28,7 +28,7 @@
     <div class="topbar">
       <a class="who" href="index.html"><span class="mark" aria-hidden="true">GR</span>Gilad Rainer</a>
       <nav class="topnav" aria-label="Site">
-        <a href="offroad-trust.html" aria-current="page">Case study</a>
+        <a href="index.html#s-cases">Case studies</a>
         <a href="methods.html">Methods</a>
         <a class="btn btn-ghost" href="mailto:giladrainer@gmail.com">Get in touch</a>
       </nav>
@@ -37,10 +37,12 @@
       <div class="hero-text">
         <p class="kicker"><span class="pill">Case study</span>Gaia GPS and onX Offroad, from public app-store reviews</p>
         <h1>Many of Gaia GPS's critics are long-time users. onX&nbsp;Offroad's are mostly new.</h1>
-        <p class="dek">Among 1 and 2-star App Store reviewers, <span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's are long-time users, against <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span> of onX's. These are the users Gaia can least afford to lose, and their reviews point to two problems: features that moved behind the paywall, and an app that fails with no signal or in the vehicle. Reviews can't show which one ends subscriptions. This case lays out what the evidence supports and the low-cost checks on Outside's own data that could settle it in weeks, before committing a team. I off-road in BC and I'm weighing the same switch to onX.</p>
-        <div class="byline"><span class="mark" aria-hidden="true">GR</span><span><b>Gilad Rainer</b>Senior Product Manager - Technical at Amazon</span></div>
+        <p class="dek">Among 1 and 2-star App Store reviewers, <span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's are long-time users, against <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span> of onX's. These are the users Gaia can least afford to lose, and their reviews point to two problems: features that moved behind the paywall, and an app that fails with no signal or in the vehicle. Reviews can't show which one ends subscriptions, so this case lays out the low-cost checks on Outside's own data that could settle it in weeks, before committing a team.</p>
       </div>
-      <div class="explorer" data-explorer aria-label="Gaia GPS and onX Offroad compared, from 1 and 2-star App Store reviews"></div>
+      <div class="ex-wrap">
+        <div class="explorer" data-explorer aria-label="Gaia GPS and onX Offroad compared, from 1 and 2-star App Store reviews"></div>
+        <p class="ex-base" data-ex-base></p>
+      </div>
     </div>
   </div>
 </header>
@@ -66,8 +68,10 @@
     </aside>
     <div class="callout apps">
       <h2 id="s-context">The two apps</h2>
+      <div class="two-up">
       <p><b>Gaia GPS</b> is a navigation app for hiking, camping, overlanding and off-roading, built around offline maps for places with no cell service. It's part of the Outside network of outdoor brands, free to use, with a paid Premium subscription (<a href="https://apps.apple.com/us/app/id1201979492">App Store listing</a>).</p>
       <p><b>onX Offroad</b> is built for off-roaders: trail maps for 4x4s, side-by-sides, ATVs and dirt bikes, plus offline maps, route planning and land ownership. It's also free to use, with paid Premium and Elite plans (<a href="https://www.onxmaps.com/offroad">onX's product page</a>).</p>
+      </div>
       <p>Both are used far from cell service, so an app that fails there fails at the worst time.</p>
     </div>
     </div>
@@ -79,24 +83,14 @@
         <h2 id="s-summary">The two-minute version</h2>
       </div>
       <dl class="summary">
-        <dt>The decision</dt><dd>Long-time users make up a large share of Gaia's unhappy reviewers and almost none of onX's. Outside can try to keep them in three ways: change what the paywall covers, fix reliability, or add trail discovery. This case is about which one to fund first, and how to find out cheaply.</dd>
-        <dt>What the reviews show</dt><dd>Two complaints dominate. Paywall complaints are equally common on both stores (<span data-k="store_split.all.android.pay_share" data-fmt="pct"></span> on Google Play, <span data-k="store_split.all.ios.pay_share" data-fmt="pct"></span> on the App Store), mostly about saving routes moving behind the paywall. Failures, the app breaking during a trip, concentrate on the App Store (<span data-k="store_split.all.ios.reliability_share" data-fmt="pct"></span> against <span data-k="store_split.all.android.reliability_share" data-fmt="pct"></span> on Google Play). There, Gaia's unhappy reviewers report failures <span data-k="derived.reliability_share_ratio.ratio" data-fmt="x"></span> as often as onX's.</dd>
-        <dt>My hypothesis</dt><dd>The two complaints push away different users: the paywall loses long-time free users, and failures lose paying subscribers at renewal. Reviews can't confirm this, because they show who complains, not who cancels. A third reason may matter too: trail discovery. onX recommends trails, I haven't found anything like that in Gaia, and reviews barely mention it.</dd>
-        <dt>What I'd do first</dt><dd>Add CarPlay and Android Auto checks to every release now. Users reported a blank CarPlay map after a recent release, and the check is cheap. Then, before committing a team, run the cheapest checks first: ask lapsed long-time users why they left (1 to 2 weeks), compare cancellations after a failure with similar subscribers who had none (1 to 2 weeks), and offer lapsed free users a small free route-saving allowance against a holdout (2 to 4 weeks). Trail discovery comes after a small build.</dd>
-        <dt>What would change the plan</dt><dd>If cancellations don't rise after a failure, reliability isn't driving churn. If the allowance doesn't bring users back, or cuts paid conversion, the paywall stays. If discovery doesn't move retention, it isn't worth the trail content. If nothing moves, the problem is the price itself.</dd>
-        <dt>What this can't tell you</dt><dd>The comparison rests on <span data-k="ios_comparison.gaia.n_low" data-fmt="n"></span> Gaia and <span data-k="ios_comparison.onx_offroad.n_low" data-fmt="n"></span> onX 1 and 2-star App Store reviews, checked against Google Play and user forums. It shows where to look, not how many users leave or what a fix is worth. Only Outside's data can size that.</dd>
+        <dt>The decision</dt><dd>Long-time users make up a large share of Gaia's unhappy reviewers and almost none of onX's. Which fix should Outside fund first to keep them: the paywall, reliability, or trail discovery?</dd>
+        <dt>What the reviews show</dt><dd>Two complaints dominate. Paywall complaints are equally common on both stores, mostly about route saving moving behind the paywall. Failures during a trip concentrate on the App Store, where Gaia's unhappy reviewers report them <span data-k="derived.reliability_share_ratio.ratio" data-fmt="x"></span> as often as onX's.</dd>
+        <dt>My hypothesis</dt><dd>The paywall loses long-time free users, and failures lose paying subscribers at renewal. Trail discovery may matter too: onX recommends trails, and I haven't found anything like that in Gaia.</dd>
+        <dt>What I'd do first</dt><dd>Add CarPlay and Android Auto checks to every release now, since users reported a blank CarPlay map after a recent release. Then run three cheap tests before committing a team: ask lapsed long-time users why they left, compare cancellations after a failure with similar subscribers who had none, and offer lapsed free users a small route-saving allowance against a holdout.</dd>
+        <dt>What would change the plan</dt><dd>If cancellations don't rise after a failure, reliability isn't driving churn. If the allowance doesn't bring users back, the paywall stays. If nothing moves, the problem is the price itself.</dd>
+        <dt>What this can't tell you</dt><dd>Reviews show who complains, not who cancels. <span data-k="ios_comparison.gaia.n_low" data-fmt="n"></span> Gaia and <span data-k="ios_comparison.onx_offroad.n_low" data-fmt="n"></span> onX 1 and 2-star App Store reviews show where to look, not how big the problem is. Only Outside's data can size it.</dd>
       </dl>
       <p class="col">I compared <span data-k="ios_comparison.gaia.n" data-fmt="n"></span> App Store reviews of Gaia GPS with <span data-k="ios_comparison.onx_offroad.n" data-fmt="n"></span> of onX Offroad from <span class="mono" data-k="cmp_window.since" data-fmt="date"></span> to <span class="mono" data-k="cmp_window.until" data-fmt="date"></span>, the period both review feeds fully cover (<a href="methods.html">method</a>), and sorted each complaint into price, route planning or the app failing during a trip, then repeated the comparison on Google Play.</p>
-      <div class="stats" aria-label="Headline figures">
-        <div class="stat">
-          <div class="big"><span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span></div>
-          <p>of Gaia's 1 and 2-star App Store reviewers are long-time users, against <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span> of onX's. Google Play: <span data-k="android_comparison.excl_burst.gaia.loyal_share_of_low" data-fmt="pct"></span> against <span data-k="android_comparison.excl_burst.onx_offroad.loyal_share_of_low" data-fmt="pct"></span>.</p>
-        </div>
-        <div class="stat">
-          <div class="big"><span data-k="store_split.all.fail_ratio_ios_over_android" data-fmt="x"></span></div>
-          <p>as common on the App Store: <span data-k="store_split.all.ios.reliability_share" data-fmt="pct"></span> of Gaia's unhappy reviewers there say the app failed, against <span data-k="store_split.all.android.reliability_share" data-fmt="pct"></span> on Google Play. Paywall complaints are even: <span data-k="store_split.all.ios.pay_share" data-fmt="pct"></span> and <span data-k="store_split.all.android.pay_share" data-fmt="pct"></span>.</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -107,7 +101,7 @@
         <h2 id="s-approach">How I approached it</h2>
         <p>I started as a user weighing a switch to onX, and turned that into the question Outside would need answered: why are long-time users unhappy, and which fix should get a team first?</p>
       </div>
-      <ol class="ranked col">
+      <ol class="ranked tight">
         <li><h3>Collect what users wrote</h3><p>Public reviews of Gaia GPS and onX Offroad from the App Store (US and Canada) and Google Play, compared over the period both review feeds fully cover.</p></li>
         <li><h3>Sort the complaints</h3><p>Each 1 and 2-star review sorted into price, route planning or the app failing during a trip, and flagged as a long-time user from phrases like "for years" and "used to love". Hand checks on random samples measure how often the sorting is right.</p></li>
         <li><h3>Compare, then try to break the finding</h3><p>Gaia against onX on the App Store, then the same comparison on Google Play, to separate the apps from the store. A result that doesn't hold on both stores is reported as such.</p></li>
@@ -175,8 +169,8 @@
         <h3>Who leaves, and which job fails</h3>
         <p>The complaints map to four jobs: keeping the routes I've built (planning and saving), navigating from the vehicle (CarPlay and Android Auto), finding the way with no signal (offline maps and login), and keeping a record (tracks and sync). The BC groups add a fact that changes the risk: members run two to four apps plus paper maps. So the threat isn't a dramatic switch. Gaia gets demoted to the backup app, and backups don't get renewed. That's a hypothesis to check against Outside's activity data.</p>
       </div>
-      <p class="col"><b>Why onX Offroad.</b> It's the app Gaia's critics name most as where they're going (<span data-k="apps.gaia.competitors_in_low.onX" data-fmt="n"></span> reviews), and the one I'm weighing. It isn't Gaia's whole market, and I can't size the off-road part from reviews: only <span data-k="apps.gaia.offroad.n" data-fmt="n"></span> Gaia reviews mention off-roading. The few unhappy ones say what the rest of this page says: crashes, price, and moving to onX. For hikers and hunters the comparison would be CalTopo or onX Backcountry, which I haven't run.</p>
-      <div class="col">
+      <div class="two-up">
+      <p><b>Why onX Offroad.</b> It's the app Gaia's critics name most as where they're going (<span data-k="apps.gaia.competitors_in_low.onX" data-fmt="n"></span> reviews), and the one I'm weighing. It isn't Gaia's whole market, and I can't size the off-road part from reviews: only <span data-k="apps.gaia.offroad.n" data-fmt="n"></span> Gaia reviews mention off-roading. The few unhappy ones say what the rest of this page says: crashes, price, and moving to onX. For hikers and hunters the comparison would be CalTopo or onX Backcountry, which I haven't run.</p>
         <figure class="fig">
           <figcaption>
             <span class="fig-title">Other apps named in Gaia's 1 and 2-star reviews</span>
@@ -223,10 +217,10 @@
           <h3>Gaia's community forum</h3>
           <p>Of the <span data-k="ext.gaia_forum.listing_n"></span> newest posts (<span data-k="ext.gaia_forum.window"></span>), <span data-k="ext.gaia_forum.listing_reliability_n"></span> are about offline maps, sync, downloads, CarPlay or a pulled release. Three examples:</p>
           <ol class="timeline" id="forum-timeline"></ol>
-        </div>
-        <div class="flow">
           <h3>Reddit</h3>
           <p>On r/overlanding, where both apps were collected the same way, genuine reliability complaints were few and similar for both apps (<span data-k="ext.reddit.neutral_reliability.gaia.0"></span> of <span data-k="ext.reddit.neutral_reliability.gaia.1"></span> flagged Gaia mentions and <span data-k="ext.reddit.neutral_reliability.onx.0"></span> of <span data-k="ext.reddit.neutral_reliability.onx.1"></span> for onX), and switching runs both ways (<a href="methods.html#s-other">method</a>).</p>
+        </div>
+        <div class="flow">
           <h3>BC off-road Facebook groups</h3>
           <p>I read <span data-k="ext.facebook_bc.read_in_depth"></span> threads in depth. A hand count found about <span data-k="ext.facebook_bc.threads_total"></span> threads about navigation apps in <span data-k="ext.facebook_bc.groups_searched"></span> groups since <span class="mono" data-k="ext.facebook_bc.window_from" data-fmt="date"></span>. The groups are members-only, so these are summaries:</p>
           <ul class="clean" id="fb-themes"></ul>
@@ -268,21 +262,6 @@
         </div>
       </div>
 
-      <div class="callout col">
-        <h3>One rule for Gaia and Trailforks</h3>
-        <p>Gaia GPS and Trailforks sign in with the same Outside account (<a href="https://help.trailforks.com/hc/en-us/articles/5430015145367">Trailforks help</a>), so the lockout fix belongs in that shared account system. <b>Let the phone remember the user's login and subscription for a set period, such as 30 days, without checking online. Maps already on the phone always open. The online check happens only when someone downloads something new,</b> which is exactly where subscription revenue needs protecting.</p>
-        <details class="table-view">
-        <summary>How it could work</summary>
-        <ul class="eng" style="margin-top:10px">
-          <li><b>A signed pass on the phone.</b> At each online check the server issues a signed token (account, plan, what it unlocks, expiry). The app keeps it in secure storage and checks the signature locally, with no network.</li>
-          <li><b>At expiry.</b> Maps, routes and tracks already on the phone still open, and navigation and recording keep working. Only new paid downloads and premium layers wait for a check, shown as "connect to renew offline access", not a login wall.</li>
-          <li><b>Abuse, and how to bound it.</b> A lapsed subscriber keeps at most one token period on maps already downloaded, since the server stops renewing. Each token is bound to a device, with a cap on active devices per account. Setting the clock back doesn't help: the app counts from the last server time it saw using the phone's uptime counter, which users can't change.</li>
-          <li><b>Measuring offline.</b> Each offline launch logs a small event on the phone (app version, time to a usable map, login prompt or not, token age). Events upload at the next sync with their original timestamps, so the "opens with no signal" rate arrives a few days late but complete.</li>
-        </ul>
-        </details>
-        <p><b>Guardrail:</b> premium downloads and paid conversions from accounts past their offline period. If use by lapsed accounts grows, shorten the period.</p>
-      </div>
-
       <div class="mock-row">
         <div class="phone" role="img" aria-label="Illustrative screen: pre-trip offline readiness check">
           <div class="ph-top"><span>9:41</span><span>Wi-Fi</span></div>
@@ -297,7 +276,21 @@
           <button class="cta" type="button">Sync and go offline</button>
           <p class="tag">Illustrative concept, not a real product screen</p>
         </div>
-        <div class="flow col">
+        <div class="flow">
+          <div class="callout">
+          <h3>One rule for Gaia and Trailforks</h3>
+          <p>Gaia GPS and Trailforks sign in with the same Outside account (<a href="https://help.trailforks.com/hc/en-us/articles/5430015145367">Trailforks help</a>), so the lockout fix belongs in that shared account system. <b>Let the phone remember the user's login and subscription for a set period, such as 30 days, without checking online. Maps already on the phone always open. The online check happens only when someone downloads something new,</b> which is exactly where subscription revenue needs protecting.</p>
+          <details class="table-view">
+          <summary>How it could work</summary>
+          <ul class="eng" style="margin-top:10px">
+            <li><b>A signed pass on the phone.</b> At each online check the server issues a signed token (account, plan, what it unlocks, expiry). The app keeps it in secure storage and checks the signature locally, with no network.</li>
+            <li><b>At expiry.</b> Maps, routes and tracks already on the phone still open, and navigation and recording keep working. Only new paid downloads and premium layers wait for a check, shown as "connect to renew offline access", not a login wall.</li>
+            <li><b>Abuse, and how to bound it.</b> A lapsed subscriber keeps at most one token period on maps already downloaded, since the server stops renewing. Each token is bound to a device, with a cap on active devices per account. Setting the clock back doesn't help: the app counts from the last server time it saw using the phone's uptime counter, which users can't change.</li>
+            <li><b>Measuring offline.</b> Each offline launch logs a small event on the phone (app version, time to a usable map, login prompt or not, token age). Events upload at the next sync with their original timestamps, so the "opens with no signal" rate arrives a few days late but complete.</li>
+          </ul>
+          </details>
+          <p><b>Guardrail:</b> premium downloads and paid conversions from accounts past their offline period. If use by lapsed accounts grows, shorten the period.</p>
+        </div>
           <h3>Tell the user before they lose signal</h3>
           <p>The measures tell the team whether the promise holds. This screen tells the user, while they can still fix it: a map gap, a login about to expire, unsaved waypoints, a missing CarPlay map.</p>
           <p><b>How I'd test it.</b> Show it to a random half of users who download maps for a route. Measure failed no-signal launches per trip, with time to start navigating as the guardrail.</p>
@@ -414,9 +407,9 @@
   </div>
 </footer>
 
-<script src="data/reviews_summary.js?v=202611171157"></script>
-<script src="data/external.js?v=202611171157"></script>
-<script src="assets/charts.js?v=202611171157"></script>
+<script src="data/reviews_summary.js?v=202611181104"></script>
+<script src="data/external.js?v=202611181104"></script>
+<script src="assets/charts.js?v=202611181104"></script>
 <script>
 (function () {
   const R = window.REVIEWS, C = window.Charts;
@@ -475,6 +468,6 @@
   document.getElementById("prec-range").textContent = `${Math.round(Math.min(...pr) * 100)}% to ${Math.round(Math.max(...pr) * 100)}%`;
 })();
 </script>
-<script src="assets/site.js?v=202611171157"></script>
+<script src="assets/site.js?v=202611181104"></script>
 </body>
 </html>

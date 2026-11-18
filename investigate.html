@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-accent="neutral">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400&family=Schibsted+Grotesk:wght@400..800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=202611171157">
+<link rel="stylesheet" href="assets/style.css?v=202611181104">
 <style>
   /* Hero diagram: the band is dark in both themes, so it uses on-forest colours */
   .waymap { --chg: #6fd0ba; margin: 0; width: 100%; background: var(--forest-2); border: 1px solid var(--forest-line); border-radius: 20px; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.45); }
@@ -28,9 +28,8 @@
   .waymap .after dt { color: var(--chg); }
   .waymap dd { margin: 0; font-size: 14px; line-height: 1.45; color: var(--on-forest-2); }
   .waymap dd b { display: block; font-size: 15.5px; font-weight: 650; color: var(--on-forest); margin-bottom: 2px; }
-  @media (max-width: 480px) { .waymap .wm-stat { padding: 16px 16px; } .waymap .wm-stat span { font-size: 13px; } .waymap .wm-row { grid-template-columns: 1fr; gap: 2px; padding: 12px 16px; } .waymap dt, .waymap dd { font-size: 13px; } .waymap dd b { font-size: 14px; } }
+  @media (max-width: 480px) { .waymap .wm-stat { padding: 16px 16px; } .waymap .wm-stat b { font-size: 2.5rem; } .waymap .wm-stat span { font-size: 13px; } .waymap .wm-row { grid-template-columns: 1fr; gap: 2px; padding: 12px 16px; } .waymap dt, .waymap dd { font-size: 13px; } .waymap dd b { font-size: 14px; } }
   .fn { font-size: var(--step--1); color: var(--ink-3); }
-  sup a { text-decoration: none; font-weight: 600; }
   /* Phase list: status sits after the phase name */
   ol.timeline.phases li { font-size: var(--step-0); }
   ol.timeline.phases li b { font-weight: 650; }
@@ -51,15 +50,15 @@
     <div class="topbar">
       <a class="who" href="index.html"><span class="mark" aria-hidden="true">GR</span>Gilad Rainer</a>
       <nav class="topnav" aria-label="Site">
+        <a href="index.html#s-cases">Case studies</a>
         <a class="btn btn-ghost" href="mailto:giladrainer@gmail.com">Get in touch</a>
       </nav>
     </div>
     <div class="hero">
       <div class="hero-text">
-        <p class="kicker"><span class="pill">Case study</span>Cisco Umbrella, 2020 to 2022</p>
-        <h1>Making threat intelligence part of analysts' workflow, without breaking it for standalone users</h1>
-        <p class="dek">Investigate was a paid threat-intelligence product, sold through its own app and an API. My director suggested folding it fully into Cisco Umbrella.<sup><a href="#fn-1" id="fnref-1" aria-label="Note 1">1</a></sup> I brought it into Umbrella where it helped analysts, kept the standalone app for the customers who needed it, and cleaned up the API.</p>
-        <div class="byline"><span class="mark" aria-hidden="true">GR</span><span><b>Gilad Rainer</b>Product Manager, Cisco Umbrella (my first PM role)</span></div>
+        <p class="kicker"><span class="pill">Case study</span>Cisco Umbrella, 2020 to 2022, my first PM role</p>
+        <h1>Integrated where it helped analysts, standalone where customers needed it</h1>
+        <p class="dek">Investigate was a paid threat-intelligence product, sold through its own app and an API. My director suggested folding it fully into Cisco Umbrella, Cisco's cloud security product. I brought it into Umbrella where it helped analysts, kept the standalone app for the customers who needed it, and cleaned up the API.</p>
       </div>
       <figure class="waymap" role="group" aria-label="Investigate before and after the platform work, with results">
         <div class="wm-res">
@@ -86,11 +85,9 @@
     <details open>
       <summary>On this page</summary>
       <ol>
-        <li class="grp"><p class="grp-label">Overview</p><ol><li><a href="#s-summary">Two-minute version</a></li><li><a href="#s-problem">The problem</a></li></ol></li>
-        <li class="grp"><p class="grp-label">Discovery</p><ol><li><a href="#s-discovery">Who I learned from</a></li></ol></li>
+        <li class="grp"><p class="grp-label">Overview</p><ol><li><a href="#s-summary">Two-minute version</a></li><li><a href="#s-problem">The problem</a></li><li><a href="#s-discovery">Who I learned from</a></li></ol></li>
         <li class="grp"><p class="grp-label">Decisions</p><ol><li><a href="#s-scope">Standalone or folded in</a></li><li><a href="#s-calls">Other calls</a></li></ol></li>
-        <li class="grp"><p class="grp-label">Delivery</p><ol><li><a href="#s-phases">Four phases</a></li><li><a href="#s-results">What changed</a></li></ol></li>
-        <li class="grp"><p class="grp-label">Reflection</p><ol><li><a href="#s-lessons">What I'd do differently</a></li></ol></li>
+        <li class="grp"><p class="grp-label">Delivery and reflection</p><ol><li><a href="#s-phases">Four phases</a></li><li><a href="#s-results">What changed</a></li><li><a href="#s-lessons">What I'd do differently</a></li></ol></li>
       </ol>
     </details>
   </nav>
@@ -99,21 +96,16 @@
   <section class="band" aria-labelledby="s-summary">
     <div class="flow-lg">
       <div class="sec-head">
-        <h2 id="s-summary">Two-minute version</h2>
+        <h2 id="s-summary">The two-minute version</h2>
       </div>
       <dl class="summary">
         <dt>The product</dt><dd>Investigate gave security teams threat intelligence on domains, IPs and ASNs, through a console and an API. Customers included Fortune 500 companies, universities and government organizations.</dd>
         <dt>The problem</dt><dd>Investigate was a separate product from Umbrella, with its own authentication. Investigation workflows were fragmented, and the API's access model didn't match the rest of Umbrella.</dd>
         <dt>The key call</dt><dd>My director suggested folding Investigate fully into Umbrella and rebranding it as a data feed. Research and marketing showed that would hurt customers who had Investigate without Umbrella, advanced researchers, and possibly the sales pipeline. I kept the standalone product, integrated where it helped analysts, and presented that as a strategy. The director agreed.</dd>
         <dt>What I did</dt><dd>Brought Investigate into the Umbrella console as a micro-app, cleaned up the API without breaking changes, and decided to unify its authentication with Umbrella's, which the platform team built.</dd>
-        <dt>What changed</dt><dd>Each kind of user got something. Admins who need a quick verdict scrolled less and used Investigate more. Researchers kept the full standalone experience and got richer data. Teams on the API got a cleaner API: API revenue rose 10%, a gain I attribute to the cleanup, and API-related support tickets fell 35%. Across all of them, usage went up, Investigate became part of regular investigations, and access and login tickets fell after the auth merge.</dd>
+        <dt>What changed</dt><dd>API revenue rose 10%, a gain I attribute to the API cleanup, and API-related support tickets fell 35%. Admins who need a quick verdict scrolled less and used Investigate more, and researchers kept the full standalone experience. Usage went up, Investigate became part of regular investigations, and access and login tickets fell after the auth merge.</dd>
         <dt>What I'd change</dt><dd>Set explicit success criteria for each phase before starting it, so the call to move on is a decision, not a default.</dd>
       </dl>
-      <div class="stats" aria-label="Headline figures">
-        <div class="stat"><div class="big">+10%</div><p>API revenue, measured before and after, which I attribute to the API cleanup</p></div>
-        <div class="stat"><div class="big">&minus;35%</div><p>API-related support tickets, measured before and after</p></div>
-        <div class="stat"><div class="big">8 months</div><p>end to end, with six engineers, an engineering manager and shared UX support</p></div>
-      </div>
     </div>
   </section>
 
@@ -121,8 +113,7 @@
     <div class="col flow">
       <h2 id="s-problem">Useful intelligence, outside the workflow</h2>
       <p>Investigate's users were technical: security researchers, incident responders and threat hunters, plus teams that pulled its data into their own tools through the API.</p>
-      <p>It sat apart from Umbrella, Cisco's cloud security product, with its own separate authentication flow. Investigation workflows were fragmented across the two, and customers, UX research and CSMs all told us they wanted one access model.</p>
-      <p>The API had its own problems: access-management issues, throttling and latency. API-related questions were a source of support tickets that a cleaner API could avoid.</p>
+      <p>It sat apart from Umbrella, with its own authentication, so investigation workflows were fragmented across the two. The API had its own problems: access-management issues, throttling and latency. API-related questions were a source of support tickets that a cleaner API could avoid.</p>
       <p>One option was to merge Investigate into Umbrella completely. Part of this case is why I didn't.</p>
     </div>
   </section>
@@ -165,8 +156,10 @@
 
   <section class="band" aria-labelledby="s-scope">
     <div class="col flow">
-      <p class="marker">Decision 1 of 3</p>
-      <h2 id="s-scope">I kept Investigate standalone and integrated where it helped analysts</h2>
+      <div class="sec-head">
+        <p class="marker">The main decision</p>
+        <h2 id="s-scope">I kept Investigate standalone and integrated where it helped analysts</h2>
+      </div>
       <p>My skip-level manager, the director of product, suggested I consider a full integration: Investigate as a micro-app inside Umbrella with no standalone experience, rebranded by marketing and sales as a data feed.</p>
       <p>Input from research and marketing showed who would lose out. Some customers had Investigate without Umbrella, and advanced researchers depended on the full standalone experience. It could also have disrupted the sales pipeline, since sales used Investigate to show Umbrella's efficacy.</p>
       <p>So I kept the standalone web experience with fewer integration points. I presented it to the director as a strategy built on the three kinds of user, with a direction we called threat intelligence everywhere. The director agreed. I wrote that strategy a few months into my first PM role.</p>
@@ -180,7 +173,7 @@
       </div>
       <div class="defs">
         <div class="def">
-          <p class="marker">Decision 2 of 3</p>
+          <p class="marker">Decision</p>
           <h3>One access model</h3>
           <dl>
             <dt>The call</dt><dd>Remove Investigate's separate authentication and merge it with Umbrella's, so customers had one access model</dd>
@@ -190,7 +183,7 @@
           </dl>
         </div>
         <div class="def">
-          <p class="marker">Decision 3 of 3</p>
+          <p class="marker">Decision</p>
           <h3>A late launch over throwaway work</h3>
           <dl>
             <dt>What happened</dt><dd>The platform team's work to host Investigate as a micro-app took longer than they had estimated</dd>
@@ -215,7 +208,7 @@
     <div class="flow-lg">
       <div class="sec-head">
         <h2 id="s-phases">Four phases, starting with early validation</h2>
-        <p class="col">The console integration went first, to validate early and get feedback from customers and the field. About eight months end to end.</p>
+        <p class="col">The console integration went first, to validate early and get feedback from customers and the field. About eight months end to end, with six engineers, an engineering manager and shared UX support.</p>
       </div>
       <ol class="timeline phases col">
         <li><b>1. Console integration</b> <span class="tag-stage">About 3 to 4 months</span><br><span class="muted">Investigate rebuilt as a micro-app on the Umbrella platform, with the platform and UX teams, for easier integration, a consistent UX and no duplicate work.</span></li>
@@ -278,9 +271,10 @@
         <p>When we finished the console integration and moved to the API, I couldn't tell leadership, or honestly myself, whether the first phase had worked. We had signals like the heat maps, but not a bar we'd agreed on up front.</p>
         <p class="worked"><b>What I do now:</b> make the go or no-go call explicit, with impact and cost on the table. At AWS, when fully automating customer onboarding for the Migration Acceleration Program turned out more complex than expected, I made it an explicit decision and chose a smaller version that still gave customers real value.</p>
       </div>
+      <p class="next">Next case study: <a href="offroad-trust.html">Many of Gaia GPS's critics are long-time users. onX Offroad's are mostly new.</a> My own analysis of public reviews and forums.</p>
     </div>
   </section>
-  <aside class="band" aria-label="Notes"><p class="fn col" id="fn-1"><sup>1</sup> Cisco Umbrella is Cisco's cloud security product. It covered DNS security and a secure internet gateway (SIG). Umbrella began as OpenDNS, which Cisco acquired in 2015. Its enterprise security products were renamed Cisco Umbrella in 2016. Investigate was an OpenDNS product before the acquisition. <a href="#fnref-1" aria-label="Back to text">Back</a></p></aside>
+  <aside class="band" aria-label="About Cisco Umbrella"><p class="fn" id="fn-1">About Cisco Umbrella: it covered DNS security and a secure internet gateway (SIG). Umbrella began as OpenDNS, which Cisco acquired in 2015. Its enterprise security products were renamed Cisco Umbrella in 2016. Investigate was an OpenDNS product before the acquisition.</p></aside>
   </main>
 </div>
 
@@ -297,6 +291,6 @@
   </div>
 </footer>
 
-<script src="assets/site.js?v=202611171157"></script>
+<script src="assets/site.js?v=202611181104"></script>
 </body>
 </html>

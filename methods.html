@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400&family=Schibsted+Grotesk:wght@400..800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=202611171157">
+<link rel="stylesheet" href="assets/style.css?v=202611181104">
 <style>
   code.pat { font: 12px/1.5 var(--font-data); color: var(--ink-2); overflow-wrap: anywhere; }
   table.data td.pat-cell { white-space: normal; min-width: 260px; max-width: 560px; }
@@ -28,13 +28,13 @@
     <div class="topbar">
       <a class="who" href="index.html"><span class="mark" aria-hidden="true">GR</span>Gilad Rainer</a>
       <nav class="topnav" aria-label="Site">
-        <a href="offroad-trust.html">Case study</a>
+        <a href="index.html#s-cases">Case studies</a>
         <a href="methods.html" aria-current="page">Methods</a>
         <a class="btn btn-ghost" href="mailto:giladrainer@gmail.com">Get in touch</a>
       </nav>
     </div>
     <div class="page-head">
-      <p class="kicker"><span class="pill">Methods</span>Data, checks and limits</p>
+      <p class="kicker"><span class="pill">Methods</span>Data, checks and limits behind the <a href="offroad-trust.html">Gaia GPS case study</a></p>
       <h1>How the numbers were made</h1>
       <p class="dek">Every number on these pages is produced by scripts and inserted from their output, not typed by hand. Below: where the data came from, how reviews were sorted and checked, and what the data can't tell you.</p>
     </div>
@@ -120,7 +120,7 @@
         <h3>What long-time critics complain about</h3>
         <p>This is the cross-tab behind the case study's two complaints. It takes Gaia's 1 and 2-star reviews from both stores since <span class="mono" data-k="window.since" data-fmt="date"></span> that match the long-time phrase list (<span data-k="loyal_mix.gaia.n" data-fmt="n"></span> reviews) and sorts each one by which complaint types it matches: price or paywall only, the app failed (reliability as defined above) only, both, or neither. Counting overlaps, <span data-k="loyal_mix.gaia.pay_share" data-fmt="pct"></span> mention price and <span data-k="loyal_mix.gaia.reliability_share" data-fmt="pct"></span> mention a failure. That pooled figure hides a store split, so the case study reports each store separately: on Google Play (<span data-k="loyal_mix_store.gaia.android.n" data-fmt="n"></span> reviews) the paywall leads, and on the App Store (<span data-k="loyal_mix_store.gaia.ios.n" data-fmt="n"></span> reviews) the two are even.</p>
       </div>
-      <div class="tbl-wrap col"><table class="data" id="tbl-loyal-mix">
+      <div class="tbl-wrap"><table class="data" id="tbl-loyal-mix">
         <thead><tr><th>Long-time critics who mention</th><th class="r">Google Play</th><th class="r">App Store</th><th class="r">Both stores</th></tr></thead>
         <tbody>
           <tr><td>Price or paywall only</td><td class="r"><span data-k="loyal_mix_store.gaia.android.pay_only_n" data-fmt="n"></span> (<span data-k="loyal_mix_store.gaia.android.pay_only_share" data-fmt="pct"></span>)</td><td class="r"><span data-k="loyal_mix_store.gaia.ios.pay_only_n" data-fmt="n"></span> (<span data-k="loyal_mix_store.gaia.ios.pay_only_share" data-fmt="pct"></span>)</td><td class="r"><span data-k="loyal_mix.gaia.pay_only_n" data-fmt="n"></span> (<span data-k="loyal_mix.gaia.pay_only_share" data-fmt="pct"></span>)</td></tr>
@@ -134,7 +134,7 @@
       <p class="col small muted">On the App Store comparison period alone the group is small (<span data-k="loyal_mix_cmp.gaia.n" data-fmt="n"></span> reviews): <span data-k="loyal_mix_cmp.gaia.pay_share" data-fmt="pct"></span> mention price and <span data-k="loyal_mix_cmp.gaia.reliability_share" data-fmt="pct"></span> a failure. The App Store leans toward failures in that period, which matches the store split above. Treat the App Store split as direction only: the group is small.</p>
       <h3 class="col">Store differences, with ranges</h3>
       <p class="col">The case study only claims store differences whose 95% range excludes zero. Figures are percentage points, Google Play minus App Store for the store columns, and paywall minus failures within each store (a paired comparison, since one review can mention both). Gaia 1 and 2-star reviews since <span class="mono" data-k="store_split.window.since" data-fmt="date"></span>.</p>
-      <div class="tbl-wrap col"><table class="data" id="tbl-store-split">
+      <div class="tbl-wrap"><table class="data" id="tbl-store-split">
         <thead><tr><th>Group</th><th class="r">Reviews (Play / App Store)</th><th class="r">Paywall, Play minus App Store</th><th class="r">Failed, Play minus App Store</th><th class="r">Paywall minus failed, Play</th><th class="r">Paywall minus failed, App Store</th></tr></thead>
         <tbody>
           <tr><td>All unhappy reviewers</td><td class="r"><span data-k="store_split.all.android.n" data-fmt="n"></span> / <span data-k="store_split.all.ios.n" data-fmt="n"></span></td><td class="r"><span data-k="store_split.all.pay_diff.pts"></span> (<span data-k="store_split.all.pay_diff.lo"></span> to <span data-k="store_split.all.pay_diff.hi"></span>)</td><td class="r"><span data-k="store_split.all.fail_diff.pts"></span> (<span data-k="store_split.all.fail_diff.lo"></span> to <span data-k="store_split.all.fail_diff.hi"></span>)</td><td class="r"><span data-k="store_split.all.within.android.pts"></span> (<span data-k="store_split.all.within.android.lo"></span> to <span data-k="store_split.all.within.android.hi"></span>)</td><td class="r"><span data-k="store_split.all.within.ios.pts"></span> (<span data-k="store_split.all.within.ios.lo"></span> to <span data-k="store_split.all.within.ios.hi"></span>)</td></tr>
@@ -201,9 +201,9 @@
   </div>
 </footer>
 
-<script src="data/reviews_summary.js?v=202611171157"></script>
-<script src="data/external.js?v=202611171157"></script>
-<script src="assets/charts.js?v=202611171157"></script>
+<script src="data/reviews_summary.js?v=202611181104"></script>
+<script src="data/external.js?v=202611181104"></script>
+<script src="assets/charts.js?v=202611181104"></script>
 <script>
 (function () {
   const R = window.REVIEWS, C = window.Charts;
@@ -248,6 +248,6 @@
     `<p><b>Long-time or paying user:</b> <code class="pat">${esc(R.patterns.loyal)}</code></p><p><b>Mentions off-roading:</b> <code class="pat">${esc(R.patterns.offroad)}</code></p>`;
 })();
 </script>
-<script src="assets/site.js?v=202611171157"></script>
+<script src="assets/site.js?v=202611181104"></script>
 </body>
 </html>

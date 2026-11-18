@@ -12,15 +12,15 @@
     const g = R.ios_comparison.gaia, o = R.ios_comparison.onx_offroad, D = R.derived, W = R.cmp_window;
     const P = R.android_comparison.excl_burst.derived;
     const views = [
-      { tab: "Long-time users", short: "Long-timers", unit: "Long-time users, per 100 people who left a 1 or 2-star App Store review",
+      { tab: "Long-time users", short: "Long-timers", unit: "Long-time users, per 100 unhappy App Store reviewers",
         a: g.loyal_share_of_low * 100, b: o.loyal_share_of_low * 100,
         claim: "Gaia\u2019s unhappy reviewers are <em>far more often long-time users.</em>",
         note: `Google Play shows the same split: ${Math.round(R.android_comparison.excl_burst.gaia.loyal_share_of_low * 100)}% against ${Math.round(R.android_comparison.excl_burst.onx_offroad.loyal_share_of_low * 100)}%. Matched on phrases such as \u201cfor years\u201d and \u201cused to love\u201d.` },
-      { tab: "Didn\u2019t work", unit: "Say the app didn\u2019t work, per 100 people who left a 1 or 2-star App Store review",
+      { tab: "Didn\u2019t work", unit: "Say the app didn\u2019t work, per 100 unhappy App Store reviewers",
         a: g.reliability_share_of_low * 100, b: o.reliability_share_of_low * 100,
         claim: `On the App Store, Gaia\u2019s unhappy reviewers say it failed <em>${D.reliability_share_ratio.ratio}× as often.</em>`,
         note: `Likely range ${D.reliability_share_ratio.lo}× to ${D.reliability_share_ratio.hi}×. On Google Play the gap is small: ${P.reliability_share_ratio.ratio}×.` },
-      { tab: "Price", unit: "Mention price or the paywall, per 100 people who left a 1 or 2-star App Store review",
+      { tab: "Price", unit: "Mention price or paywall, per 100 unhappy App Store reviewers",
         a: g.pay_share_of_low * 100, b: o.pay_share_of_low * 100,
         claim: "Price is <em>a complaint at both apps.</em>",
         note: `On Google Play, Gaia\u2019s unhappy reviewers raise it ${P.pay_share_ratio.ratio}× as often as onX\u2019s.` },
@@ -51,6 +51,8 @@
     const vals = [...root.querySelectorAll(".ex-val")];
     const unit = root.querySelector(".ex-unit"), claim = root.querySelector(".claim"), src = root.querySelector(".src");
     const base = `App Store, ${day(W.since)} to ${day(W.until)}: ${g.n_low} Gaia and ${o.n_low} onX 1 and 2-star reviews. One dot is one in 100, rounded.`;
+    const baseEl = root.parentElement && root.parentElement.querySelector("[data-ex-base]");
+    if (baseEl) baseEl.textContent = `Unhappy means a 1 or 2-star review. ${base}`;
     let cur = -1;
     function show(i, focus) {
       if (i === cur) return; cur = i;
@@ -69,7 +71,7 @@
         vals[k].textContent = one(val);
       });
       claim.innerHTML = v.claim;
-      src.textContent = `${v.note} ${base}`;
+      src.textContent = baseEl ? v.note : `${v.note} ${base}`;
     }
     tabs.forEach((t, i) => {
       t.addEventListener("click", () => show(i));
