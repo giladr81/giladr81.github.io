@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400&family=Schibsted+Grotesk:wght@400..800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=202611181104">
+<link rel="stylesheet" href="assets/style.css?v=202611250001">
 <style>
   .src-note { font-size: var(--step--1); color: var(--ink-3); }
   ul.eng { margin: 0; padding-left: 1.2rem; display: grid; gap: 6px; }
@@ -37,10 +37,10 @@
       <div class="hero-text">
         <p class="kicker"><span class="pill">Case study</span>Gaia GPS and onX Offroad, from public app-store reviews</p>
         <h1>Long-time users are a large share of Gaia GPS's critics and almost none of onX&nbsp;Offroad's.</h1>
-        <p class="dek">Among 1 and 2-star App Store reviewers, <span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's are long-time users, against <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span> of onX's. Their reviews name two problems: features that moved behind the paywall, and an app that fails with no signal or in the vehicle. Price comes up at least as often as failures, and reviews can't show which one ends a subscription, so the case ends with the checks that would.</p>
+        <p class="dek">Among 1 and 2-star Apple App Store (iPhone) reviewers, <span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's are long-time users, against <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span> of onX's. Their reviews name two problems: features that moved behind the paywall, and an app that fails with no signal or in the vehicle. Price comes up at least as often as failures, and reviews can't show which one ends a subscription, so the case ends with the checks that would.</p>
       </div>
       <div class="ex-wrap">
-        <div class="explorer" data-explorer aria-label="Gaia GPS and onX Offroad compared, from 1 and 2-star App Store reviews"></div>
+        <div class="explorer" data-explorer aria-label="Gaia GPS and onX Offroad compared, from 1 and 2-star Apple App Store reviews"></div>
         <p class="ex-base" data-ex-base></p>
       </div>
     </div>
@@ -69,7 +69,7 @@
     <div class="callout apps">
       <h2 id="s-context">The two apps</h2>
       <div class="two-up">
-      <p><b>Gaia GPS</b> is a navigation app for hiking, camping, overlanding and off-roading, built around offline maps for places with no cell service. It's part of the Outside network of outdoor brands, free to use, with a paid Premium subscription (<a href="https://apps.apple.com/us/app/id1201979492">App Store listing</a>).</p>
+      <p><b>Gaia GPS</b> is a navigation app for hiking, camping, overlanding and off-roading, built around offline maps for places with no cell service. It's part of the Outside network of outdoor brands, free to use, with a paid Premium subscription (<a href="https://apps.apple.com/us/app/id1201979492">Apple App Store listing</a>).</p>
       <p><b>onX Offroad</b> is built for off-roaders: trail maps for 4x4s, side-by-sides, ATVs and dirt bikes, plus offline maps, route planning and land ownership. It's also free to use, with paid Premium and Elite plans (<a href="https://www.onxmaps.com/offroad">onX's product page</a>).</p>
       </div>
       <p>Both are used far from cell service, so an app that fails there fails at the worst time.</p>
@@ -84,13 +84,13 @@
       </div>
       <dl class="summary">
         <dt>The question</dt><dd>Long-time users make up a large share of Gaia's unhappy reviewers and almost none of onX's. What are they unhappy about: the paywall, failures, or something reviews barely measure, such as trail discovery?</dd>
-        <dt>What the reviews show</dt><dd>Two complaints dominate. Paywall complaints are equally common on both stores, mostly about route saving moving behind the paywall. Failures during a trip concentrate on the App Store, where Gaia's unhappy reviewers report them <span data-k="derived.reliability_share_ratio.ratio" data-fmt="x"></span> as often as onX's. Among long-time critics that failure gap between stores is within chance.</dd>
+        <dt>What the reviews show</dt><dd>Two complaints dominate. Paywall complaints are equally common on both stores, mostly about route saving moving behind the paywall. Failures during a trip concentrate on the Apple App Store, where Gaia's unhappy reviewers report them <span data-k="derived.reliability_share_ratio.ratio" data-fmt="x"></span> as often as onX's. Among long-time critics alone, there are too few reviews to tell whether that gap between the stores is real.</dd>
         <dt>My hypothesis</dt><dd>Two readings fit the reviews. The paywall loses long-time free users, or failures lose subscribers at renewal. Price is named at least as often as failures among long-time critics on both stores, so I wouldn't assume it is failures. Trail discovery may matter too: onX recommends trails, and I haven't found anything like that in Gaia.</dd>
         <dt>What I'd do first</dt><dd>If I owned the product, I would first ask lapsed long-time users why they left, because the reviews are split between price and failures. In parallel I would add CarPlay and Android Auto checks to every release, since users reported a blank CarPlay map after <span data-k="ext.gaia_releases.carplay_suspect.version"></span> and that is worth fixing either way. Then I would test a small route-saving allowance against a holdout.</dd>
         <dt>What would change the plan</dt><dd>If lapsed users name price or the paywall first, the allowance test moves ahead of reliability work. If they name failures, the release checks move up. If neither, trail discovery is the next question.</dd>
-        <dt>What this can't tell you</dt><dd>Reviews show who complains, not who cancels. <span data-k="ios_comparison.gaia.n_low" data-fmt="n"></span> Gaia and <span data-k="ios_comparison.onx_offroad.n_low" data-fmt="n"></span> onX 1 and 2-star App Store reviews show where to look, not how big the problem is. Only product data can size it: cancellations, offline launches and crashes.</dd>
+        <dt>What this can't tell you</dt><dd>Reviews show who complains, not who cancels. <span data-k="ios_comparison.gaia.n_low" data-fmt="n"></span> Gaia and <span data-k="ios_comparison.onx_offroad.n_low" data-fmt="n"></span> onX 1 and 2-star Apple App Store reviews show where to look, not how big the problem is. Only product data can size it: cancellations, offline launches and crashes.</dd>
       </dl>
-      <p class="col">I compared <span data-k="ios_comparison.gaia.n" data-fmt="n"></span> App Store reviews of Gaia GPS with <span data-k="ios_comparison.onx_offroad.n" data-fmt="n"></span> of onX Offroad from <span class="mono" data-k="cmp_window.since" data-fmt="date"></span> to <span class="mono" data-k="cmp_window.until" data-fmt="date"></span>, the period both review feeds fully cover (<a href="methods.html">method</a>), and sorted each complaint into price, route planning or the app failing during a trip, then repeated the comparison on Google Play.</p>
+      <p class="col">I compared <span data-k="ios_comparison.gaia.n" data-fmt="n"></span> Apple App Store reviews of Gaia GPS with <span data-k="ios_comparison.onx_offroad.n" data-fmt="n"></span> of onX Offroad from <span class="mono" data-k="cmp_window.since" data-fmt="date"></span> to <span class="mono" data-k="cmp_window.until" data-fmt="date"></span>, the period both review feeds fully cover (<a href="methods.html">method</a>), and sorted each complaint into price, route planning or the app failing during a trip, then repeated the comparison on the Google Play Store (Android).</p>
     </div>
   </section>
 
@@ -102,9 +102,9 @@
         <p>I started as a user weighing a switch to onX, and turned that into a question: why are long-time users unhappy, and is it price or failures?</p>
       </div>
       <ol class="ranked tight">
-        <li><h3>Collect what users wrote</h3><p>Public reviews of Gaia GPS and onX Offroad from the App Store (US and Canada) and Google Play, compared over the period both review feeds fully cover.</p></li>
+        <li><h3>Collect what users wrote</h3><p>Public reviews of Gaia GPS and onX Offroad from the Apple App Store (iPhone, US and Canada) and the Google Play Store (Android), compared over the period both review feeds fully cover.</p></li>
         <li><h3>Sort the complaints</h3><p>Each 1 and 2-star review sorted into price, route planning or the app failing during a trip, and flagged as a long-time user from phrases like "for years" and "used to love". Hand checks on random samples measure how often the sorting is right.</p></li>
-        <li><h3>Compare, then try to break the finding</h3><p>Gaia against onX on the App Store, then the same comparison on Google Play, to separate the apps from the store. A result that doesn't hold on both stores is reported as such.</p></li>
+        <li><h3>Compare, then try to break the finding</h3><p>Gaia against onX on the Apple App Store, then the same comparison on the Google Play Store, to separate the apps from the store. A result that doesn't hold on both stores is reported as such.</p></li>
         <li><h3>Check other channels</h3><p>Reddit, the Gaia GPS forum and BC off-road Facebook groups, to see whether the same problems show up outside the app stores.</p></li>
         <li><h3>Turn the findings into checks</h3><p>The cheapest checks on product data that would separate price from failures.</p></li>
       </ol>
@@ -116,14 +116,14 @@
     <div class="flow-lg">
       <div class="sec-head">
         <p class="marker">Evidence 1 of 3</p>
-        <h2 id="s-stages">Price is a complaint at both apps. Failures set Gaia apart on the App Store.</h2>
-        <p>Among 1 and 2-star App Store reviews, <span data-k="ios_comparison.gaia.pay_share_of_low" data-fmt="pct"></span> of Gaia's and <span data-k="ios_comparison.onx_offroad.pay_share_of_low" data-fmt="pct"></span> of onX's mention price. The difference is whether the app works: <span data-k="ios_comparison.gaia.reliability_share_of_low" data-fmt="pct"></span> of Gaia's unhappy reviewers say it failed during a trip, against <span data-k="ios_comparison.onx_offroad.reliability_share_of_low" data-fmt="pct"></span> of onX's, <span data-k="derived.reliability_share_ratio.ratio" data-fmt="x"></span> as often. I compare shares of unhappy reviews, not counts per 100 reviews, because apps differ in how many happy users they prompt to write one (<a href="methods.html#s-count">method</a>).</p>
+        <h2 id="s-stages">Price is a complaint at both apps. Failures set Gaia apart on the Apple App Store.</h2>
+        <p>Among 1 and 2-star Apple App Store reviews, <span data-k="ios_comparison.gaia.pay_share_of_low" data-fmt="pct"></span> of Gaia's and <span data-k="ios_comparison.onx_offroad.pay_share_of_low" data-fmt="pct"></span> of onX's mention price. The difference is whether the app works: <span data-k="ios_comparison.gaia.reliability_share_of_low" data-fmt="pct"></span> of Gaia's unhappy reviewers say it failed during a trip, against <span data-k="ios_comparison.onx_offroad.reliability_share_of_low" data-fmt="pct"></span> of onX's, <span data-k="derived.reliability_share_ratio.ratio" data-fmt="x"></span> as often. I compare shares of unhappy reviews, not counts per 100 reviews, because apps differ in how many happy users they prompt to write one (<a href="methods.html#s-count">method</a>).</p>
       </div>
-      <p class="col">Google Play tells a different story. There the failure gap is small (<span data-k="android_comparison.excl_burst.derived.reliability_share_ratio.ratio" data-fmt="x"></span>, within what chance alone could produce) and Gaia's critics raise price more often than onX's (<span data-k="android_comparison.excl_burst.derived.pay_share_ratio.ratio" data-fmt="x"></span>). Google Play figures leave out a burst of onX rating-prompt reviews (<a href="methods.html#s-android">method</a>). So the App Store gap is real, but it isn't the whole picture.</p>
+      <p class="col">Google Play Store tells a different story. There the failure gap is small (<span data-k="android_comparison.excl_burst.derived.reliability_share_ratio.ratio" data-fmt="x"></span>, within what chance alone could produce) and Gaia's critics raise price more often than onX's (<span data-k="android_comparison.excl_burst.derived.pay_share_ratio.ratio" data-fmt="x"></span>). Google Play Store figures leave out a burst of onX rating-prompt reviews (<a href="methods.html#s-android">method</a>). So the Apple App Store gap is real, but it isn't the whole picture.</p>
       <figure class="fig">
         <figcaption>
           <span class="fig-title">Complaints per 100 reviews, by type of complaint</span>
-          <span class="fig-note">1 and 2-star App Store reviews, comparison period, per 100 reviews: direction only. Route planning isn't counted as a failure: about half of Gaia's planning complaints are about the paywall. <span id="stages-omitted"></span></span>
+          <span class="fig-note">1 and 2-star Apple App Store reviews, comparison period, per 100 reviews: direction only. Route planning isn't counted as a failure: about half of Gaia's planning complaints are about the paywall. <span id="stages-omitted"></span></span>
         </figcaption>
         <div class="legend"><span class="key"><span class="sw" style="background:var(--series-1)"></span>Gaia GPS</span><span class="key"><span class="sw" style="background:var(--series-muted)"></span>onX Offroad (benchmark)</span></div>
         <div class="chart" id="chart-stages"></div>
@@ -137,7 +137,7 @@
       <div class="sec-head">
         <p class="marker">Evidence 2 of 3</p>
         <h2 id="s-who">Long-time critics name price at least as often as failures on both stores.</h2>
-        <p><span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's 1 and 2-star App Store reviewers say they've used it for years, mention a past subscription, or say it "used to be" good. For onX it's <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span>. Google Play shows the same split: <span data-k="android_comparison.excl_burst.gaia.loyal_share_of_low" data-fmt="pct"></span> against <span data-k="android_comparison.excl_burst.onx_offroad.loyal_share_of_low" data-fmt="pct"></span>. Among long-time critics, price is <span data-k="loyal_mix_store.gaia.android.pay_share" data-fmt="pct"></span> on Google Play against <span data-k="loyal_mix_store.gaia.android.reliability_share" data-fmt="pct"></span> for failures, and <span data-k="loyal_mix_store.gaia.ios.pay_share" data-fmt="pct"></span> against <span data-k="loyal_mix_store.gaia.ios.reliability_share" data-fmt="pct"></span> on the App Store. Gaia's critics name onX most as where they're going. In a hand check, <span data-k="loyal_precision.0"></span> of <span data-k="loyal_precision.1"></span> random matches really described the reviewer's own long or past use.</p>
+        <p><span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's 1 and 2-star Apple App Store reviewers say they've used it for years, mention a past subscription, or say it "used to be" good. For onX it's <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span>. Google Play Store shows the same split: <span data-k="android_comparison.excl_burst.gaia.loyal_share_of_low" data-fmt="pct"></span> against <span data-k="android_comparison.excl_burst.onx_offroad.loyal_share_of_low" data-fmt="pct"></span>. Among long-time critics, price is <span data-k="loyal_mix_store.gaia.android.pay_share" data-fmt="pct"></span> on the Google Play Store against <span data-k="loyal_mix_store.gaia.android.reliability_share" data-fmt="pct"></span> for failures, and <span data-k="loyal_mix_store.gaia.ios.pay_share" data-fmt="pct"></span> against <span data-k="loyal_mix_store.gaia.ios.reliability_share" data-fmt="pct"></span> on the Apple App Store. Gaia's critics name onX most as where they're going. In a hand check, <span data-k="loyal_precision.0"></span> of <span data-k="loyal_precision.1"></span> random matches really described the reviewer's own long or past use.</p>
       </div>
       <div class="quotes" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))">
         <blockquote class="q" data-q="loyal"></blockquote>
@@ -146,12 +146,12 @@
         <blockquote class="q bench" data-q="onx_new"></blockquote>
       </div>
       <p class="src-note">Quotes come from both stores since <span class="mono" data-k="window.since" data-fmt="date"></span>.</p>
-      <p class="col">Across all of Gaia's unhappy reviewers since <span class="mono" data-k="window.since" data-fmt="date"></span> (<span data-k="store_split.all.android.n" data-fmt="n"></span> on Google Play, <span data-k="store_split.all.ios.n" data-fmt="n"></span> on the App Store), paywall complaints are equally common (<span data-k="store_split.all.android.pay_share" data-fmt="pct"></span> and <span data-k="store_split.all.ios.pay_share" data-fmt="pct"></span>), but failures are <span data-k="store_split.all.fail_ratio_ios_over_android" data-fmt="x"></span> as common on the App Store (<span data-k="store_split.all.ios.reliability_share" data-fmt="pct"></span> against <span data-k="store_split.all.android.reliability_share" data-fmt="pct"></span>). Long-time critics point the same way: on Google Play they name the paywall over failures (<span data-k="store_split.loyal.android.pay_share" data-fmt="pct"></span> against <span data-k="store_split.loyal.android.reliability_share" data-fmt="pct"></span>), and on the App Store the two are even (<span data-k="store_split.loyal.ios.pay_share" data-fmt="pct"></span> and <span data-k="store_split.loyal.ios.reliability_share" data-fmt="pct"></span>). With <span data-k="store_split.loyal.android.n" data-fmt="n"></span> and <span data-k="store_split.loyal.ios.n" data-fmt="n"></span> long-time critics, the difference between the stores is direction only (<a href="methods.html#s-count">method</a>). Reviews can't say why the stores differ. It may be who uses each platform, or how each version of the app changed. The tests below are split by platform to find out. Route planning is where the paywall shows up most: <span data-k="plan_overlap.gaia.loyal_pay_n" data-fmt="n"></span> of <span data-k="plan_overlap.gaia.loyal_n" data-fmt="n"></span> long-time complaints about planning are price complaints, mostly about saving routes moving behind the paywall, like the second quote.</p>
+      <p class="col">Across all of Gaia's unhappy reviewers since <span class="mono" data-k="window.since" data-fmt="date"></span> (<span data-k="store_split.all.android.n" data-fmt="n"></span> on the Google Play Store, <span data-k="store_split.all.ios.n" data-fmt="n"></span> on the Apple App Store), paywall complaints are equally common (<span data-k="store_split.all.android.pay_share" data-fmt="pct"></span> and <span data-k="store_split.all.ios.pay_share" data-fmt="pct"></span>), but failures are <span data-k="store_split.all.fail_ratio_ios_over_android" data-fmt="x"></span> as common on the Apple App Store (<span data-k="store_split.all.ios.reliability_share" data-fmt="pct"></span> against <span data-k="store_split.all.android.reliability_share" data-fmt="pct"></span>). Long-time critics point the same way: on the Google Play Store they name the paywall over failures (<span data-k="store_split.loyal.android.pay_share" data-fmt="pct"></span> against <span data-k="store_split.loyal.android.reliability_share" data-fmt="pct"></span>), and on the Apple App Store the two are even (<span data-k="store_split.loyal.ios.pay_share" data-fmt="pct"></span> and <span data-k="store_split.loyal.ios.reliability_share" data-fmt="pct"></span>). With <span data-k="store_split.loyal.android.n" data-fmt="n"></span> and <span data-k="store_split.loyal.ios.n" data-fmt="n"></span> long-time critics, the difference between the stores is direction only (<a href="methods.html#s-count">method</a>). Reviews can't say why the stores differ. It may be who uses each platform, or how each version of the app changed. The tests below are split by platform to find out. Route planning is where the paywall shows up most: <span data-k="plan_overlap.gaia.loyal_pay_n" data-fmt="n"></span> of <span data-k="plan_overlap.gaia.loyal_n" data-fmt="n"></span> long-time complaints about planning are price complaints, mostly about saving routes moving behind the paywall, like the second quote.</p>
       <div class="two-up">
         <figure class="fig">
           <figcaption>
             <span class="fig-title">Share of 1 and 2-star reviewers who are long-time users</span>
-            <span class="fig-note">App Store, comparison period. Matched on phrases such as "for years", "used to love", "long time user".</span>
+            <span class="fig-note">Apple App Store, comparison period. Matched on phrases such as "for years", "used to love", "long time user".</span>
           </figcaption>
           <div class="chart" id="chart-loyal"></div>
           <details class="table-view"><summary>Show as table</summary><div class="tbl-wrap"><table class="data" id="tbl-loyal"></table></div></details>
@@ -189,7 +189,7 @@
       <div class="sec-head">
         <p class="marker">Evidence 3 of 3</p>
         <h2 id="s-where">Trust breaks in the vehicle first. The offline lockout is rarer but worse.</h2>
-        <p>"Navigating" (crashes, freezes, GPS errors, CarPlay, tracks that stop recording) is Gaia's biggest complaint after price: <span data-k="ios_comparison.gaia.per100.on_route"></span> per 100 App Store reviews, against <span data-k="ios_comparison.onx_offroad.per100.on_route"></span> for onX. The offline lockout, a login demand with no signal, is absent from the comparison period and appears in <span data-k="apps.gaia.stage_low.trailhead.n"></span> Gaia reviews across both stores since <span class="mono" data-k="window.since" data-fmt="date"></span>. Rare, but the worst failure a navigation app can have.</p>
+        <p>"Navigating" (crashes, freezes, GPS errors, CarPlay, tracks that stop recording) is Gaia's biggest complaint after price: <span data-k="ios_comparison.gaia.per100.on_route"></span> per 100 Apple App Store reviews, against <span data-k="ios_comparison.onx_offroad.per100.on_route"></span> for onX. The offline lockout, a login demand with no signal, is absent from the comparison period and appears in <span data-k="apps.gaia.stage_low.trailhead.n"></span> Gaia reviews across both stores since <span class="mono" data-k="window.since" data-fmt="date"></span>. Rare, but the worst failure a navigation app can have.</p>
       </div>
         <figure class="field-photo">
           <img src="assets/salsbury-crossing.jpg" width="768" height="1024" loading="lazy" alt="My pickup crossing a shallow creek on a rocky forest road, with other off-road vehicles waiting up the hill">
@@ -292,7 +292,7 @@
       <div class="sec-head">
         <p class="marker">Checks</p>
         <h2 id="s-test">Checks that separate price from failures</h2>
-        <p>Reviews show where to look, not what to do. Cheapest checks first, and each has a result that would change the order of work. Split every test by platform: reviews suggest failures matter more to App Store users, and only product data can confirm it.</p>
+        <p>Reviews show where to look, not what to do. Cheapest checks first, and each has a result that would change the order of work. Split every test by platform: reviews suggest failures matter more to Apple App Store users, and only product data can confirm it.</p>
       </div>
       <p class="col">Gaia's own recent releases point the same way. iOS <span data-k="ext.gaia_releases.ios_offline.version"></span> (<span class="mono" data-k="ext.gaia_releases.ios_offline.date" data-fmt="date"></span>) says downloaded maps load more reliably when cell service is spotty, and Android <span data-k="ext.gaia_releases.android_reauth.version"></span> (<span class="mono" data-k="ext.gaia_releases.android_reauth.date" data-fmt="date"></span>) fixed account re-authentication. The team has started on offline and login. So the first checks should run on these versions, or they'll measure problems that may already be fixed.</p>
       <div class="tbl-wrap">
@@ -316,7 +316,7 @@
       <h2 id="s-limits">Limits of this evidence, and how to close each one</h2>
       <ul class="clean">
         <li>Reviewers skew unhappy, so reviews compare problems, not overall satisfaction. <span class="close">Cancellation analysis would show it.</span></li>
-        <li>The head-to-head uses App Store reviews, and Gaia has only <span data-k="ios_comparison.gaia.n" data-fmt="n"></span> in the period. Counted per 100 reviews, the failure gap looks like <span data-k="derived.reliability_ratio" data-fmt="x"></span> (range <span data-k="derived.reliability_ratio_ci.lo" data-fmt="x"></span> to <span data-k="derived.reliability_ratio_ci.hi" data-fmt="x"></span>), but that count is inflated by how many happy users each app prompts to review, so the case uses shares of unhappy reviews. On Google Play the failure gap is small. <span class="close">Repeating the comparison each quarter on both stores would show whether it holds.</span></li>
+        <li>The head-to-head uses Apple App Store reviews, and Gaia has only <span data-k="ios_comparison.gaia.n" data-fmt="n"></span> in the period. Counted per 100 reviews, the failure gap looks like <span data-k="derived.reliability_ratio" data-fmt="x"></span> (range <span data-k="derived.reliability_ratio_ci.lo" data-fmt="x"></span> to <span data-k="derived.reliability_ratio_ci.hi" data-fmt="x"></span>), but that count is inflated by how many happy users each app prompts to review, so the case uses shares of unhappy reviews. On the Google Play Store the failure gap is small. <span class="close">Repeating the comparison each quarter on both stores would show whether it holds.</span></li>
         <li>Types come from phrase matching. In hand checks, <span id="prec-range"></span> of sampled reviews per type were correctly placed, and <span data-k="loyal_precision.0"></span> of <span data-k="loyal_precision.1"></span> for long-time users. <span class="close">Support-ticket categories would test it.</span></li>
         <li>onX Offroad is a vehicle app. Only <span data-k="apps.gaia.offroad.n" data-fmt="n"></span> Gaia reviews mention off-roading, so for Gaia's hikers and hunters the comparison is untested. <span class="close">Splitting app data by activity, and repeating this against CalTopo or onX Backcountry, would show it.</span></li>
       </ul>
@@ -346,9 +346,9 @@
   </div>
 </footer>
 
-<script src="data/reviews_summary.js?v=202611181104"></script>
-<script src="data/external.js?v=202611181104"></script>
-<script src="assets/charts.js?v=202611181104"></script>
+<script src="data/reviews_summary.js?v=202611250001"></script>
+<script src="data/external.js?v=202611250001"></script>
+<script src="assets/charts.js?v=202611250001"></script>
 <script>
 (function () {
   const R = window.REVIEWS, C = window.Charts;
@@ -376,7 +376,7 @@
     "<thead><tr><th>Complaint type</th><th class='r'>Gaia per 100</th><th class='r'>Gaia reviews</th><th class='r'>onX per 100</th><th class='r'>onX reviews</th><th class='r'>Gaia ÷ onX</th></tr></thead><tbody>" +
     R.stages.map((s) => { const r = R.derived.stage_ratio[s.key];
       return `<tr><td>${s.label}</td><td class='r'>${g.per100[s.key]}</td><td class='r'>${g.count[s.key]}</td><td class='r'>${o.per100[s.key]}</td><td class='r'>${o.count[s.key]}</td><td class='r'>${r ? r.toFixed(1) + "×" : "n/a"}</td></tr>`; }).join("") +
-    `</tbody><caption class="small muted" style="caption-side:bottom;text-align:left;padding-top:6px">App Store, ${R.cmp_window.since} to ${R.cmp_window.until}. All Gaia reviews: ${g.n}. All onX reviews: ${o.n}. n/a: onX has no reviews of that type, so there is no ratio.</caption>`;
+    `</tbody><caption class="small muted" style="caption-side:bottom;text-align:left;padding-top:6px">Apple App Store, ${R.cmp_window.since} to ${R.cmp_window.until}. All Gaia reviews: ${g.n}. All onX reviews: ${o.n}. n/a: onX has no reviews of that type, so there is no ratio.</caption>`;
 
   C.columns(document.getElementById("chart-loyal"), [
     { label: "Gaia GPS", value: g.loyal_share_of_low, tip: `Gaia: ${Math.round(g.loyal_share_of_low * 100)}% of 1 and 2-star reviewers` },
@@ -385,29 +385,31 @@
     aria: `Share of unhappy reviewers who are long-time users: Gaia ${Math.round(g.loyal_share_of_low * 100)} percent, onX ${Math.round(o.loyal_share_of_low * 100)} percent` });
 
   const pc = (v) => Math.round(v * 100) + "%", SS = R.store_split;
-  const mix = [["Paywall", "android", "pay", "Google Play"], ["App failed", "android", "reliability", "Google Play"], ["Paywall", "ios", "pay", "App Store"], ["App failed", "ios", "reliability", "App Store"]];
+  const mix = [["Paywall", "android", "pay", "Google Play Store"], ["App failed", "android", "reliability", "Google Play Store"], ["Paywall", "ios", "pay", "Apple App Store"], ["App failed", "ios", "reliability", "Apple App Store"]];
   C.columns(document.getElementById("chart-mix"), mix.map(([label, st, k, store]) =>
     ({ label, value: SS.all[st][k + "_share"], tip: `${store}, ${label.toLowerCase()}: ${pc(SS.all[st][k + "_share"])} of ${SS.all[st].n} unhappy reviewers` })),
-    { w: 420, h: 240, bottom: 52, max: 0.5, ticks: [0, 0.25, 0.5], fmt: pc, highlight: [0, 1, 2, 3], groups: [{ from: 0, to: 1, label: "Google Play" }, { from: 2, to: 3, label: "App Store" }],
-      aria: `What Gaia's unhappy reviewers complain about. Google Play: paywall ${pc(SS.all.android.pay_share)}, failed ${pc(SS.all.android.reliability_share)}. App Store: paywall ${pc(SS.all.ios.pay_share)}, failed ${pc(SS.all.ios.reliability_share)}` });
+    { w: 420, h: 240, bottom: 52, max: 0.5, ticks: [0, 0.25, 0.5], fmt: pc, highlight: [0, 1, 2, 3], groups: [{ from: 0, to: 1, label: "Google Play Store" }, { from: 2, to: 3, label: "Apple App Store" }],
+      aria: `What Gaia's unhappy reviewers complain about. Google Play Store: paywall ${pc(SS.all.android.pay_share)}, failed ${pc(SS.all.android.reliability_share)}. Apple App Store: paywall ${pc(SS.all.ios.pay_share)}, failed ${pc(SS.all.ios.reliability_share)}` });
   document.getElementById("tbl-mix").innerHTML =
     "<thead><tr><th>Group</th><th class='r'>Reviews</th><th class='r'>Paywall</th><th class='r'>The app failed</th></tr></thead><tbody>" +
-    [["All unhappy, Google Play", "all", "android"], ["All unhappy, App Store", "all", "ios"], ["Long-time, Google Play", "loyal", "android"], ["Long-time, App Store", "loyal", "ios"]].map(([name, g, st]) => { const m = SS[g][st];
-      return `<tr><td>${name}</td><td class='r'>${m.n}</td><td class='r'>${pc(m.pay_share)}</td><td class='r'>${pc(m.reliability_share)}</td></tr>`; }).join("") +
-    `</tbody><caption class="small muted" style="caption-side:bottom;text-align:left;padding-top:6px">Gaia 1 and 2-star reviews since ${SS.window.since}. Store differences: failures ${SS.all.fail_diff.pts} points on Google Play against the App Store (95% range ${SS.all.fail_diff.lo} to ${SS.all.fail_diff.hi}), paywall ${SS.all.pay_diff.pts} (${SS.all.pay_diff.lo} to ${SS.all.pay_diff.hi}). Among long-time critics both ranges include zero.</caption>`;
+    [["Google Play Store", "android"], ["Apple App Store", "ios"]].map(([store, st]) =>
+      `<tr><th colspan='4' scope='colgroup' style='padding-top:14px;color:var(--ink-2)'>${store}</th></tr>` +
+      [["All unhappy", "all"], ["Long-time", "loyal"]].map(([name, g]) => { const m = SS[g][st];
+        return `<tr><td>${name}</td><td class='r'>${m.n}</td><td class='r'>${pc(m.pay_share)}</td><td class='r'>${pc(m.reliability_share)}</td></tr>`; }).join("")).join("") +
+    `</tbody><caption class="small muted" style="caption-side:bottom;text-align:left;padding-top:6px">Gaia 1 and 2-star reviews since ${SS.window.since}. Store differences: failures ${SS.all.fail_diff.pts} points on the Google Play Store against the Apple App Store (95% range ${SS.all.fail_diff.lo} to ${SS.all.fail_diff.hi}), paywall ${SS.all.pay_diff.pts} (${SS.all.pay_diff.lo} to ${SS.all.pay_diff.hi}). Among long-time critics both ranges include zero.</caption>`;
 
   const comp = Object.entries(R.apps.gaia.competitors_in_low).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]).map(([label, value]) => ({ label, value }));
   C.ranked(document.getElementById("chart-comp"), comp, { w: 420, aria: "Other apps named in Gaia's low-rated reviews, onX first" });
   document.getElementById("tbl-comp").innerHTML = "<thead><tr><th>App named</th><th class='r'>Gaia 1 and 2-star reviews</th></tr></thead><tbody>" +
     comp.map((c) => `<tr><td>${c.label}</td><td class='r'>${c.value}</td></tr>`).join("") + "</tbody>";
-  document.getElementById("tbl-loyal").innerHTML = "<thead><tr><th>App</th><th class='r'>Long-time users among 1 and 2-star reviewers</th></tr></thead><tbody>" +
+  document.getElementById("tbl-loyal").innerHTML = "<thead><tr><th>App</th><th class='r' style='white-space:normal'>Long-time users among 1 and 2-star reviewers</th></tr></thead><tbody>" +
     `<tr><td>Gaia GPS</td><td class='r'>${Math.round(g.loyal_share_of_low * 100)}%</td></tr><tr><td>onX Offroad</td><td class='r'>${Math.round(o.loyal_share_of_low * 100)}%</td></tr></tbody>`;
 
   const pr = Object.values(R.precision).map(([a, b]) => a / b);
   document.getElementById("prec-range").textContent = `${Math.round(Math.min(...pr) * 100)}% to ${Math.round(Math.max(...pr) * 100)}%`;
 })();
 </script>
-<script src="assets/site.js?v=202611181104"></script>
+<script src="assets/site.js?v=202611250001"></script>
 <script data-goatcounter="https://giladr81.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
