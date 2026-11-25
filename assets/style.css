@@ -203,8 +203,15 @@ ul.clean li::marker { color: var(--ink-3); }
 @media (max-width: 480px) { .toc { margin-inline: -16px; padding-inline: 16px; } }
 
 /* Sections */
-section.band { padding-block: 40px; border-top: 1px solid var(--line); }
-.doc-main > section.band:first-child { border-top: 0; }
+/* Section rule: heavier and darker than table and list hairlines (1px --line), so it reads as a section break. */
+/* Section rule as a trail on a topo map: a dashed 2px track in --line-2 with a waypoint ring at the trailhead.
+   Neutral colour only (orange means Gaia). Heavier than the 1px --line hairlines in tables and lists. */
+section.band { padding-block: 40px; position: relative; }
+section.band::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: repeating-linear-gradient(90deg, var(--line-2) 0 14px, transparent 14px 22px); }
+section.band::after { content: ""; position: absolute; top: -4px; left: 0; width: 6px; height: 6px; border-radius: 50%;
+  border: 2px solid var(--line-2); background: var(--bg); }
+main > section.band:first-child::before, main > section.band:first-child::after { content: none; }
 section.band h2 { scroll-margin-top: 24px; }
 .doc-main h2 { font-size: 1.625rem; line-height: 1.15; }
 .sec-head { display: grid; gap: 10px; max-width: var(--measure); }
@@ -264,6 +271,8 @@ table.data { border-collapse: collapse; width: 100%; font-size: var(--step--1); 
 table.data th, table.data td { text-align: left; padding: 8px 14px 8px 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
 table.data thead th { font-weight: 600; color: var(--ink-3); font-size: 0.8125rem; }
 table.data td.r, table.data th.r { text-align: right; }
+/* No rule under the last row: a table that ends a section would otherwise show two lines (row + section rule). */
+table.data tbody tr:last-child > * { border-bottom: 0; }
 table.data td.wrap-cell { white-space: normal; min-width: 220px; max-width: 360px; vertical-align: top; }
 table.stage-key td { vertical-align: top; }
 
