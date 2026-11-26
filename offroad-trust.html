@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400&family=Schibsted+Grotesk:wght@400..800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=202611250027">
+<link rel="stylesheet" href="assets/style.css?v=202611251559">
 <style>
   .src-note { font-size: var(--step--1); color: var(--ink-3); }
   ul.eng { margin: 0; padding-left: 1.2rem; display: grid; gap: 6px; }
@@ -37,7 +37,7 @@
       <div class="hero-text">
         <p class="kicker"><span class="pill">Case study</span>Gaia GPS and onX Offroad, from public app-store reviews</p>
         <h1>Long-time users are a large share of Gaia GPS's critics and almost none of onX&nbsp;Offroad's.</h1>
-        <p class="dek">Among 1 and 2-star Apple App Store (iPhone) reviewers, <span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's are long-time users, against <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span> of onX's. Their reviews name two problems: features that moved behind the paywall, and an app that fails with no signal or in the vehicle. Price comes up at least as often as failures, and reviews can't show which one ends a subscription, so the case ends with the checks that would.</p>
+        <p class="dek">Among 1 and 2-star Apple App Store (iPhone) reviewers, <span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's are long-time users, against <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span> of onX's. Their reviews name two problems: features that moved behind the paywall, and an app that fails with no signal or in the vehicle. Price comes up about as often as failures, and reviews can't show which one ends a subscription, so the case ends with the checks that would.</p>
       </div>
       <div class="ex-wrap">
         <div class="explorer" data-explorer aria-label="Gaia GPS and onX Offroad compared, from 1 and 2-star Apple App Store reviews"></div>
@@ -85,9 +85,9 @@
       <dl class="summary">
         <dt>The question</dt><dd>Long-time users make up a large share of Gaia's unhappy reviewers and almost none of onX's. What are they unhappy about: the paywall, failures, or something reviews barely measure, such as trail discovery?</dd>
         <dt>What the reviews show</dt><dd>Two complaints dominate. Paywall complaints are equally common on both stores, mostly about route saving moving behind the paywall. Failures during a trip concentrate on the Apple App Store, where Gaia's unhappy reviewers report them <span data-k="derived.reliability_share_ratio.ratio" data-fmt="x"></span> as often as onX's. Among long-time critics alone, there are too few reviews to tell whether that gap between the stores is real.</dd>
-        <dt>My hypothesis</dt><dd>Two readings fit the reviews. The paywall loses long-time free users, or failures lose subscribers at renewal. Price is named at least as often as failures among long-time critics on both stores, so I wouldn't assume it is failures. Trail discovery may matter too: onX recommends trails, and I haven't found anything like that in Gaia.</dd>
+        <dt>My hypothesis</dt><dd>Two readings fit the reviews. The paywall loses long-time free users, or failures lose subscribers at renewal. Among long-time critics, price is named about as often as failures on the Apple App Store and more often on the Google Play Store, so I wouldn't assume it is failures. Trail discovery may matter too: onX recommends trails, and I haven't found anything like that in Gaia.</dd>
         <dt>What I'd do first</dt><dd>If I owned the product, I would first ask lapsed long-time users why they left, because the reviews are split between price and failures. In parallel I would add CarPlay and Android Auto checks to every release, since users reported a blank CarPlay map after <span data-k="ext.gaia_releases.carplay_suspect.version"></span> and that is worth fixing either way. Then I would test a small route-saving allowance against a holdout.</dd>
-        <dt>What would change the plan</dt><dd>If lapsed users name price, the paywall or removed map layers first, the allowance test moves ahead of reliability work. If they name failures, the release checks move up. If neither, trail discovery is the next question.</dd>
+        <dt>What would change the plan</dt><dd>If lapsed users name price, the paywall or removed map layers first, the allowance test moves ahead of reliability work. If they name failures, the release checks move up. If neither, trail discovery is the next question. Early signs suggest it may be neither: in a small survey of a BC off-road group and in Reddit posts about leaving Gaia, ease of use and changes since Outside bought Gaia come up more often than price or failures.</dd>
         <dt>What this can't tell you</dt><dd>Reviews show who complains, not who cancels. Gaia is also the older app, so it has more long-time users to begin with. <span data-k="ios_comparison.gaia.n_low" data-fmt="n"></span> Gaia and <span data-k="ios_comparison.onx_offroad.n_low" data-fmt="n"></span> onX 1 and 2-star Apple App Store reviews show where to look, not how big the problem is. Only product data can size it: cancellations, offline launches and crashes.</dd>
       </dl>
       <p class="col">I compared <span data-k="ios_comparison.gaia.n" data-fmt="n"></span> Apple App Store reviews of Gaia GPS with <span data-k="ios_comparison.onx_offroad.n" data-fmt="n"></span> of onX Offroad from <span class="mono" data-k="cmp_window.since" data-fmt="date"></span> to <span class="mono" data-k="cmp_window.until" data-fmt="date"></span>, the period both review feeds fully cover (<a href="methods.html">method</a>), and sorted each complaint into price, route planning or the app failing during a trip, then repeated the comparison on the Google Play Store (Android).</p>
@@ -136,8 +136,8 @@
     <div class="flow-lg">
       <div class="sec-head">
         <p class="marker">Evidence 2 of 3</p>
-        <h2 id="s-who">Long-time critics name price at least as often as failures on both stores.</h2>
-        <p><span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's 1 and 2-star Apple App Store reviewers say they've used it for years, mention a past subscription, or say it "used to be" good. For onX it's <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span>. Google Play Store shows the same split: <span data-k="android_comparison.excl_burst.gaia.loyal_share_of_low" data-fmt="pct"></span> against <span data-k="android_comparison.excl_burst.onx_offroad.loyal_share_of_low" data-fmt="pct"></span>. Among long-time critics, price is <span data-k="loyal_mix_store.gaia.android.pay_share" data-fmt="pct"></span> on the Google Play Store against <span data-k="loyal_mix_store.gaia.android.reliability_share" data-fmt="pct"></span> for failures, and <span data-k="loyal_mix_store.gaia.ios.pay_share" data-fmt="pct"></span> against <span data-k="loyal_mix_store.gaia.ios.reliability_share" data-fmt="pct"></span> on the Apple App Store. Gaia's critics name onX most as where they're going. In a hand check, <span data-k="loyal_precision.0"></span> of <span data-k="loyal_precision.1"></span> random matches really described the reviewer's own long or past use.</p>
+        <h2 id="s-who">Long-time critics name price about as often as failures on the App Store, and more often on Google Play.</h2>
+        <p><span data-k="ios_comparison.gaia.loyal_share_of_low" data-fmt="pct"></span> of Gaia's 1 and 2-star Apple App Store reviewers say they've used it for years, mention a past subscription, or say it "used to be" good. For onX it's <span data-k="ios_comparison.onx_offroad.loyal_share_of_low" data-fmt="pct"></span>. Google Play Store shows the same split: <span data-k="android_comparison.excl_burst.gaia.loyal_share_of_low" data-fmt="pct"></span> against <span data-k="android_comparison.excl_burst.onx_offroad.loyal_share_of_low" data-fmt="pct"></span>. Among long-time critics, price is <span data-k="loyal_mix_store.gaia.android.pay_share" data-fmt="pct"></span> on the Google Play Store against <span data-k="loyal_mix_store.gaia.android.reliability_share" data-fmt="pct"></span> for failures, and <span data-k="loyal_mix_store.gaia.ios.pay_share" data-fmt="pct"></span> against <span data-k="loyal_mix_store.gaia.ios.reliability_share" data-fmt="pct"></span> on the Apple App Store. In app reviews, Gaia's critics name onX most as where they're going. In a hand check, <span data-k="loyal_precision.0"></span> of <span data-k="loyal_precision.1"></span> random matches really described the reviewer's own long or past use.</p>
       </div>
       <div class="quotes" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))">
         <blockquote class="q" data-q="loyal"></blockquote>
@@ -170,7 +170,7 @@
         <p>The complaints map to four jobs: keeping the routes I've built (planning and saving), navigating from the vehicle (CarPlay and Android Auto), finding the way with no signal (offline maps and login), and keeping a record (tracks and sync). The BC groups add a fact that changes the risk: members run two to four apps plus paper maps. So the threat isn't a dramatic switch. Gaia gets demoted to the backup app, and backups don't get renewed. Lock-in slows even that: on r/GaiaGPS, long-time users say years of saved tracks and waypoints keep them from leaving, so an unhappy user can stay subscribed while their trips move to another app. That's a hypothesis to check against product activity data.</p>
       </div>
       <div class="two-up">
-      <p><b>Why onX Offroad.</b> It's the app Gaia's critics name most as where they're going (<span data-k="apps.gaia.competitors_in_low.onX" data-fmt="n"></span> reviews), and the one I'm weighing. It isn't Gaia's whole market, and I can't size the off-road part from reviews: only <span data-k="apps.gaia.offroad.n" data-fmt="n"></span> Gaia reviews mention off-roading. The few unhappy ones say what the rest of this page says: crashes, price, and moving to onX. For hikers and hunters the comparison would be CalTopo or onX Backcountry, which I haven't run.</p>
+      <p><b>Why onX Offroad.</b> It's the app Gaia's critics name most in app reviews as where they're going (<span data-k="apps.gaia.competitors_in_low.onX" data-fmt="n"></span> reviews), and the one I'm weighing. It isn't Gaia's whole market, and I can't size the off-road part from reviews: only <span data-k="apps.gaia.offroad.n" data-fmt="n"></span> Gaia reviews mention off-roading. The few unhappy ones say what the rest of this page says: crashes, price, and moving to onX. For hikers and hunters the comparison would be CalTopo or onX Backcountry, which I haven't run.</p>
         <figure class="fig">
           <figcaption>
             <span class="fig-title">Other apps named in Gaia's 1 and 2-star reviews</span>
@@ -209,22 +209,22 @@
     <div class="flow-lg">
       <div class="sec-head">
         <p class="marker">Beyond app-store reviews</p>
-        <h2 id="s-beyond">Other channels: price is the main complaint in the BC groups, and Reddit shows no gap</h2>
-        <p>Gaia's forum, Reddit and BC off-road Facebook groups I belong to repeat the same problems. Reddit shows similar failure rates for both apps, and the BC groups name price as the main complaint. onX advertises <span data-k="ext.onx_positioning.trail_miles"></span> miles of off-road trails, and trail recommendations are why I'm looking at onX myself, which reviews barely measure.</p>
+        <h2 id="s-beyond">Other channels: price leads in the BC groups, and on Reddit onX has overtaken Gaia</h2>
+        <p>Gaia's forum, Reddit and BC off-road Facebook groups I belong to repeat the same problems. On Reddit, failure complaints are similar for both apps, but onX has overtaken Gaia in the conversation and more users describe leaving Gaia than joining it. The BC groups name price as the main complaint. onX advertises <span data-k="ext.onx_positioning.trail_miles"></span> miles of off-road trails, and trail recommendations are why I'm looking at onX myself, which reviews barely measure.</p>
       </div>
       <div class="two-up">
         <div class="flow">
           <h3>Gaia's community forum</h3>
           <p>Of the <span data-k="ext.gaia_forum.listing_n"></span> newest posts (<span data-k="ext.gaia_forum.window"></span>), <span data-k="ext.gaia_forum.listing_reliability_n"></span> are about offline maps, sync, downloads, CarPlay or a pulled release. Three examples:</p>
           <ol class="timeline" id="forum-timeline"></ol>
-          <h3>Reddit</h3>
-          <p>On r/overlanding, where both apps were collected the same way, genuine reliability complaints were few and similar for both apps (<span data-k="ext.reddit.neutral_reliability.gaia.0"></span> of <span data-k="ext.reddit.neutral_reliability.gaia.1"></span> flagged Gaia mentions and <span data-k="ext.reddit.neutral_reliability.onx.0"></span> of <span data-k="ext.reddit.neutral_reliability.onx.1"></span> for onX), and switching runs both ways (<a href="methods.html#s-other">method</a>).</p>
-          <p>On r/GaiaGPS, Gaia's own subreddit, long-time users also name map layers Gaia has dropped, such as National Geographic Trails Illustrated maps and Esri satellite imagery. They describe it as paying the same for less, which is closer to a price complaint than a failure.</p>
-        </div>
-        <div class="flow">
           <h3>BC off-road Facebook groups</h3>
           <p>I read <span data-k="ext.facebook_bc.read_in_depth"></span> threads in depth. A hand count found about <span data-k="ext.facebook_bc.threads_total"></span> threads about navigation apps in <span data-k="ext.facebook_bc.groups_searched"></span> groups since <span class="mono" data-k="ext.facebook_bc.window_from" data-fmt="date"></span>. The groups are members-only, so these are summaries:</p>
           <ul class="clean" id="fb-themes"></ul>
+        </div>
+        <div class="flow">
+          <h3>Reddit</h3>
+          <p>On r/overlanding, where both apps were collected the same way, genuine reliability complaints were few and similar for both apps (<span data-k="ext.reddit.neutral_reliability.gaia.0"></span> of <span data-k="ext.reddit.neutral_reliability.gaia.1"></span> flagged Gaia mentions and <span data-k="ext.reddit.neutral_reliability.onx.0"></span> of <span data-k="ext.reddit.neutral_reliability.onx.1"></span> for onX). Switching is one-sided: since <span data-k="ext.reddit_switching.from_year"></span>, <span data-k="ext.reddit_switching.overlanding.left_gaia"></span> r/overlanding users described leaving Gaia (<span data-k="ext.reddit_switching.overlanding.to_onx"></span> for onX, <span data-k="ext.reddit_switching.overlanding.to_caltopo"></span> for CalTopo) and <span data-k="ext.reddit_switching.overlanding.to_gaia"></span> described joining it. The conversation moved the same way. The share of r/overlanding posters who mention Gaia fell from <span data-k="ext.reddit_mentions.years.2021.gaia"></span> in 2021 to <span data-k="ext.reddit_mentions.years.2026.gaia"></span> in 2026, while onX rose from <span data-k="ext.reddit_mentions.years.2021.onx"></span> to <span data-k="ext.reddit_mentions.years.2026.onx"></span> and passed Gaia in <span data-k="ext.reddit_mentions.onx_ahead_from"></span> (<a href="methods.html#s-other">method</a>).</p>
+          <p>On r/GaiaGPS, Gaia's own subreddit, long-time users also name map layers Gaia has dropped, such as National Geographic Trails Illustrated maps and Esri satellite imagery. They describe it as paying the same for less, which is closer to a price complaint than a failure. Leavers there name CalTopo (<span data-k="ext.reddit_switching.gaiagps.to_caltopo"></span>) more often than onX (<span data-k="ext.reddit_switching.gaiagps.to_onx"></span>), which fits hikers more than off-roaders.</p>
         </div>
       </div>
     </div>
@@ -320,6 +320,7 @@
         <li>The head-to-head uses Apple App Store reviews, and Gaia has only <span data-k="ios_comparison.gaia.n" data-fmt="n"></span> in the period. Counted per 100 reviews, the failure gap looks like <span data-k="derived.reliability_ratio" data-fmt="x"></span> (range <span data-k="derived.reliability_ratio_ci.lo" data-fmt="x"></span> to <span data-k="derived.reliability_ratio_ci.hi" data-fmt="x"></span>), but that count is inflated by how many happy users each app prompts to review, so the case uses shares of unhappy reviews. On the Google Play Store the failure gap is small. <span class="close">Repeating the comparison each quarter on both stores would show whether it holds.</span></li>
         <li>Types come from phrase matching. In hand checks, <span id="prec-range"></span> of sampled reviews per type were correctly placed, and <span data-k="loyal_precision.0"></span> of <span data-k="loyal_precision.1"></span> for long-time users. <span class="close">Support-ticket categories would test it.</span></li>
         <li>Gaia is the older app, so it has more users who could have used it for years. Part of the long-time gap may come from that, not from how each app treats its users. <span class="close">Comparing critics who started at the same time, from subscription start dates, would show it.</span></li>
+        <li>Some long-time critics name neither price nor failures. On Reddit, the most common reason given for leaving Gaia was how it changed after Outside bought it: neglect, the Outside account and billing, the social feed and data privacy (<span data-k="ext.reddit_switching.acquisition.n"></span> users, only <span data-k="ext.reddit_switching.acquisition.overlanding_n"></span> of them on r/overlanding). <span class="close">Calls with lapsed users would show how common that is next to price and failures.</span></li>
         <li>onX Offroad is a vehicle app. Only <span data-k="apps.gaia.offroad.n" data-fmt="n"></span> Gaia reviews mention off-roading, so for Gaia's hikers and hunters the comparison is untested. <span class="close">Splitting app data by activity, and repeating this against CalTopo or onX Backcountry, would show it.</span></li>
       </ul>
       <p><a href="methods.html">Full method, scripts and validation</a></p>
@@ -348,9 +349,9 @@
   </div>
 </footer>
 
-<script src="data/reviews_summary.js?v=202611250025"></script>
-<script src="data/external.js?v=202611250025"></script>
-<script src="assets/charts.js?v=202611250025"></script>
+<script src="data/reviews_summary.js?v=202611251559"></script>
+<script src="data/external.js?v=202611251559"></script>
+<script src="assets/charts.js?v=202611251559"></script>
 <script>
 (function () {
   const R = window.REVIEWS, C = window.Charts;
@@ -411,7 +412,7 @@
   document.getElementById("prec-range").textContent = `${Math.round(Math.min(...pr) * 100)}% to ${Math.round(Math.max(...pr) * 100)}%`;
 })();
 </script>
-<script src="assets/site.js?v=202611250025"></script>
+<script src="assets/site.js?v=202611251559"></script>
 <script data-goatcounter="https://giladr81.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400&family=Schibsted+Grotesk:wght@400..800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=202611250027">
+<link rel="stylesheet" href="assets/style.css?v=202611251559">
 <style>
   code.pat { font: 12px/1.5 var(--font-data); color: var(--ink-2); overflow-wrap: anywhere; }
   table.data td.pat-cell { white-space: normal; min-width: 260px; max-width: 560px; }
@@ -155,7 +155,7 @@
   <section class="band" aria-labelledby="s-other">
     <div><div class="col flow">
       <h2 id="s-other">Other sources</h2>
-      <p><b>Reddit.</b> Posts and comments from r/GaiaGPS and from off-road and overlanding subreddits that mention Gaia, onX or Trailforks, collected through the Arctic Shift archive of public Reddit data. Usernames are dropped when saved. Reddit has no star ratings, so a post counts as a complaint of a given type only when problem language ("doesn't work", "crash", "lost", "broken") appears within about 150 characters of that type's phrases. Hand-checked precision was lower than for app reviews: <span id="reddit-precision">see the data build</span>. The Gaia vs onX Reddit comparison uses only r/overlanding, where both apps were collected the same way, over the dates both searches cover (<span class="mono" data-k="ext.reddit.neutral_scope.from" data-fmt="date"></span> to <span class="mono" data-k="ext.reddit.neutral_scope.until" data-fmt="date"></span>). There I read every mention the phrase lists flagged as a reliability problem. <span data-k="ext.reddit.neutral_reliability.gaia.0"></span> of <span data-k="ext.reddit.neutral_reliability.gaia.1"></span> for Gaia and <span data-k="ext.reddit.neutral_reliability.onx.0"></span> of <span data-k="ext.reddit.neutral_reliability.onx.1"></span> for onX were genuine reliability complaints (hand check of <span class="mono" data-k="ext.reddit.neutral_reliability.checked" data-fmt="date"></span>), so the case study reports those counts, not the raw rates.</p>
+      <p><b>Reddit.</b> Posts and comments from r/GaiaGPS and from off-road and overlanding subreddits that mention Gaia, onX or Trailforks, collected through the Arctic Shift archive of public Reddit data. Usernames are dropped when saved. Reddit has no star ratings, so a post counts as a complaint of a given type only when problem language ("doesn't work", "crash", "lost", "broken") appears within about 150 characters of that type's phrases. Hand-checked precision was lower than for app reviews: <span id="reddit-precision">see the data build</span>. The Gaia vs onX Reddit comparison uses only r/overlanding, where both apps were collected the same way, over the dates both searches cover (<span class="mono" data-k="ext.reddit.neutral_scope.from" data-fmt="date"></span> to <span class="mono" data-k="ext.reddit.neutral_scope.until" data-fmt="date"></span>). There I read every mention the phrase lists flagged as a reliability problem. <span data-k="ext.reddit.neutral_reliability.gaia.0"></span> of <span data-k="ext.reddit.neutral_reliability.gaia.1"></span> for Gaia and <span data-k="ext.reddit.neutral_reliability.onx.0"></span> of <span data-k="ext.reddit.neutral_reliability.onx.1"></span> for onX were genuine reliability complaints (hand check of <span class="mono" data-k="ext.reddit.neutral_reliability.checked" data-fmt="date"></span>), so the case study reports those counts, not the raw rates. Switching between apps comes from a hand read of r/overlanding and r/GaiaGPS posts and comments since <span data-k="ext.reddit_switching.from_year"></span> (checked <span data-k="ext.reddit_switching.checked" data-fmt="date"></span>), counting distinct users who described moving from one app to another. These counts are lower bounds and replace an earlier phrase-matching count that found switching in both directions. The mention trend counts, for each year, the distinct r/overlanding posters who mention Gaia GPS or onX (as "onX" or "onX Offroad", not "on x"), out of everyone who posted that year. A hand check of random <span data-k="ext.reddit_mentions_precision.year"></span> matches found <span data-k="ext.reddit_mentions_precision.gaia.0"></span> of <span data-k="ext.reddit_mentions_precision.gaia.1"></span> Gaia and <span data-k="ext.reddit_mentions_precision.onx.0"></span> of <span data-k="ext.reddit_mentions_precision.onx.1"></span> onX matches referred to the app. It measures conversation, not users or switching.</p>
       <p><b>Reddit coverage gaps.</b> Collected so far: <span id="reddit-subs"></span>. Never collected: <span id="reddit-missing"></span>. r/onXmaps returns <span data-k="ext.reddit.coverage_gaps.onxmaps_items"></span> items from the archive, so onX items come from other subreddits. The archive holds very few r/GaiaGPS items from <span class="mono" data-k="ext.reddit.coverage_gaps.gaiagps_incomplete_from" data-fmt="date"></span> on. Commenters there say new posts were blocked for part of that time, so treat r/GaiaGPS as incomplete from then. Reading Reddit directly in the browser was blocked by the browser extension, so these gaps were disclosed rather than filled (checked <span class="mono" data-k="ext.reddit.coverage_gaps.checked" data-fmt="date"></span>).</p>
       <p><b>Gaia's community forum.</b> The newest public posts at help.gaiagps.com, read on <span class="mono" data-k="ext.gaia_forum.checked" data-fmt="date"></span> (<span data-k="ext.gaia_forum.window"></span>, no newer posts). Each one shown on these pages is linked to its source. A Gaia help-center author account replied on <span data-k="ext.gaia_forum.staff_replies.n"></span> of the <span data-k="ext.gaia_forum.staff_replies.of"></span> newest posts, none of them about CarPlay, offline maps or sync.</p>
       <p><b>Gaia release notes.</b> Read from the Apple App Store version history and an Android release listing on <span class="mono" data-k="ext.gaia_releases.ios_offline.checked" data-fmt="date"></span>. iOS <span data-k="ext.gaia_releases.ios_offline.version"></span> (<span class="mono" data-k="ext.gaia_releases.ios_offline.date" data-fmt="date"></span>): "<span data-k="ext.gaia_releases.ios_offline.note"></span>" Android <span data-k="ext.gaia_releases.android_reauth.version"></span> (<span class="mono" data-k="ext.gaia_releases.android_reauth.date" data-fmt="date"></span>): "<span data-k="ext.gaia_releases.android_reauth.note"></span>" No release note since <span data-k="ext.gaia_releases.carplay_suspect.version"></span> mentions CarPlay.</p>
@@ -200,9 +200,9 @@
   </div>
 </footer>
 
-<script src="data/reviews_summary.js?v=202611250025"></script>
-<script src="data/external.js?v=202611250025"></script>
-<script src="assets/charts.js?v=202611250025"></script>
+<script src="data/reviews_summary.js?v=202611251559"></script>
+<script src="data/external.js?v=202611251559"></script>
+<script src="assets/charts.js?v=202611251559"></script>
 <script>
 (function () {
   const R = window.REVIEWS, C = window.Charts;
@@ -247,7 +247,7 @@
     `<p><b>Long-time or paying user:</b> <code class="pat">${esc(R.patterns.loyal)}</code></p><p><b>Mentions off-roading:</b> <code class="pat">${esc(R.patterns.offroad)}</code></p>`;
 })();
 </script>
-<script src="assets/site.js?v=202611250025"></script>
+<script src="assets/site.js?v=202611251559"></script>
 <script data-goatcounter="https://giladr81.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
